@@ -109,8 +109,8 @@ export default {
           "100%": { width: "100%" },
         },
         "blink": {
-          "0%, 50%": { borderColor: "hsl(var(--primary))" },
-          "51%, 100%": { borderColor: "transparent" },
+          "0%, 50%": { opacity: "1" },
+          "51%, 100%": { opacity: "0" },
         },
       },
       animation: {
