@@ -33,7 +33,7 @@ const ProcessTimeline = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">Process</p>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground">
             How We <span className="glow-text">Deliver</span>
           </h2>
         </div>
