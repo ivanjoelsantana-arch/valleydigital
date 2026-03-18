@@ -51,9 +51,9 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         indigo: {
-          glow: "hsl(var(--indigo-glow))",
-          bright: "hsl(var(--indigo-bright))",
-          dim: "hsl(var(--indigo-dim))",
+          glow: "hsl(var(--blue-glow))",
+          bright: "hsl(var(--blue-bright))",
+          dim: "hsl(var(--blue-dim))",
         },
         surface: {
           glass: "hsl(var(--surface-glass))",

@@ -45,7 +45,7 @@ const CapabilitiesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">Capabilities</p>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground">
             Full-Stack <span className="glow-text">Engineering</span> Muscle
           </h2>
         </div>

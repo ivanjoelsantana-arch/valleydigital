@@ -33,7 +33,7 @@ const ProcessTimeline = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">Process</p>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground">
             How We <span className="glow-text">Deliver</span>
           </h2>
         </div>
@@ -44,8 +44,8 @@ const ProcessTimeline = () => {
             className="absolute left-6 md:left-8 top-0 w-px transition-all duration-700 ease-out"
             style={{
               height: activeIndex >= 0 ? `${((activeIndex + 1) / steps.length) * 100}%` : "0%",
-              background: "linear-gradient(to bottom, hsl(245 80% 62%), hsl(260 80% 55%))",
-              boxShadow: "0 0 12px hsl(245 80% 62% / 0.6)",
+              background: "linear-gradient(to bottom, hsl(210 100% 56%), hsl(215 80% 38%))",
+              boxShadow: "0 0 12px hsl(210 100% 56% / 0.6)",
             }}
           />
           <div className="space-y-12">
