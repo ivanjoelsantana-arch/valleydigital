@@ -75,7 +75,7 @@ const HeroSection = () => {
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
             Accepting Q3 2026 engagements
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]">
             Architecting <span className="glow-text">Scale</span>,<br />
             Not Just Websites.
           </h1>
