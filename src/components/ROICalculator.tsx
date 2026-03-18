@@ -73,7 +73,7 @@ const SliderInput = ({
 const ResultCard = ({ label, value, subtitle, highlight }: { label: string; value: string; subtitle?: string; highlight?: boolean }) => (
   <div className={`rounded-xl p-5 ${highlight ? "bg-primary/10 border border-primary/30" : "bg-secondary/50 border border-border/50"}`}>
     <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">{label}</p>
-    <p className={`text-2xl font-bold ${highlight ? "text-[hsl(220,80%,60%)]" : "text-foreground"}`}>{value}</p>
+    <p className={`text-2xl font-bold ${highlight ? "text-[hsl(210,100%,65%)]" : "text-foreground"}`}>{value}</p>
     {subtitle && <p className="text-muted-foreground text-xs mt-1">{subtitle}</p>}
   </div>
 );
