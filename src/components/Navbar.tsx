@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <img src={logo} alt="Valley Digital Consulting" className="h-9 w-9" />
-            <span className="font-semibold text-foreground tracking-tight">Valley Digital</span>
+            <span className="font-semibold text-foreground tracking-tight">Valley Digital Consulting</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#capabilities" className="hover:text-foreground transition-colors">Capabilities</a>
