@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import CapabilitiesSection from "@/components/CapabilitiesSection";
 import LocalPricingSection from "@/components/LocalPricingSection";
+import BentoGrid from "@/components/BentoGrid";
+import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import ROICalculator from "@/components/ROICalculator";
 import Footer from "@/components/Footer";
@@ -11,8 +12,9 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <CapabilitiesSection />
       <LocalPricingSection />
+      <BentoGrid />
+      <CapabilitiesSection />
       <ProcessTimeline />
       <ROICalculator />
       <Footer />
