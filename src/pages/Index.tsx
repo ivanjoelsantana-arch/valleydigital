@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
+import LocalPricingSection from "@/components/LocalPricingSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import ROICalculator from "@/components/ROICalculator";
 import Footer from "@/components/Footer";
@@ -11,6 +12,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <CapabilitiesSection />
+      <LocalPricingSection />
       <ProcessTimeline />
       <ROICalculator />
       <Footer />
