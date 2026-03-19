@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ContactDrawer from "./ContactDrawer";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
