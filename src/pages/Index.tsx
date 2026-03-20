@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import LocalPricingSection from "@/components/LocalPricingSection";
 import PersuasionSection from "@/components/PersuasionSection";
 import ROIArchitectureSection from "@/components/ROIArchitectureSection";
+import MeetTheArchitect from "@/components/MeetTheArchitect";
 import ArchitectureProcess from "@/components/ArchitectureProcess";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
@@ -17,6 +18,7 @@ const Index = () => {
       <LocalPricingSection />
       <PersuasionSection />
       <ROIArchitectureSection />
+      <MeetTheArchitect />
       <ArchitectureProcess />
       <CapabilitiesSection />
       <ProcessTimeline />
