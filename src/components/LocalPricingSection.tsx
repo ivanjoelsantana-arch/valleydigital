@@ -125,7 +125,7 @@ const LocalPricingSection = () => {
         <p className="text-center text-muted-foreground text-sm mt-12 max-w-2xl mx-auto leading-relaxed">
           Local Partner Rates are reserved for businesses physically located in
           the Pembina Valley and Southern Manitoba. We believe in investing in
-          our neighbors.
+          our neighbours.
         </p>
       </div>
     </section>
