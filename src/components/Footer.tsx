@@ -49,7 +49,7 @@ const Footer = () => (
 
       <div className="border-t border-border/30 mt-12 pt-8 flex flex-col items-center gap-3 text-xs text-muted-foreground">
         <p className="italic">Founded by Ivan. Architecting digital growth in Altona, MB.</p>
-        <p>© {new Date().getFullYear()} Valley Digital Consulting. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Valley Digital Architecture. All rights reserved.</p>
       </div>
     </div>
   </footer>

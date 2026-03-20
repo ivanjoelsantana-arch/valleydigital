@@ -80,7 +80,7 @@ const HeroSection = () => {
             Not Just Websites.
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Valley Digital Consulting engineers high-performance digital systems that compound growth. Strategy. Code. Results.
+            Valley Digital Architecture engineers high-performance digital solutions that compound growth. Strategy. Code. Results.
           </p>
           <CommandKSearch />
         </div>
