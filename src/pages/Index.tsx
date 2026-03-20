@@ -3,8 +3,10 @@ import HeroSection from "@/components/HeroSection";
 import LocalPricingSection from "@/components/LocalPricingSection";
 import PersuasionSection from "@/components/PersuasionSection";
 import ROIArchitectureSection from "@/components/ROIArchitectureSection";
+import ArchitectureProcess from "@/components/ArchitectureProcess";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
+import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,8 +17,10 @@ const Index = () => {
       <LocalPricingSection />
       <PersuasionSection />
       <ROIArchitectureSection />
+      <ArchitectureProcess />
       <CapabilitiesSection />
       <ProcessTimeline />
+      <FinalCTA />
       <Footer />
     </div>
   );
