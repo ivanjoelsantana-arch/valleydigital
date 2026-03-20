@@ -6,7 +6,6 @@ import ROIArchitectureSection from "@/components/ROIArchitectureSection";
 import MeetTheArchitect from "@/components/MeetTheArchitect";
 import ArchitectureProcess from "@/components/ArchitectureProcess";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
-import ProcessTimeline from "@/components/ProcessTimeline";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -20,8 +19,7 @@ const Index = () => {
       <ROIArchitectureSection />
       <MeetTheArchitect />
       <ArchitectureProcess />
-      <CapabilitiesSection />
-      <ProcessTimeline />
+      <LocalPricingSection />
       <FinalCTA />
       <Footer />
     </div>
