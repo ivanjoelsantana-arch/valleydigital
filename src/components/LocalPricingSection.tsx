@@ -90,7 +90,7 @@ const PricingCard = ({
       </ul>
 
       <button className="btn-primary-glow w-full text-center">
-        Secure Your Q2 Engagement
+        Start Your Build
       </button>
     </div>
   );
