@@ -98,46 +98,51 @@ const PerformanceRibbon = () => {
 
   return (
     <>
-      <div
-        ref={ribbonRef}
-        className="glass-card max-w-3xl w-full mx-auto glow-border relative overflow-hidden"
-      >
+      <div className="w-full md:max-w-3xl mx-auto relative">
+        {/* Scroll indicators for mobile */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 z-10 bg-gradient-to-r from-background/80 to-transparent md:hidden" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 z-10 bg-gradient-to-l from-background/80 to-transparent md:hidden" />
         <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent 0%, hsl(210 100% 56% / 0.08) 50%, transparent 100%)",
-            backgroundSize: "30% 100%",
-            animation: "ribbon-scan 5s ease-in-out infinite",
-          }}
-        />
-        <div className="relative flex items-center justify-between divide-x divide-border/50 px-2 py-4 md:px-6">
-          {ribbonItems.map((item, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveItem(item)}
-              className={`flex items-center gap-3 flex-1 px-3 md:px-5 cursor-pointer transition-all hover:opacity-80 text-left ${
-                litSegments[i]
-                  ? "ribbon-segment-visible"
-                  : "ribbon-segment-hidden"
-              }`}
-              style={{
-                animation: litSegments[i]
-                  ? "ribbon-shimmer 0.6s ease-out"
-                  : undefined,
-              }}
-            >
-              <item.icon className="w-5 h-5 text-primary shrink-0" />
-              <div className="min-w-0">
-                <p className="text-foreground text-xs md:text-sm font-semibold leading-tight whitespace-nowrap">
-                  {item.title}
-                </p>
-                <p className="text-muted-foreground text-[10px] md:text-xs leading-tight mt-0.5 whitespace-nowrap">
-                  {item.subtitle}
-                </p>
-              </div>
-            </button>
-          ))}
+          ref={ribbonRef}
+          className="glass-card w-full glow-border relative overflow-x-auto md:overflow-hidden scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent"
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent 0%, hsl(210 100% 56% / 0.08) 50%, transparent 100%)",
+              backgroundSize: "30% 100%",
+              animation: "ribbon-scan 5s ease-in-out infinite",
+            }}
+          />
+          <div className="relative flex items-center divide-x divide-border/50 px-2 py-4 md:px-6 md:justify-between w-max md:w-full">
+            {ribbonItems.map((item, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveItem(item)}
+                className={`flex items-center gap-3 px-5 md:px-5 md:flex-1 cursor-pointer transition-all hover:opacity-80 text-left ${
+                  litSegments[i]
+                    ? "ribbon-segment-visible"
+                    : "ribbon-segment-hidden"
+                }`}
+                style={{
+                  animation: litSegments[i]
+                    ? "ribbon-shimmer 0.6s ease-out"
+                    : undefined,
+                }}
+              >
+                <item.icon className="w-5 h-5 text-primary shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-foreground text-xs md:text-sm font-semibold leading-tight whitespace-nowrap">
+                    {item.title}
+                  </p>
+                  <p className="text-muted-foreground text-[10px] md:text-xs leading-tight mt-0.5 whitespace-nowrap">
+                    {item.subtitle}
+                  </p>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
       {activeItem && (
