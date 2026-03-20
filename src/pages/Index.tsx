@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import LocalPricingSection from "@/components/LocalPricingSection";
 import PersuasionSection from "@/components/PersuasionSection";
 import ROIArchitectureSection from "@/components/ROIArchitectureSection";
-import BentoGrid from "@/components/BentoGrid";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import ROICalculator from "@/components/ROICalculator";
@@ -17,7 +16,6 @@ const Index = () => {
       <LocalPricingSection />
       <PersuasionSection />
       <ROIArchitectureSection />
-      <BentoGrid />
       <CapabilitiesSection />
       <ProcessTimeline />
       <ROICalculator />
