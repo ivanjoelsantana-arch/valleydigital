@@ -18,7 +18,7 @@ const Navbar = () => {
             <a href="#process" className="hover:text-foreground transition-colors">Process</a>
             <a href="#roi" className="hover:text-foreground transition-colors">ROI</a>
           </div>
-          <a href="#pricing" className="btn-primary-glow text-[0.65rem] px-3 py-1.5 md:text-sm md:px-6 md:py-3 w-auto whitespace-nowrap">
+          <a href="#pricing" className="btn-primary-glow text-[0.75rem] px-4 py-1.5 font-semibold md:text-sm md:px-6 md:py-3 md:font-medium w-auto whitespace-nowrap">
             Get Started
           </a>
         </div>
