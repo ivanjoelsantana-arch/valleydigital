@@ -19,7 +19,7 @@ const FeaturedProject = () => {
             {/* Left: Screenshot */}
             <div className="relative group">
               <div
-                className="rounded-xl overflow-hidden aspect-video"
+                className="rounded-xl overflow-hidden"
                 style={{
                   border: "1px solid hsl(210 100% 56% / 0.5)",
                   boxShadow:
@@ -29,7 +29,7 @@ const FeaturedProject = () => {
                 <img
                   src={screenshot}
                   alt="A Furry Tail Ending — Featured project by Valley Digital Architecture"
-                  className="w-full h-full object-cover object-top block transition-[filter] duration-500 grayscale group-hover:grayscale-0"
+                  className="w-full h-auto block transition-[filter] duration-500 grayscale group-hover:grayscale-0"
                 />
               </div>
             </div>
