@@ -4,7 +4,7 @@ const MeetTheArchitect = () => {
   return (
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-start">
+        <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
           {/* Left: Headshot */}
           <div className="flex justify-center md:justify-start">
             <div
