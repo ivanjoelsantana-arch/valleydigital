@@ -1,6 +1,6 @@
 const PersuasionSection = () => {
   return (
-    <section className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
+    <section className="px-6 md:px-12 lg:px-20 py-20 md:py-[100px]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
@@ -28,9 +28,9 @@ const PersuasionSection = () => {
                 className="w-px h-48 animate-pulse-glow"
                 style={{
                   background:
-                    "linear-gradient(180deg, transparent, hsl(210 100% 56%), transparent)",
-                }}
-              />
+                  "linear-gradient(180deg, transparent, hsl(210 100% 56%), transparent)"
+                }} />
+              
             </div>
 
             {/* Right: Body copy */}
@@ -51,8 +51,8 @@ const PersuasionSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default PersuasionSection;
