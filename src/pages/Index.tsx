@@ -16,6 +16,7 @@ const Index = () => {
       <HeroSection />
       <LocalPricingSection />
       <PersuasionSection />
+      <ROIArchitectureSection />
       <BentoGrid />
       <CapabilitiesSection />
       <ProcessTimeline />
