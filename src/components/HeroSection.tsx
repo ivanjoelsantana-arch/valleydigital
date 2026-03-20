@@ -185,12 +185,11 @@ const HeroSection = () => {
             Not Just Websites.
           </h1>
           <p
-            className="text-muted-foreground text-lg md:text-2xl max-w-3xl mx-auto"
-            style={{ lineHeight: 1.6 }}
+            className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto"
+            style={{ lineHeight: 1.7 }}
           >
-            Premium digital architecture for the modern business. We transform
-            local brands through world-class web design, masterful sales copy,
-            and stunning logo design that convert browsers into partners.
+            A stunning website without masterful copy is a building without a
+            foundation. We engineer both.
           </p>
           <PerformanceRibbon />
         </div>
