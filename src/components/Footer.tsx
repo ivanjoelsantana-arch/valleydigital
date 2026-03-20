@@ -8,7 +8,7 @@ const navLinks = [
 ];
 
 const Footer = () => (
-  <footer className="border-t border-border/30 mt-8">
+  <footer className="border-t border-border/30">
     <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20">
       <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
         {/* Logo & tagline */}

@@ -68,7 +68,7 @@ const bentoItems = [
 
 const HeroSection = () => {
   return (
-    <section className="flex flex-col justify-center section-padding pt-32 pb-12">
+    <section className="flex flex-col justify-center section-padding pt-32">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-12 space-y-6">
           <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-xs text-muted-foreground mb-4">
