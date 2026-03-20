@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import LocalPricingSection from "@/components/LocalPricingSection";
 import MeetTheArchitect from "@/components/MeetTheArchitect";
 import ThreePillarSolution from "@/components/ThreePillarSolution";
+import PersuasionSection from "@/components/PersuasionSection";
 import FeaturedProject from "@/components/FeaturedProject";
 import ROIArchitectureSection from "@/components/ROIArchitectureSection";
 import ArchitectureProcess from "@/components/ArchitectureProcess";
