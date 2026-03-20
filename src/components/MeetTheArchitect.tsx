@@ -4,20 +4,19 @@ const MeetTheArchitect = () => {
   return (
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
+        <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-start">
           {/* Left: Headshot */}
           <div className="flex justify-center md:justify-start">
             <div
-              className="w-64 h-80 md:w-72 md:h-96 rounded-lg overflow-hidden shrink-0"
+              className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shrink-0"
               style={{
-                border: "1px solid transparent",
-                borderImage: "linear-gradient(180deg, hsl(210 100% 60%), hsl(215 80% 38%)) 1",
-                boxShadow: "var(--shadow-glow-sm)",
+                border: "1px solid hsl(210 100% 56%)",
+                boxShadow: "0 0 24px -4px hsl(210 100% 56% / 0.45), 0 0 8px -2px hsl(210 100% 56% / 0.25)",
               }}
             >
               <img
                 src={ivanHeadshot}
-                alt="Ivan — Lead Architect at Valley Digital"
+                alt="Ivan — Lead Architect at Valley Digital Architecture"
                 className="w-full h-full object-cover object-top"
               />
             </div>
