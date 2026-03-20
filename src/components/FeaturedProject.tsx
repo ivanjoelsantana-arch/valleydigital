@@ -46,7 +46,8 @@ const FeaturedProject = () => {
                   Case Study
                 </p>
                 <h3 className="text-2xl md:text-3xl font-black tracking-tight text-foreground leading-tight">
-                  Featured Infrastructure:{" "}
+                  Featured Infrastructure:
+                  <br />
                   <span className="glow-text">A Furry Tail Ending</span>
                 </h3>
                 <p className="text-muted-foreground text-sm font-medium mt-1">
