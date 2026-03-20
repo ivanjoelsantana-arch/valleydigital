@@ -90,7 +90,7 @@ const PricingCard = ({
       </ul>
 
       <button className="btn-primary-glow w-full text-center">
-        Apply for Local Rate
+        Secure Your Q2 Engagement
       </button>
     </div>
   );
