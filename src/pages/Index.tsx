@@ -5,7 +5,6 @@ import PersuasionSection from "@/components/PersuasionSection";
 import ROIArchitectureSection from "@/components/ROIArchitectureSection";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
-import ROICalculator from "@/components/ROICalculator";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -18,7 +17,6 @@ const Index = () => {
       <ROIArchitectureSection />
       <CapabilitiesSection />
       <ProcessTimeline />
-      <ROICalculator />
       <Footer />
     </div>
   );
