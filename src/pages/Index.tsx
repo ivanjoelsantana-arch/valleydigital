@@ -18,6 +18,7 @@ const Index = () => {
       <LocalPricingSection />
       <PersuasionSection />
       <ROIArchitectureSection />
+      <MeetTheArchitect />
       <ArchitectureProcess />
       <CapabilitiesSection />
       <ProcessTimeline />
