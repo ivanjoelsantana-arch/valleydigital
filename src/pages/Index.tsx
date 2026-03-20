@@ -20,6 +20,7 @@ const Index = () => {
       <MeetTheArchitect />
       <ThreePillarSolution />
       <PersuasionSection />
+      <SignalNoiseTransition />
       <FeaturedProject />
       <ROIArchitectureSection />
       <ArchitectureProcess />
