@@ -14,7 +14,7 @@ const Navbar = () => {
             <span className="font-semibold text-foreground tracking-tight">Valley Digital Consulting</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#capabilities" className="hover:text-foreground transition-colors">Capabilities</a>
+            <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
             <a href="#process" className="hover:text-foreground transition-colors">Process</a>
             <a href="#roi" className="hover:text-foreground transition-colors">ROI</a>
           </div>
