@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Search, ArrowRight, Globe, Code2, BarChart3 } from "lucide-react";
 
 const commands = [
-  "Scale my SaaS to 10k users...",
-  "Architect a microservices platform...",
-  "Build a high-conversion funnel...",
-  "Optimize cloud infrastructure...",
-];
+"Scale my SaaS to 10k users...",
+"Architect a microservices platform...",
+"Build a high-conversion funnel...",
+"Optimize cloud infrastructure..."];
+
 
 const CommandKSearch = () => {
   const [currentCmd, setCurrentCmd] = useState(0);
@@ -38,37 +38,37 @@ const CommandKSearch = () => {
           <span>⌘</span><span>K</span>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 const bentoItems = [
-  {
-    title: "Web Solutions Architecture",
-    desc: "Enterprise-grade platforms built for scale. From monoliths to microservices.",
-    icon: Globe,
-    className: "md:col-span-2 md:row-span-2",
-    accent: true,
-  },
-  {
-    title: "SaaS Development",
-    desc: "Ship faster. Multi-tenant, API-first products that grow with you.",
-    icon: Code2,
-    className: "md:col-span-1",
-    accent: false,
-  },
-  {
-    title: "Strategic Consulting",
-    desc: "Data-driven digital strategy that converts browsers into buyers.",
-    icon: BarChart3,
-    className: "md:col-span-1",
-    accent: false,
-  },
-];
+{
+  title: "Web Solutions Architecture",
+  desc: "Enterprise-grade platforms built for scale. From monoliths to microservices.",
+  icon: Globe,
+  className: "md:col-span-2 md:row-span-2",
+  accent: true
+},
+{
+  title: "SaaS Development",
+  desc: "Ship faster. Multi-tenant, API-first products that grow with you.",
+  icon: Code2,
+  className: "md:col-span-1",
+  accent: false
+},
+{
+  title: "Strategic Consulting",
+  desc: "Data-driven digital strategy that converts browsers into buyers.",
+  icon: BarChart3,
+  className: "md:col-span-1",
+  accent: false
+}];
+
 
 const HeroSection = () => {
   return (
-    <section className="flex flex-col justify-center section-padding pt-32">
+    <section className="flex flex-col justify-center section-padding pt-32 py-[100px]">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-12 space-y-6">
           <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-xs text-muted-foreground mb-4">
@@ -85,8 +85,8 @@ const HeroSection = () => {
           <CommandKSearch />
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export { bentoItems };
