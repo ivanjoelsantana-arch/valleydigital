@@ -24,8 +24,16 @@ const FeaturedProject = () => {
                   border: "1px solid hsl(210 100% 56% / 0.5)",
                   boxShadow:
                     "0 0 30px -8px hsl(210 100% 56% / 0.35), inset 0 1px 0 hsl(210 100% 65% / 0.15)",
+                  background: "hsl(220 15% 13%)",
                 }}
               >
+                {/* macOS title bar */}
+                <div className="flex items-center gap-1.5 px-3 py-2" style={{ background: "hsl(220 15% 16%)" }}>
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FEBC2E" }} />
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28C840" }} />
+                </div>
+                {/* Screenshot */}
                 <img
                   src={screenshot}
                   alt="A Furry Tail Ending — Featured project by Valley Digital Architecture"
