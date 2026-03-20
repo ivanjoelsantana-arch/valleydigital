@@ -18,9 +18,9 @@ const Navbar = () => {
             <a href="#process" className="hover:text-foreground transition-colors">Process</a>
             <a href="#roi" className="hover:text-foreground transition-colors">ROI</a>
           </div>
-          <button onClick={() => setDrawerOpen(true)} className="btn-primary-glow text-sm">
-            Get in Touch
-          </button>
+          <a href="#pricing" className="btn-primary-glow text-sm">
+            Get Started
+          </a>
         </div>
       </nav>
       <ContactDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
