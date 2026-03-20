@@ -41,7 +41,7 @@ const pricingPlans = [
 
 const LocalPricingSection = () => {
   return (
-    <section id="pricing" className="px-6 md:px-12 lg:px-20 pt-4 pb-20 md:pb-28 py-0">
+    <section id="pricing" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
