@@ -79,8 +79,8 @@ const HeroSection = () => {
             Architecting <span className="glow-text">Scale</span>,<br />
             Not Just Websites.
           </h1>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Valley Digital Architecture engineers high-performance digital solutions that compound growth. Strategy. Code. Results.
+          <p className="text-muted-foreground text-lg md:text-2xl max-w-3xl mx-auto" style={{ lineHeight: 1.6 }}>
+            Premium digital architecture for the modern business. We transform local brands through world-class web design, masterful sales copy, and stunning logo design that convert browsers into partners.
           </p>
           <CommandKSearch />
         </div>
