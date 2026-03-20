@@ -23,7 +23,7 @@ const FinalCTA = () => {
             href="#pricing"
             className="btn-primary-glow text-base md:text-lg px-10 py-4 inline-block"
           >
-            Secure Your Q2 Engagement
+            Start Your Build
           </a>
         </div>
       </div>
