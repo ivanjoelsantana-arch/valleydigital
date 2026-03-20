@@ -136,10 +136,74 @@
   .preserve-3d {
     transform-style: preserve-3d;
   }
+
+  /* Scroll reveal base */
+  .scroll-hidden {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+
+  /* Architect headshot scale variant */
+  .scroll-hidden-scale {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.9);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-visible-scale {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+
+  /* Architect text slide-right variant */
+  .scroll-hidden-right {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateX(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-visible-right {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+
+  /* Ribbon segment shimmer */
+  .ribbon-segment-hidden {
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .ribbon-segment-visible {
+    opacity: 1;
+  }
 }
 
 @keyframes ribbon-scan {
   0% { background-position: -30% 0; }
   50% { background-position: 130% 0; }
   100% { background-position: -30% 0; }
+}
+
+@keyframes ribbon-shimmer {
+  0% { box-shadow: none; }
+  50% { box-shadow: inset 0 0 20px hsl(210 100% 56% / 0.15); }
+  100% { box-shadow: none; }
 }

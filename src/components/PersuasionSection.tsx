@@ -1,8 +1,18 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 const PersuasionSection = () => {
+  const header = useScrollReveal();
+  const card = useScrollReveal();
+
   return (
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div
+          ref={header.ref}
+          className={`text-center mb-16 ${
+            header.isVisible ? "scroll-visible" : "scroll-hidden"
+          }`}
+        >
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
             Strategy
           </p>
@@ -11,9 +21,13 @@ const PersuasionSection = () => {
           </h2>
         </div>
 
-        <div className="glass-card p-8 md:p-12 lg:p-16 glow-border">
+        <div
+          ref={card.ref}
+          className={`glass-card p-8 md:p-12 lg:p-16 glow-border ${
+            card.isVisible ? "scroll-visible" : "scroll-hidden"
+          }`}
+        >
           <div className="grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-0 items-center">
-            {/* Left: Headline */}
             <div className="md:pr-12">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-foreground">
                 Design Captures Attention.
@@ -22,26 +36,27 @@ const PersuasionSection = () => {
               </h3>
             </div>
 
-            {/* Divider */}
             <div className="hidden md:flex justify-center">
               <div
                 className="w-px h-48 animate-pulse-glow"
                 style={{
                   background:
-                  "linear-gradient(180deg, transparent, hsl(210 100% 56%), transparent)"
-                }} />
-              
+                    "linear-gradient(180deg, transparent, hsl(210 100% 56%), transparent)",
+                }}
+              />
             </div>
 
-            {/* Right: Body copy */}
             <div className="md:pl-12">
               <p className="text-secondary-foreground leading-loose text-sm md:text-base">
                 Copywriting is the strategic art of shifting a visitor from a
                 spectator to a participant. It is not just about words—it is
-                about <span className="font-semibold text-foreground">Storytelling with intent</span>.
-                By placing your customer as the hero of the narrative and your
-                business as the essential guide, we use psychology-driven copy
-                to bridge the gap between their problem and your solution. This
+                about{" "}
+                <span className="font-semibold text-foreground">
+                  Storytelling with intent
+                </span>
+                . By placing your customer as the hero of the narrative and your
+                business as the essential guide, we use psychology-driven copy to
+                bridge the gap between their problem and your solution. This
                 narrative framework eliminates doubt, builds an emotional
                 connection, and creates a logical path that leads directly to a
                 transaction. We don't just fill space; we engineer the{" "}
@@ -51,8 +66,8 @@ const PersuasionSection = () => {
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default PersuasionSection;

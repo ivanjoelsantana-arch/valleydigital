@@ -1,4 +1,5 @@
 import { Compass, Wrench, Rocket } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const steps = [
   {
@@ -21,11 +22,49 @@ const steps = [
   },
 ];
 
+const StepCard = ({
+  step,
+  index,
+}: {
+  step: (typeof steps)[0];
+  index: number;
+}) => {
+  const { ref, isVisible } = useScrollReveal();
+
+  return (
+    <div
+      ref={ref}
+      className={`glass-card p-8 md:p-10 text-center group hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] transition-all duration-300 ${
+        isVisible ? "scroll-visible" : "scroll-hidden"
+      }`}
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+        <step.icon className="w-7 h-7 text-primary" />
+      </div>
+      <span className="glow-text text-3xl font-black">{step.num}</span>
+      <h3 className="text-xl font-bold text-foreground mt-3 mb-3">
+        {step.title}
+      </h3>
+      <p className="text-muted-foreground text-sm leading-relaxed">
+        {step.desc}
+      </p>
+    </div>
+  );
+};
+
 const ArchitectureProcess = () => {
+  const header = useScrollReveal();
+
   return (
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div
+          ref={header.ref}
+          className={`text-center mb-16 ${
+            header.isVisible ? "scroll-visible" : "scroll-hidden"
+          }`}
+        >
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
             Method
           </p>
@@ -36,22 +75,8 @@ const ArchitectureProcess = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {steps.map((step) => (
-            <div
-              key={step.num}
-              className="glass-card p-8 md:p-10 text-center group hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] transition-all duration-300"
-            >
-              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                <step.icon className="w-7 h-7 text-primary" />
-              </div>
-              <span className="glow-text text-3xl font-black">{step.num}</span>
-              <h3 className="text-xl font-bold text-foreground mt-3 mb-3">
-                {step.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {step.desc}
-              </p>
-            </div>
+          {steps.map((step, i) => (
+            <StepCard key={step.num} step={step} index={i} />
           ))}
         </div>
       </div>

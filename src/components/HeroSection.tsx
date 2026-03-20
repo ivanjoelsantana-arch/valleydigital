@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Globe, Code2, BarChart3, Zap, Shield, BoltIcon, X } from "lucide-react";
 
 const ribbonItems = [
@@ -69,10 +69,39 @@ const RibbonModal = ({
 
 const PerformanceRibbon = () => {
   const [activeItem, setActiveItem] = useState<(typeof ribbonItems)[0] | null>(null);
+  const [litSegments, setLitSegments] = useState<boolean[]>([false, false, false]);
+  const ribbonRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ribbonRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          ribbonItems.forEach((_, i) => {
+            setTimeout(() => {
+              setLitSegments((prev) => {
+                const next = [...prev];
+                next[i] = true;
+                return next;
+              });
+            }, i * 200);
+          });
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
-      <div className="glass-card max-w-3xl w-full mx-auto glow-border relative overflow-hidden">
+      <div
+        ref={ribbonRef}
+        className="glass-card max-w-3xl w-full mx-auto glow-border relative overflow-hidden"
+      >
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -87,7 +116,16 @@ const PerformanceRibbon = () => {
             <button
               key={i}
               onClick={() => setActiveItem(item)}
-              className="flex items-center gap-3 flex-1 px-3 md:px-5 cursor-pointer transition-opacity hover:opacity-80 text-left"
+              className={`flex items-center gap-3 flex-1 px-3 md:px-5 cursor-pointer transition-all hover:opacity-80 text-left ${
+                litSegments[i]
+                  ? "ribbon-segment-visible"
+                  : "ribbon-segment-hidden"
+              }`}
+              style={{
+                animation: litSegments[i]
+                  ? "ribbon-shimmer 0.6s ease-out"
+                  : undefined,
+              }}
             >
               <item.icon className="w-5 h-5 text-primary shrink-0" />
               <div className="min-w-0">
@@ -110,35 +148,35 @@ const PerformanceRibbon = () => {
 };
 
 const bentoItems = [
-{
-  title: "Web Solutions Architecture",
-  desc: "Enterprise-grade platforms built for scale. From monoliths to microservices.",
-  icon: Globe,
-  className: "md:col-span-2 md:row-span-2",
-  accent: true
-},
-{
-  title: "SaaS Development",
-  desc: "Ship faster. Multi-tenant, API-first products that grow with you.",
-  icon: Code2,
-  className: "md:col-span-1",
-  accent: false
-},
-{
-  title: "Strategic Consulting",
-  desc: "Data-driven digital strategy that converts browsers into buyers.",
-  icon: BarChart3,
-  className: "md:col-span-1",
-  accent: false
-}];
-
+  {
+    title: "Web Solutions Architecture",
+    desc: "Enterprise-grade platforms built for scale. From monoliths to microservices.",
+    icon: Globe,
+    className: "md:col-span-2 md:row-span-2",
+    accent: true,
+  },
+  {
+    title: "SaaS Development",
+    desc: "Ship faster. Multi-tenant, API-first products that grow with you.",
+    icon: Code2,
+    className: "md:col-span-1",
+    accent: false,
+  },
+  {
+    title: "Strategic Consulting",
+    desc: "Data-driven digital strategy that converts browsers into buyers.",
+    icon: BarChart3,
+    className: "md:col-span-1",
+    accent: false,
+  },
+];
 
 const HeroSection = () => {
   return (
     <section className="flex flex-col justify-center section-padding pt-32 py-[100px]">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-12 space-y-6">
-          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-xs text-muted-foreground mb-4">
+          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-xs text-muted-foreground mb-4 scroll-hidden scroll-visible">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
             Accepting Q2 2026 engagements
           </div>
@@ -146,17 +184,21 @@ const HeroSection = () => {
             Architecting <span className="glow-text">Scale</span>,<br />
             Not Just Websites.
           </h1>
-          <p className="text-muted-foreground text-lg md:text-2xl max-w-3xl mx-auto" style={{ lineHeight: 1.6 }}>
-            Premium digital architecture for the modern business. We transform local brands through world-class web design, masterful sales copy, and stunning logo design that convert browsers into partners.
+          <p
+            className="text-muted-foreground text-lg md:text-2xl max-w-3xl mx-auto"
+            style={{ lineHeight: 1.6 }}
+          >
+            Premium digital architecture for the modern business. We transform
+            local brands through world-class web design, masterful sales copy,
+            and stunning logo design that convert browsers into partners.
           </p>
           <PerformanceRibbon />
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export { bentoItems };
-
 
 export default HeroSection;
