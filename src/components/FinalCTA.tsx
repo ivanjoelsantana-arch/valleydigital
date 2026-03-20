@@ -1,8 +1,17 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 const FinalCTA = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
     <section className="section-padding">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="glass-card glow-border-strong p-12 md:p-20">
+        <div
+          ref={ref}
+          className={`glass-card glow-border-strong p-12 md:p-20 ${
+            isVisible ? "scroll-visible" : "scroll-hidden"
+          }`}
+        >
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground mb-4">
             Ready to Architect Your{" "}
             <span className="glow-text">Growth</span>?

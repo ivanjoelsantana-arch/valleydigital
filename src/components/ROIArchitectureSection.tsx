@@ -1,3 +1,5 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 const valueProps = [
   {
     num: "01",
@@ -16,11 +18,53 @@ const valueProps = [
   },
 ];
 
+const ROICard = ({
+  item,
+  index,
+}: {
+  item: (typeof valueProps)[0];
+  index: number;
+}) => {
+  const { ref, isVisible } = useScrollReveal();
+
+  return (
+    <div
+      ref={ref}
+      className={`glass-card p-6 md:p-8 rounded-xl transition-all duration-300 hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] group ${
+        isVisible ? "scroll-visible" : "scroll-hidden"
+      }`}
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      <div className="flex gap-5">
+        <span className="glow-text text-2xl md:text-3xl font-black shrink-0">
+          {item.num}
+        </span>
+        <div>
+          <h4 className="text-lg md:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+            {item.title}
+          </h4>
+          <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+            {item.desc}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ROIArchitectureSection = () => {
+  const header = useScrollReveal();
+  const headline = useScrollReveal();
+
   return (
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div
+          ref={header.ref}
+          className={`text-center mb-16 ${
+            header.isVisible ? "scroll-visible" : "scroll-hidden"
+          }`}
+        >
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
             Value
           </p>
@@ -31,37 +75,22 @@ const ROIArchitectureSection = () => {
         </div>
 
         <div className="grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16 items-start">
-          {/* Left: Headline */}
-          <div className="md:sticky md:top-32">
+          <div
+            ref={headline.ref}
+            className={`md:sticky md:top-32 ${
+              headline.isVisible ? "scroll-visible" : "scroll-hidden"
+            }`}
+          >
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-foreground">
               A Strategic Investment,
               <br />
-              Not a Digital{" "}
-              <span className="glow-text">Expense.</span>
+              Not a Digital <span className="glow-text">Expense.</span>
             </h3>
           </div>
 
-          {/* Right: Value propositions */}
           <div className="space-y-4">
-            {valueProps.map((item) => (
-              <div
-                key={item.num}
-                className="glass-card p-6 md:p-8 rounded-xl transition-all duration-300 hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] group"
-              >
-                <div className="flex gap-5">
-                  <span className="glow-text text-2xl md:text-3xl font-black shrink-0">
-                    {item.num}
-                  </span>
-                  <div>
-                    <h4 className="text-lg md:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              </div>
+            {valueProps.map((item, i) => (
+              <ROICard key={item.num} item={item} index={i} />
             ))}
 
             <p className="text-center md:text-left text-muted-foreground text-sm italic pt-4">

@@ -1,17 +1,27 @@
 import ivanHeadshot from "@/assets/ivan-headshot.png";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const MeetTheArchitect = () => {
+  const headshot = useScrollReveal();
+  const textBlock = useScrollReveal();
+
   return (
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
           {/* Left: Headshot */}
-          <div className="flex justify-center md:justify-start">
+          <div
+            ref={headshot.ref}
+            className={`flex justify-center md:justify-start ${
+              headshot.isVisible ? "scroll-visible-scale" : "scroll-hidden-scale"
+            }`}
+          >
             <div
               className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shrink-0"
               style={{
                 border: "1px solid hsl(210 100% 56%)",
-                boxShadow: "0 0 24px -4px hsl(210 100% 56% / 0.45), 0 0 8px -2px hsl(210 100% 56% / 0.25)",
+                boxShadow:
+                  "0 0 24px -4px hsl(210 100% 56% / 0.45), 0 0 8px -2px hsl(210 100% 56% / 0.25)",
               }}
             >
               <img
@@ -23,7 +33,12 @@ const MeetTheArchitect = () => {
           </div>
 
           {/* Right: Copy */}
-          <div className="space-y-6">
+          <div
+            ref={textBlock.ref}
+            className={`space-y-6 ${
+              textBlock.isVisible ? "scroll-visible-right" : "scroll-hidden-right"
+            }`}
+          >
             <span className="inline-block glow-text text-xs font-bold tracking-widest uppercase">
               Lead Architect
             </span>
