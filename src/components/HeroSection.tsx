@@ -100,7 +100,7 @@ const PerformanceRibbon = () => {
     <>
       <div
         ref={ribbonRef}
-        className="glass-card max-w-3xl w-full md:mx-auto glow-border relative overflow-hidden mx-0"
+        className="glass-card w-auto lg:max-w-3xl lg:mx-auto glow-border relative overflow-hidden"
       >
         <div
           className="absolute inset-0 pointer-events-none"
