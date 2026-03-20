@@ -196,11 +196,6 @@
   }
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.33%); }
-}
-
 @keyframes ribbon-scan {
   0% { background-position: -30% 0; }
   50% { background-position: 130% 0; }
