@@ -1,45 +1,56 @@
-import { useState, useEffect } from "react";
-import { Search, ArrowRight, Globe, Code2, BarChart3 } from "lucide-react";
+import { Globe, Code2, BarChart3, Zap, Shield, BoltIcon } from "lucide-react";
 
-const commands = [
-"Scale my SaaS to 10k users...",
-"Architect a microservices platform...",
-"Build a high-conversion funnel...",
-"Optimize cloud infrastructure..."];
+const ribbonItems = [
+  {
+    icon: BoltIcon,
+    title: "99+ PageSpeed Score",
+    subtitle: "Optimized Core Web Vitals",
+  },
+  {
+    icon: Shield,
+    title: "Enterprise-Grade Security",
+    subtitle: "SSL & Database Encryption",
+  },
+  {
+    icon: Zap,
+    title: "Instant Global Edge",
+    subtitle: "Sub-200ms Response Times",
+  },
+];
 
-
-const CommandKSearch = () => {
-  const [currentCmd, setCurrentCmd] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-
-  useEffect(() => {
-    const text = commands[currentCmd];
-    let i = 0;
-    setDisplayText("");
-    const interval = setInterval(() => {
-      if (i <= text.length) {
-        setDisplayText(text.slice(0, i));
-        i++;
-      } else {
-        clearInterval(interval);
-        setTimeout(() => setCurrentCmd((c) => (c + 1) % commands.length), 1500);
-      }
-    }, 45);
-    return () => clearInterval(interval);
-  }, [currentCmd]);
-
+const PerformanceRibbon = () => {
   return (
-    <div className="glass-card p-4 max-w-xl w-full mx-auto glow-border">
-      <div className="flex items-center gap-3">
-        <Search className="w-5 h-5 text-muted-foreground shrink-0" />
-        <span className="text-foreground/90 text-sm md:text-base">{displayText}</span>
-        <span className="w-0.5 h-5 bg-primary animate-blink" />
-        <div className="ml-auto flex items-center gap-1 text-xs text-muted-foreground bg-muted px-2 py-1 rounded-md shrink-0">
-          <span>⌘</span><span>K</span>
-        </div>
+    <div className="glass-card max-w-3xl w-full mx-auto glow-border relative overflow-hidden">
+      {/* Scanning light effect */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 0%, hsl(210 100% 56% / 0.08) 50%, transparent 100%)",
+          backgroundSize: "30% 100%",
+          animation: "ribbon-scan 5s ease-in-out infinite",
+        }}
+      />
+      <div className="relative flex items-center justify-between divide-x divide-border/50 px-2 py-4 md:px-6">
+        {ribbonItems.map((item, i) => (
+          <div
+            key={i}
+            className="flex items-center gap-3 flex-1 px-3 md:px-5"
+          >
+            <item.icon className="w-5 h-5 text-primary shrink-0" />
+            <div className="min-w-0">
+              <p className="text-foreground text-xs md:text-sm font-semibold leading-tight whitespace-nowrap">
+                {item.title}
+              </p>
+              <p className="text-muted-foreground text-[10px] md:text-xs leading-tight mt-0.5 whitespace-nowrap">
+                {item.subtitle}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>);
-
+    </div>
+  );
 };
 
 const bentoItems = [
