@@ -1,54 +1,45 @@
-import { useState } from "react";
-import { Globe, Code2, BarChart3 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Search, ArrowRight, Globe, Code2, BarChart3 } from "lucide-react";
 
-const solutions = [
-  { label: "Web Architecture", icon: Globe },
-  { label: "Sales Narrative", icon: Code2 },
-  { label: "Brand Identity", icon: BarChart3 },
-];
+const commands = [
+"Scale my SaaS to 10k users...",
+"Architect a microservices platform...",
+"Build a high-conversion funnel...",
+"Optimize cloud infrastructure..."];
 
-const CoreSolutionsSelector = () => {
-  const [active, setActive] = useState<string | null>(null);
+
+const CommandKSearch = () => {
+  const [currentCmd, setCurrentCmd] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+
+  useEffect(() => {
+    const text = commands[currentCmd];
+    let i = 0;
+    setDisplayText("");
+    const interval = setInterval(() => {
+      if (i <= text.length) {
+        setDisplayText(text.slice(0, i));
+        i++;
+      } else {
+        clearInterval(interval);
+        setTimeout(() => setCurrentCmd((c) => (c + 1) % commands.length), 1500);
+      }
+    }, 45);
+    return () => clearInterval(interval);
+  }, [currentCmd]);
 
   return (
-    <div className="glass-card p-1.5 max-w-xl w-full mx-auto glow-border rounded-full">
-      <div className="flex items-center gap-1">
-        {solutions.map(({ label, icon: Icon }) => (
-          <button
-            key={label}
-            onClick={() => setActive(active === label ? null : label)}
-            className={`
-              flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium
-              transition-all duration-300 cursor-pointer
-              ${active === label
-                ? "text-primary-foreground"
-                : "text-muted-foreground hover:text-foreground"
-              }
-            `}
-            style={active === label ? {
-              background: "linear-gradient(180deg, hsl(210 100% 60%), hsl(215 80% 42%))",
-              boxShadow: "0 0 20px -5px hsl(210 100% 56% / 0.5), inset 0 1px 0 hsl(210 100% 72% / 0.3)",
-            } : undefined}
-            onMouseEnter={(e) => {
-              if (active !== label) {
-                e.currentTarget.style.boxShadow = "0 0 15px -5px hsl(210 100% 56% / 0.3)";
-                e.currentTarget.style.background = "hsl(220 16% 14%)";
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (active !== label) {
-                e.currentTarget.style.boxShadow = "";
-                e.currentTarget.style.background = "";
-              }
-            }}
-          >
-            <Icon className="w-4 h-4 shrink-0" />
-            <span className="hidden sm:inline">{label}</span>
-          </button>
-        ))}
+    <div className="glass-card p-4 max-w-xl w-full mx-auto glow-border">
+      <div className="flex items-center gap-3">
+        <Search className="w-5 h-5 text-muted-foreground shrink-0" />
+        <span className="text-foreground/90 text-sm md:text-base">{displayText}</span>
+        <span className="w-0.5 h-5 bg-primary animate-blink" />
+        <div className="ml-auto flex items-center gap-1 text-xs text-muted-foreground bg-muted px-2 py-1 rounded-md shrink-0">
+          <span>⌘</span><span>K</span>
+        </div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 const bentoItems = [
@@ -91,7 +82,7 @@ const HeroSection = () => {
           <p className="text-muted-foreground text-lg md:text-2xl max-w-3xl mx-auto" style={{ lineHeight: 1.6 }}>
             Premium digital architecture for the modern business. We transform local brands through world-class web design, masterful sales copy, and stunning logo design that convert browsers into partners.
           </p>
-          <CoreSolutionsSelector />
+          <CommandKSearch />
         </div>
       </div>
     </section>);
