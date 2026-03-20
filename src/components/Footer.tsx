@@ -47,7 +47,10 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-border/30 mt-12 pt-8 flex flex-col items-center gap-3 text-xs text-muted-foreground">
+      <div className="border-t border-border/30 mt-12 pt-8 flex flex-col items-center gap-4 text-xs text-muted-foreground">
+        <p className="text-center max-w-md leading-relaxed">
+          Elevating the digital landscape of Altona and the Pembina Valley. Dedicated to Southern Manitoba's economic growth.
+        </p>
         <p className="italic">Founded by Ivan. Architecting digital growth in Altona, MB.</p>
         <p>© {new Date().getFullYear()} Valley Digital Architecture. All rights reserved.</p>
       </div>

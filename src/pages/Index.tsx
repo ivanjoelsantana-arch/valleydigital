@@ -1,11 +1,10 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import LocalPricingSection from "@/components/LocalPricingSection";
-import PersuasionSection from "@/components/PersuasionSection";
-import ROIArchitectureSection from "@/components/ROIArchitectureSection";
 import MeetTheArchitect from "@/components/MeetTheArchitect";
+import ThreePillarSolution from "@/components/ThreePillarSolution";
+import ROIArchitectureSection from "@/components/ROIArchitectureSection";
 import ArchitectureProcess from "@/components/ArchitectureProcess";
-import CapabilitiesSection from "@/components/CapabilitiesSection";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -15,9 +14,9 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <LocalPricingSection />
-      <PersuasionSection />
-      <ROIArchitectureSection />
       <MeetTheArchitect />
+      <ThreePillarSolution />
+      <ROIArchitectureSection />
       <ArchitectureProcess />
       <LocalPricingSection />
       <FinalCTA />
