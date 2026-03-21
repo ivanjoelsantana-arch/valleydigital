@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { Globe, Code2, BarChart3, Zap, Shield, BoltIcon, X } from "lucide-react";
 
 const ribbonItems = [
