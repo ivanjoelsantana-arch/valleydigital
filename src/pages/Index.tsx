@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import PrettyWebsiteTrap from "@/components/PrettyWebsiteTrap";
 import LocalPricingSection from "@/components/LocalPricingSection";
 import MeetTheArchitect from "@/components/MeetTheArchitect";
 import ThreePillarSolution from "@/components/ThreePillarSolution";
