@@ -41,7 +41,7 @@ const RibbonModal = ({
   const Icon = item.modalIcon;
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center px-4"
+      className="fixed inset-0 z-[60] flex items-center justify-center px-4"
       onClick={onClose}
     >
       <div className="absolute inset-0 bg-background/70 backdrop-blur-[8px]" />
