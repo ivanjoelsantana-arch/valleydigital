@@ -44,7 +44,7 @@ const RibbonModal = ({
       className="fixed inset-0 z-[60] flex items-center justify-center px-4"
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-background/70 backdrop-blur-[8px]" />
+      <div className="fixed inset-0 w-screen h-screen bg-background/70 backdrop-blur-[12px]" />
       <div
         className="relative glass-card glow-border max-w-lg w-full p-8 animate-scale-in"
         onClick={(e) => e.stopPropagation()}
