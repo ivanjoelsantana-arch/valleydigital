@@ -160,7 +160,6 @@ const PerformanceRibbon = () => {
           </div>
         </div>
       </div>
-      </div>
       {activeItem && (
         <RibbonModal item={activeItem} onClose={() => setActiveItem(null)} />
       )}
