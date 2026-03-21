@@ -17,7 +17,7 @@ const pillars = [
   {
     icon: Target,
     title: "Conversion-Centric Layouts",
-    desc: "A beautiful site that doesn't sell is a failed project. We use data-driven design patterns to guide your visitors toward the "Buy" or "Contact" button, turning passive traffic into active leads.",
+    desc: "A beautiful site that doesn't sell is a failed project. We use data-driven design patterns to guide your visitors toward the 'Buy' or 'Contact' button, turning passive traffic into active leads.",
     goal: "A measurable ROI on your digital investment.",
   },
   {
