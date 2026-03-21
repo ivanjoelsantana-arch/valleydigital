@@ -111,50 +111,52 @@ const PerformanceRibbon = () => {
 
   return (
     <>
-      <div className="w-full md:w-[95%] lg:max-w-3xl mx-auto relative py-[10px] md:py-0 overflow-visible">
+      <div className="w-full md:w-[95%] lg:max-w-3xl mx-auto relative p-[10px] overflow-visible">
         {/* Scroll indicators for mobile only (hidden on tablet+) */}
-        <div className="pointer-events-none absolute left-0 top-[10px] bottom-[10px] w-6 z-10 bg-gradient-to-r from-background/80 to-transparent md:hidden" />
-        <div className="pointer-events-none absolute right-0 top-[10px] bottom-[10px] w-6 z-10 bg-gradient-to-l from-background/80 to-transparent md:hidden" />
-        <div
-          ref={ribbonRef}
-          className="glass-card w-full glow-border relative overflow-x-auto md:overflow-hidden snap-x snap-mandatory md:snap-none hide-scrollbar"
-        >
+        <div className="pointer-events-none absolute left-[10px] top-[10px] bottom-[10px] w-6 z-10 bg-gradient-to-r from-background/80 to-transparent md:hidden" />
+        <div className="pointer-events-none absolute right-[10px] top-[10px] bottom-[10px] w-6 z-10 bg-gradient-to-l from-background/80 to-transparent md:hidden" />
+        <div className="glass-card glow-border relative overflow-visible">
           <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(90deg, transparent 0%, hsl(210 100% 56% / 0.08) 50%, transparent 100%)",
-              backgroundSize: "30% 100%",
-              animation: "ribbon-scan 5s ease-in-out infinite",
-            }}
-          />
-          <div className="relative flex items-center divide-x divide-border/50 px-2 py-4 md:px-3 md:py-3 lg:px-6 lg:py-4 md:justify-between w-max md:w-full">
-            {ribbonItems.map((item, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveItem(item)}
-                className={`flex items-center gap-3 md:gap-2 lg:gap-3 px-5 md:px-3 lg:px-5 md:flex-1 cursor-pointer transition-all hover:opacity-80 text-left snap-center ${
-                  litSegments[i]
-                    ? "ribbon-segment-visible"
-                    : "ribbon-segment-hidden"
-                }`}
-                style={{
-                  animation: litSegments[i]
-                    ? "ribbon-shimmer 0.6s ease-out"
-                    : undefined,
-                }}
-              >
-                <item.icon className="w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-primary shrink-0" />
-                <div className="min-w-0">
-                  <p className="text-foreground text-xs md:text-[0.7rem] lg:text-sm font-semibold leading-tight whitespace-nowrap">
-                    {item.title}
-                  </p>
-                  <p className="text-muted-foreground text-[10px] md:text-[9px] lg:text-xs leading-tight mt-0.5 whitespace-nowrap">
-                    {item.subtitle}
-                  </p>
-                </div>
-              </button>
-            ))}
+            ref={ribbonRef}
+            className="w-full overflow-x-auto md:overflow-hidden snap-x snap-mandatory md:snap-none hide-scrollbar rounded-xl"
+          >
+            <div
+              className="absolute inset-0 pointer-events-none rounded-xl"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent 0%, hsl(210 100% 56% / 0.08) 50%, transparent 100%)",
+                backgroundSize: "30% 100%",
+                animation: "ribbon-scan 5s ease-in-out infinite",
+              }}
+            />
+            <div className="relative flex items-center divide-x divide-border/50 px-2 py-4 md:px-3 md:py-3 lg:px-6 lg:py-4 md:justify-between w-max md:w-full">
+              {ribbonItems.map((item, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveItem(item)}
+                  className={`flex items-center gap-3 md:gap-2 lg:gap-3 px-5 md:px-3 lg:px-5 md:flex-1 cursor-pointer transition-all hover:opacity-80 text-left snap-center ${
+                    litSegments[i]
+                      ? "ribbon-segment-visible"
+                      : "ribbon-segment-hidden"
+                  }`}
+                  style={{
+                    animation: litSegments[i]
+                      ? "ribbon-shimmer 0.6s ease-out"
+                      : undefined,
+                  }}
+                >
+                  <item.icon className="w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-primary shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-foreground text-xs md:text-[0.7rem] lg:text-sm font-semibold leading-tight whitespace-nowrap">
+                      {item.title}
+                    </p>
+                    <p className="text-muted-foreground text-[10px] md:text-[9px] lg:text-xs leading-tight mt-0.5 whitespace-nowrap">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
