@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import LocalPricingSection from "@/components/LocalPricingSection";
 import MeetTheArchitect from "@/components/MeetTheArchitect";
 import ThreePillarSolution from "@/components/ThreePillarSolution";
+import MethodologySection from "@/components/MethodologySection";
 import PersuasionSection from "@/components/PersuasionSection";
 import SignalNoiseTransition from "@/components/SignalNoiseTransition";
 import FeaturedProject from "@/components/FeaturedProject";
@@ -19,6 +20,7 @@ const Index = () => {
       <LocalPricingSection />
       <MeetTheArchitect />
       <ThreePillarSolution />
+      <MethodologySection />
       <PersuasionSection />
       <SignalNoiseTransition />
       <FeaturedProject />
