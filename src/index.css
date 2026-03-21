@@ -196,19 +196,11 @@
   }
   /* Hide scrollbar utility */
   .hide-scrollbar {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
   }
   .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Remove glow from inner scrollable container on mobile, applied to parent instead */
-  @media (max-width: 767px) {
-    .mobile-no-glow {
-      box-shadow: none !important;
-      border-color: hsl(var(--border) / 0.5) !important;
-    }
+    display: none; /* Chrome/Safari */
   }
 }
 
