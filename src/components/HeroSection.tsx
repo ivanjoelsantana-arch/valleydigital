@@ -133,7 +133,7 @@ const PerformanceRibbon = () => {
               <button
                 key={i}
                 onClick={() => setActiveItem(item)}
-                className={`flex items-center gap-3 md:gap-2 lg:gap-3 px-5 md:px-3 lg:px-5 md:flex-1 cursor-pointer transition-all hover:opacity-80 text-left ${
+                className={`flex items-center gap-3 md:gap-2 lg:gap-3 px-5 md:px-3 lg:px-5 md:flex-1 cursor-pointer transition-all hover:opacity-80 text-left snap-center ${
                   litSegments[i]
                     ? "ribbon-segment-visible"
                     : "ribbon-segment-hidden"
