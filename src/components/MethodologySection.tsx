@@ -11,7 +11,7 @@ const pillars = [
   {
     icon: Zap,
     title: "Performance-First Engineering",
-    desc: "In the age of instant gratification, speed is a ranking factor. We architect sites with a "Clean Code" philosophy—optimizing for core web vitals to ensure your site is lightning-fast on every device, from the Pembina Valley to a global audience.",
+    desc: "In the age of instant gratification, speed is a ranking factor. We architect sites with a 'Clean Code' philosophy\u2014optimizing for core web vitals to ensure your site is lightning-fast on every device, from the Pembina Valley to a global audience.",
     goal: "Sub-second load times and flawless mobile responsiveness.",
   },
   {
