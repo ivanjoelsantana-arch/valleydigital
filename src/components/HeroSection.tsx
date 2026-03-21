@@ -72,6 +72,19 @@ const PerformanceRibbon = () => {
   const [litSegments, setLitSegments] = useState<boolean[]>([false, false, false]);
   const ribbonRef = useRef<HTMLDivElement>(null);
 
+  // Center-scroll on mobile on mount
+  useEffect(() => {
+    const el = ribbonRef.current;
+    if (!el) return;
+    requestAnimationFrame(() => {
+      const scrollWidth = el.scrollWidth;
+      const clientWidth = el.clientWidth;
+      if (scrollWidth > clientWidth) {
+        el.scrollLeft = (scrollWidth - clientWidth) / 2;
+      }
+    });
+  }, []);
+
   useEffect(() => {
     const el = ribbonRef.current;
     if (!el) return;
