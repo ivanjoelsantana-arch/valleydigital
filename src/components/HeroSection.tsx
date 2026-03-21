@@ -72,6 +72,19 @@ const PerformanceRibbon = () => {
   const [litSegments, setLitSegments] = useState<boolean[]>([false, false, false]);
   const ribbonRef = useRef<HTMLDivElement>(null);
 
+  // Center-scroll on mobile on mount
+  useEffect(() => {
+    const el = ribbonRef.current;
+    if (!el) return;
+    requestAnimationFrame(() => {
+      const scrollWidth = el.scrollWidth;
+      const clientWidth = el.clientWidth;
+      if (scrollWidth > clientWidth) {
+        el.scrollLeft = (scrollWidth - clientWidth) / 2;
+      }
+    });
+  }, []);
+
   useEffect(() => {
     const el = ribbonRef.current;
     if (!el) return;
@@ -98,13 +111,13 @@ const PerformanceRibbon = () => {
 
   return (
     <>
-      <div className="w-full md:w-[95%] lg:max-w-3xl mx-auto relative">
+      <div className="w-full md:w-[95%] lg:max-w-3xl mx-auto relative py-[10px] md:py-0 overflow-visible">
         {/* Scroll indicators for mobile only (hidden on tablet+) */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 z-10 bg-gradient-to-r from-background/80 to-transparent md:hidden" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 z-10 bg-gradient-to-l from-background/80 to-transparent md:hidden" />
+        <div className="pointer-events-none absolute left-0 top-[10px] bottom-[10px] w-6 z-10 bg-gradient-to-r from-background/80 to-transparent md:hidden" />
+        <div className="pointer-events-none absolute right-0 top-[10px] bottom-[10px] w-6 z-10 bg-gradient-to-l from-background/80 to-transparent md:hidden" />
         <div
           ref={ribbonRef}
-          className="glass-card w-full glow-border relative overflow-x-auto md:overflow-hidden scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent"
+          className="glass-card w-full glow-border relative overflow-x-auto md:overflow-hidden snap-x snap-mandatory md:snap-none hide-scrollbar"
         >
           <div
             className="absolute inset-0 pointer-events-none"
@@ -120,7 +133,7 @@ const PerformanceRibbon = () => {
               <button
                 key={i}
                 onClick={() => setActiveItem(item)}
-                className={`flex items-center gap-3 md:gap-2 lg:gap-3 px-5 md:px-3 lg:px-5 md:flex-1 cursor-pointer transition-all hover:opacity-80 text-left ${
+                className={`flex items-center gap-3 md:gap-2 lg:gap-3 px-5 md:px-3 lg:px-5 md:flex-1 cursor-pointer transition-all hover:opacity-80 text-left snap-center ${
                   litSegments[i]
                     ? "ribbon-segment-visible"
                     : "ribbon-segment-hidden"
