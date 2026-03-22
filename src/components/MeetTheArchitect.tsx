@@ -1,20 +1,12 @@
 import ivanHeadshot from "@/assets/ivan-headshot.png";
 import logo from "@/assets/logo.png";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import TextReveal from "./motion/TextReveal";
 
 const MeetTheArchitect = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
-
-  // Parallax for watermark logo
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const logoY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const logoRotate = useTransform(scrollYProgress, [0, 1], [0, 8]);
 
   return (
     <section
@@ -26,18 +18,19 @@ const MeetTheArchitect = () => {
         borderBottom: "1px solid hsl(215 25% 22% / 0.6)",
       }}
     >
-      {/* Watermark logo with parallax rotation */}
-      <motion.img
+      {/* Watermark logo — perfectly centered, no rotation */}
+      <img
         src={logo}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 m-auto pointer-events-none select-none"
+        className="absolute pointer-events-none select-none"
         style={{
           width: "80%",
           opacity: 0.03,
           zIndex: 0,
-          y: logoY,
-          rotate: logoRotate,
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%) rotate(0deg)",
         }}
       />
       <div className="max-w-7xl mx-auto relative" style={{ zIndex: 1 }}>
