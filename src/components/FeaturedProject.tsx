@@ -55,10 +55,11 @@ const FeaturedProject = () => {
               </div>
 
               <p className="text-secondary-foreground text-sm leading-relaxed">
-                We transformed a local grooming brand into a digital-first
-                service provider. By architecting a custom booking-focused UI
-                and masterful narrative, we reduced client friction and elevated
-                the brand's regional authority.
+                We partnered with Jessie to execute a complete 'ground-up'
+                re-design and structural optimization of her digital footprint.
+                By engineering her messaging from the foundation up, we
+                simplified her offering to focus specifically on attracting her
+                highest-value clients.
               </p>
 
               <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-xs text-muted-foreground">
