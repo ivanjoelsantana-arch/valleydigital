@@ -9,6 +9,7 @@ import SignalNoiseTransition from "@/components/SignalNoiseTransition";
 import FeaturedProject from "@/components/FeaturedProject";
 import ROIArchitectureSection from "@/components/ROIArchitectureSection";
 import ArchitectureProcess from "@/components/ArchitectureProcess";
+import ArchitectureAuditCTA from "@/components/ArchitectureAuditCTA";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -22,6 +23,7 @@ const Index = () => {
       <MeetTheArchitect />
       <ThreePillarSolution />
       <LocalPricingSection />
+      <ArchitectureAuditCTA />
       <PersuasionSection />
       <SignalNoiseTransition />
       <ArchitectureProcess />
