@@ -6,7 +6,7 @@ const ArchitectureAuditCTA = () => {
     <section
       className="section-padding"
       style={{
-        backgroundColor: "hsl(220 20% 8%)",
+        backgroundColor: "hsl(215 18% 13%)",
         borderTop: "1px solid hsl(215 25% 22% / 0.6)",
         borderBottom: "1px solid hsl(215 25% 22% / 0.6)",
       }}
