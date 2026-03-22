@@ -18,8 +18,8 @@ interface Particle {
 
 const PARTICLE_COUNT = 150;
 const SCATTER_RADIUS = 40;
-const STAGGER_MS = 200;
-const CONVERGE_DURATION = 1000;
+const STAGGER_MS = 80;
+const CONVERGE_DURATION = 600;
 const COLORS = [
   "hsl(220, 18%, 10%)",
   "hsl(220, 14%, 18%)",
@@ -29,14 +29,16 @@ const COLORS = [
 ];
 
 function easeOut(t: number): number {
+  // Power Out curve: [0.16, 1, 0.3, 1]
+  const p1x = 0.16, p1y = 1, p2x = 0.3, p2y = 1;
   const t2 = 1 - t;
-  return 3 * t2 * t2 * t * 1 + 3 * t2 * t * t * 1 + t * t * t * 1;
+  return 3 * t2 * t2 * t * p1y + 3 * t2 * t * t * p2y + t * t * t * 1;
 }
 
 const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.15 });
+  const isInView = useInView(containerRef, { once: true, amount: 0.05 });
   const [assembled, setAssembled] = useState(false);
   const [showFlash, setShowFlash] = useState(false);
   const animStarted = useRef(false);
