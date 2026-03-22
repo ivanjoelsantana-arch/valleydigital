@@ -26,18 +26,19 @@ const MeetTheArchitect = () => {
         borderBottom: "1px solid hsl(215 25% 22% / 0.6)",
       }}
     >
-      {/* Watermark logo with parallax rotation */}
-      <motion.img
+      {/* Watermark logo — perfectly centered, no rotation */}
+      <img
         src={logo}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 m-auto pointer-events-none select-none"
+        className="absolute pointer-events-none select-none"
         style={{
           width: "80%",
           opacity: 0.03,
           zIndex: 0,
-          y: logoY,
-          rotate: logoRotate,
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%) rotate(0deg)",
         }}
       />
       <div className="max-w-7xl mx-auto relative" style={{ zIndex: 1 }}>
