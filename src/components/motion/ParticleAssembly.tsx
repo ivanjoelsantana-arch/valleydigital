@@ -38,7 +38,7 @@ function easeOut(t: number): number {
 const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.15 });
+  const isInView = useInView(containerRef, { once: true, amount: 0.05 });
   const [assembled, setAssembled] = useState(false);
   const [showFlash, setShowFlash] = useState(false);
   const animStarted = useRef(false);
