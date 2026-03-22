@@ -58,7 +58,7 @@ const ThreePillarSolution = () => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {pillar.desc}
               </p>
-            </SpringCard>
+            </LiquidReveal>
           ))}
         </div>
       </div>

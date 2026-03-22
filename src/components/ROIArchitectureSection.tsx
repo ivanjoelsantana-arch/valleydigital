@@ -74,7 +74,7 @@ const ROIArchitectureSection = () => {
                     </p>
                   </div>
                 </div>
-              </SpringCard>
+              </LiquidReveal>
             ))}
 
             <div className="flex flex-col items-center md:items-start gap-4 pt-4">

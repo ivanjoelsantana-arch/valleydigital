@@ -55,7 +55,7 @@ const ArchitectureProcess = () => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {step.desc}
               </p>
-            </SpringCard>
+            </LiquidReveal>
           ))}
         </div>
       </div>
