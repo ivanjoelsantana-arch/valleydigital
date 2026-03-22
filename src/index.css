@@ -194,6 +194,19 @@
   .ribbon-segment-visible {
     opacity: 1;
   }
+
+  /* Highlight reveal effect */
+  .highlight-reveal {
+    opacity: 0.4;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                text-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-visible .highlight-reveal {
+    opacity: 1;
+    text-shadow: 0 0 20px hsl(210 100% 56% / 0.3);
+  }
+
   /* Hide scrollbar utility */
   .hide-scrollbar {
     scrollbar-width: none; /* Firefox */
