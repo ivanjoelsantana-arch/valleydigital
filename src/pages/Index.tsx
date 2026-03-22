@@ -26,7 +26,7 @@ const Index = () => {
       <ArchitectureAuditCTA />
       <PersuasionSection />
       <SignalNoiseTransition />
-      <ArchitectureProcess />
+      
       <ROIArchitectureSection />
       <FinalCTA />
       <Footer />
