@@ -52,7 +52,7 @@ const PricingCard = ({
   return (
     <div
       ref={ref}
-      className={`glass-card-hover p-6 md:p-8 flex flex-col relative ${
+      className={`glass-card pricing-card-hover p-6 md:p-8 flex flex-col relative ${
         plan.bestValue ? "glow-border-strong" : ""
       } ${isVisible ? "scroll-visible" : "scroll-hidden"}`}
       style={{ transitionDelay: `${index * 100}ms` }}
@@ -63,21 +63,21 @@ const PricingCard = ({
         </Badge>
       )}
 
-      <h3 className="text-xl font-bold text-foreground mb-6">{plan.title}</h3>
+      <h3 className="text-xl font-bold text-foreground mb-6 stagger-child stagger-1">{plan.title}</h3>
 
-      <div className="mb-2">
+      <div className="mb-2 stagger-child stagger-2">
         <span className="text-sm text-muted-foreground">Standard Rate</span>
         <p className="text-2xl font-bold text-muted-foreground line-through">
           {plan.standardRate}
         </p>
       </div>
 
-      <div className="mb-8">
+      <div className="mb-8 stagger-child stagger-2">
         <span className="text-sm text-muted-foreground">Local Partner Rate</span>
         <p className="text-3xl font-extrabold glow-text">{plan.localRate}</p>
       </div>
 
-      <ul className="space-y-3 mb-8 flex-1">
+      <ul className="space-y-3 mb-8 flex-1 stagger-child stagger-3">
         {plan.bullets.map((bullet) => (
           <li
             key={bullet}
@@ -89,7 +89,7 @@ const PricingCard = ({
         ))}
       </ul>
 
-      <button className="btn-primary-glow w-full text-center">
+      <button className="btn-primary-glow w-full text-center stagger-child stagger-4">
         Start Your Build
       </button>
     </div>
@@ -108,10 +108,10 @@ const LocalPricingSection = () => {
             header.isVisible ? "scroll-visible" : "scroll-hidden"
           }`}
         >
-          <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
+          <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3 stagger-child stagger-1">
             Pricing
           </p>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground stagger-child stagger-2">
             Local Partner <span className="glow-text">Pricing</span>
           </h2>
         </div>
