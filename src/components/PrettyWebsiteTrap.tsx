@@ -155,7 +155,7 @@ const PrettyWebsiteTrap = () => {
         />
       </div>
 
-      <div className="relative max-w-3xl mx-auto">
+      <div className="relative max-w-5xl mx-auto">
         {/* Section header */}
         <div
           ref={header.ref}
