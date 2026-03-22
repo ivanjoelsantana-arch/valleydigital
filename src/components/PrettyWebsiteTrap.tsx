@@ -1,4 +1,70 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useEffect, useRef, useState } from "react";
+import { Sparkles } from "lucide-react";
+
+const HighlightSentence = () => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [progress, setProgress] = useState(0);
+  const [sparkle, setSparkle] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Animate progress from 0 to 1 over 1.2s
+          let start: number | null = null;
+          const duration = 1200;
+          const animate = (ts: number) => {
+            if (!start) start = ts;
+            const p = Math.min((ts - start) / duration, 1);
+            setProgress(p);
+            if (p >= 0.85 && !sparkle) setSparkle(true);
+            if (p < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <span
+      ref={ref}
+      className="text-lg md:text-xl font-medium leading-relaxed inline"
+      style={{ lineHeight: 1.85 }}
+    >
+      and zero strategy for how to actually turn a visitor into a{" "}
+      <span className="relative inline-block">
+        <span
+          className="relative z-10"
+          style={{
+            background: `linear-gradient(90deg, hsl(var(--primary)) ${progress * 100}%, hsl(var(--muted-foreground)) ${progress * 100}%)`,
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            fontWeight: 700,
+          }}
+        >
+          lead
+        </span>
+        {sparkle && (
+          <span className="absolute -top-5 left-1/2 -translate-x-1/2 animate-fade-in">
+            <Sparkles size={16} className="text-primary animate-pulse" />
+          </span>
+        )}
+      </span>
+      .
+    </span>
+  );
+};
 
 const sections = [
   {
@@ -27,7 +93,12 @@ const sections = [
       </>
     ),
     paragraphs: [
-      "DIY builders give you a \"skin,\" but they don't give you a nervous system. They are often bloated with messy code that slows your site down, confusing layouts that frustrate your customers, and zero strategy for how to actually turn a visitor into a lead.",
+      <>
+        DIY builders give you a "skin," but they don't give you a nervous system.
+        They are often bloated with messy code that slows your site down, confusing
+        layouts that frustrate your customers,{" "}
+        <HighlightSentence />
+      </>,
       <span key="prob-bold" className="font-semibold text-foreground">
         Standard designers build for the eyes. We architect for the bottom line.
       </span>,
