@@ -50,7 +50,7 @@ const PricingCard = ({
   index: number;
 }) => {
   return (
-    <SpringCard index={index} className="self-start">
+    <SpringCard index={index} className="h-full">
       <div
         className="relative rounded-xl p-6 md:p-8 flex flex-col h-full bg-card"
         style={{ border: "1px solid hsl(var(--border))" }}
