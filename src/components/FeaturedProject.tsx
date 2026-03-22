@@ -7,7 +7,7 @@ const FeaturedProject = () => {
   const copy = useScrollReveal();
 
   return (
-    <section className="section-padding">
+    <section className="px-6 md:px-12 lg:px-20 pt-10 md:pt-12 pb-20 md:pb-28">
       <div className="max-w-7xl mx-auto">
         <div
           ref={container.ref}
