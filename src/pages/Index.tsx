@@ -24,8 +24,8 @@ const Index = () => {
       <LocalPricingSection />
       <PersuasionSection />
       <SignalNoiseTransition />
-      <ROIArchitectureSection />
       <ArchitectureProcess />
+      <ROIArchitectureSection />
       <FinalCTA />
       <Footer />
     </div>
