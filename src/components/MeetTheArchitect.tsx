@@ -8,14 +8,22 @@ const MeetTheArchitect = () => {
 
   return (
     <section
-      className="section-padding"
+      className="section-padding relative overflow-hidden"
       style={{
         backgroundColor: "#15191E",
         borderTop: "1px solid rgba(45, 55, 72, 0.6)",
         borderBottom: "1px solid rgba(45, 55, 72, 0.6)",
       }}
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Watermark logo */}
+      <img
+        src={logo}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 m-auto pointer-events-none select-none"
+        style={{ width: "80%", opacity: 0.03, zIndex: 0 }}
+      />
+      <div className="max-w-7xl mx-auto relative" style={{ zIndex: 1 }}>
         <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
           {/* Left: Headshot */}
           <div
