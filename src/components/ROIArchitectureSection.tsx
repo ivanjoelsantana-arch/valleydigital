@@ -1,6 +1,6 @@
 import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
-import SpringCard from "./motion/SpringCard";
+import LiquidReveal from "./motion/LiquidReveal";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -56,7 +56,7 @@ const ROIArchitectureSection = () => {
 
           <div className="space-y-4">
             {valueProps.map((item, i) => (
-              <SpringCard
+              <LiquidReveal
                 key={item.num}
                 index={i}
                 className="glass-card p-6 md:p-8 rounded-xl transition-all duration-300 hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] group"
@@ -74,7 +74,7 @@ const ROIArchitectureSection = () => {
                     </p>
                   </div>
                 </div>
-              </SpringCard>
+              </LiquidReveal>
             ))}
 
             <div className="flex flex-col items-center md:items-start gap-4 pt-4">

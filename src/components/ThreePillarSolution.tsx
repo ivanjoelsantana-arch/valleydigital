@@ -1,6 +1,6 @@
 import { Palette, PenTool, Hexagon } from "lucide-react";
 import BlueprintReveal from "./motion/BlueprintReveal";
-import SpringCard from "./motion/SpringCard";
+import LiquidReveal from "./motion/LiquidReveal";
 import TextReveal from "./motion/TextReveal";
 
 const pillars = [
@@ -43,7 +43,7 @@ const ThreePillarSolution = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {pillars.map((pillar, i) => (
-            <SpringCard
+            <LiquidReveal
               key={pillar.title}
               index={i}
               className="glass-card p-8 md:p-10 text-center group hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] transition-all duration-300"
@@ -58,7 +58,7 @@ const ThreePillarSolution = () => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {pillar.desc}
               </p>
-            </SpringCard>
+            </LiquidReveal>
           ))}
         </div>
       </div>

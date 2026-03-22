@@ -1,7 +1,7 @@
 import { Compass, Wrench, Rocket } from "lucide-react";
 import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
-import SpringCard from "./motion/SpringCard";
+import LiquidReveal from "./motion/LiquidReveal";
 
 const steps = [
   {
@@ -40,7 +40,7 @@ const ArchitectureProcess = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {steps.map((step, i) => (
-            <SpringCard
+            <LiquidReveal
               key={step.num}
               index={i}
               className="glass-card p-8 md:p-10 text-center group hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] transition-all duration-300"
@@ -55,7 +55,7 @@ const ArchitectureProcess = () => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {step.desc}
               </p>
-            </SpringCard>
+            </LiquidReveal>
           ))}
         </div>
       </div>
