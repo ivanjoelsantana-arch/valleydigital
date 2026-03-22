@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import FluidDrift from "./motion/FluidDrift";
 import LetterSpacingReveal from "./motion/LetterSpacingReveal";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const sections = [
   {
@@ -82,6 +84,9 @@ const sections = [
   },
 ];
 
+// Alternating directions: index 1 (left), 2 (right), 3 (left)
+const getDirection = (index: number) => (index % 2 === 1 ? -1 : 1);
+
 const NarrativeBlock = ({
   section,
   index,
@@ -89,17 +94,43 @@ const NarrativeBlock = ({
   section: (typeof sections)[0];
   index: number;
 }) => {
-  return (
-    <FluidDrift>
-      {index > 0 && (
-        <div className="flex items-center gap-4 mb-12">
-          <span className="flex-1 h-px bg-border/50" />
-          <span className="text-primary text-xs font-medium tracking-widest uppercase">
-            {section.label}
-          </span>
-          <span className="flex-1 h-px bg-border/50" />
+  const isMobile = useIsMobile();
+
+  // First block ("The Trap") keeps FluidDrift (no horizontal slide)
+  if (index === 0) {
+    return (
+      <FluidDrift>
+        <h3 className="font-sans text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-foreground mb-6">
+          {section.heading}
+        </h3>
+        <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed" style={{ lineHeight: 1.85 }}>
+          {section.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
         </div>
-      )}
+      </FluidDrift>
+    );
+  }
+
+  const dir = getDirection(index);
+  const xOffset = isMobile ? 0 : 50 * dir;
+  const yOffset = isMobile ? 20 : 10;
+
+  return (
+    <motion.div
+      style={{ willChange: "transform, opacity" }}
+      initial={{ opacity: 0, x: xOffset, y: yOffset }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <div className="flex items-center gap-4 mb-12">
+        <span className="flex-1 h-px bg-border/50" />
+        <span className="text-primary text-xs font-medium tracking-widest uppercase">
+          {section.label}
+        </span>
+        <span className="flex-1 h-px bg-border/50" />
+      </div>
 
       <h3 className="font-sans text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-foreground mb-6">
         {section.heading}
@@ -110,7 +141,7 @@ const NarrativeBlock = ({
           <p key={i}>{p}</p>
         ))}
       </div>
-    </FluidDrift>
+    </motion.div>
   );
 };
 
