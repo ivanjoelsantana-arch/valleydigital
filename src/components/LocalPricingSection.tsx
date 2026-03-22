@@ -1,7 +1,6 @@
 import { Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import SpringCard from "./motion/SpringCard";
-import GradientBorderCard from "./motion/GradientBorderCard";
 import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
 
@@ -51,13 +50,13 @@ const PricingCard = ({
   index: number;
 }) => {
   return (
-    <SpringCard index={index}>
-      <GradientBorderCard
-        active={plan.bestValue}
-        className={`p-6 md:p-8 flex flex-col relative ${plan.bestValue ? "" : ""}`}
+    <SpringCard index={index} className="self-start">
+      <div
+        className="relative rounded-xl p-6 md:p-8 flex flex-col bg-card"
+        style={{ border: "1px solid hsl(var(--border))" }}
       >
         {plan.bestValue && (
-          <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground border-none shadow-[var(--shadow-glow-sm)] px-4 py-1 z-10">
+          <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground border-none px-4 py-1 z-10">
             Best Value
           </Badge>
         )}
@@ -91,14 +90,14 @@ const PricingCard = ({
         <button className="btn-primary-glow btn-hover-lift w-full text-center">
           Start Your Build
         </button>
-      </GradientBorderCard>
+      </div>
     </SpringCard>
   );
 };
 
 const LocalPricingSection = () => {
   return (
-    <section id="pricing" className="section-padding">
+    <section id="pricing" className="section-padding pt-24 md:pt-32">
       <div className="max-w-7xl mx-auto">
         <BlueprintReveal className="text-center mb-16">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
@@ -109,7 +108,7 @@ const LocalPricingSection = () => {
           </TextReveal>
         </BlueprintReveal>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-4 items-start">
           {pricingPlans.map((plan, i) => (
             <PricingCard key={plan.title} plan={plan} index={i} />
           ))}
