@@ -123,6 +123,16 @@
     transform: translateY(-1px);
   }
 
+  .lead-highlight {
+    @apply relative font-bold text-foreground;
+    background: linear-gradient(90deg, hsl(var(--blue-glow)), hsl(var(--blue-bright)));
+    background-size: 100% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 2px;
+    animation: lead-pulse 2.5s ease-in-out infinite;
+  }
+
   .section-padding {
     @apply px-6 md:px-12 lg:px-20 py-20 md:py-28;
   }
