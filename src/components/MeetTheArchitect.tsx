@@ -6,7 +6,14 @@ const MeetTheArchitect = () => {
   const textBlock = useScrollReveal();
 
   return (
-    <section className="section-padding">
+    <section
+      className="section-padding"
+      style={{
+        backgroundColor: "#121212",
+        borderTop: "1px solid #2A2A2A",
+        borderBottom: "1px solid #2A2A2A",
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
           {/* Left: Headshot */}
