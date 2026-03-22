@@ -34,11 +34,11 @@ const MeetTheArchitect = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        <div className="grid md:grid-cols-[2fr_3fr] gap-12 md:gap-16 items-center">
-          {/* Left Column (40%): Headshot */}
+        <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
+          {/* Left: Headshot */}
           <div
             ref={headshot.ref}
-            className={`flex justify-center ${
+            className={`flex justify-center md:justify-start ${
               headshot.isVisible ? "scroll-visible-scale" : "scroll-hidden-scale"
             }`}
           >
@@ -59,30 +59,27 @@ const MeetTheArchitect = () => {
             </div>
           </div>
 
-          {/* Right Column (60%): Copy */}
+          {/* Right: Copy */}
           <div
             ref={textBlock.ref}
-            className={`text-left ${
+            className={`${
               textBlock.isVisible ? "scroll-visible-right" : "scroll-hidden-right"
             }`}
           >
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight stagger-child stagger-1">
+            <span className="inline-block glow-text text-xs font-bold tracking-widest uppercase stagger-child stagger-1">
               Lead Architect
+            </span>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mt-6 stagger-child stagger-2">
+              Strategy First. Architecture Second.
             </h2>
-            <h3
-              className="text-lg md:text-xl font-semibold mt-4 stagger-child stagger-2"
-              style={{ color: "#2D3748" }}
-            >
-              Meet the Visionary Behind Your Blueprint
-            </h3>
             <p className="text-muted-foreground text-base md:text-lg leading-[1.85] max-w-2xl mt-6 stagger-child stagger-3">
-              Our architectural approach isn't a fit for every business. It is
-              designed specifically for the established owner who is ready to
-              move past temporary fixes and{" "}
-              <span className="text-foreground font-semibold">
-                build a digital foundation capable of supporting their
-                multi-million dollar vision.
-              </span>
+              I'm Ivan—a Web Solutions Architect dedicated to helping businesses
+              in the Pembina Valley scale through high-performance digital
+              engineering. I don't just build websites; I design conversion
+              systems that turn local browsers into loyal partners. My approach
+              combines deep technical architecture with the psychology of
+              storytelling to ensure your brand doesn't just look premium—it
+              performs at a premium level.
             </p>
             <p className="text-muted-foreground/60 text-sm italic mt-6 stagger-child stagger-4">
               Based in Altona, MB. Serving the Southern Manitoba business community.
