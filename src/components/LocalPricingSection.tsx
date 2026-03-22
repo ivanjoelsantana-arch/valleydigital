@@ -11,7 +11,8 @@ const pricingPlans = [
     title: "Web + Copy Overhaul",
     standardRate: "$5,500",
     localRate: "$4,800",
-    monthlyRate: "$800/mo",
+    monthlyRate: "$640/mo",
+    deposit: "$960",
     bestValue: false,
     bullets: [
       "Complete UI/UX Redesign",
@@ -24,7 +25,8 @@ const pricingPlans = [
     title: "Professional Logo",
     standardRate: "$1,500",
     localRate: "$1,250",
-    monthlyRate: "$208/mo",
+    monthlyRate: "$166/mo",
+    deposit: "$250",
     bestValue: false,
     bullets: [
       "Strategic Discovery Session",
@@ -37,7 +39,8 @@ const pricingPlans = [
     title: "The Complete Rebrand",
     standardRate: "$6,500",
     localRate: "$5,500",
-    monthlyRate: "$916/mo",
+    monthlyRate: "$733/mo",
+    deposit: "$1,100",
     bestValue: true,
     bullets: [
       "Everything in Web, Copy, and Logo",
@@ -133,14 +136,19 @@ const PricingCard = ({
             </motion.p>
           </AnimatePresence>
           {isMonthly && (
-            <motion.p
-              className="text-xs text-muted-foreground mt-1"
+            <motion.div
+              className="space-y-1 mt-1"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.15 }}
             >
-              0% interest for local partners
-            </motion.p>
+              <p className="text-xs font-medium text-secondary-foreground">
+                Requires {plan.deposit} deposit to start
+              </p>
+              <p className="text-xs text-muted-foreground">
+                80% financed over 6 months at 0% interest
+              </p>
+            </motion.div>
           )}
         </div>
 
