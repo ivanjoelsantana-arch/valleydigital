@@ -1,4 +1,5 @@
 import ivanHeadshot from "@/assets/ivan-headshot.png";
+import logo from "@/assets/logo.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const MeetTheArchitect = () => {
