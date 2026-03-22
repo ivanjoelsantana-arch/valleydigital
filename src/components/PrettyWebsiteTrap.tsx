@@ -1,5 +1,4 @@
-import BlueprintReveal from "./motion/BlueprintReveal";
-import TextReveal from "./motion/TextReveal";
+import FluidDrift from "./motion/FluidDrift";
 import LetterSpacingReveal from "./motion/LetterSpacingReveal";
 
 const sections = [
@@ -91,7 +90,7 @@ const NarrativeBlock = ({
   index: number;
 }) => {
   return (
-    <BlueprintReveal delay={index * 0.1}>
+    <FluidDrift>
       {index > 0 && (
         <div className="flex items-center gap-4 mb-12">
           <span className="flex-1 h-px bg-border/50" />
@@ -102,30 +101,33 @@ const NarrativeBlock = ({
         </div>
       )}
 
-      <TextReveal as="h3" className="font-sans text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-foreground mb-6" delay={index * 0.1 + 0.2}>
+      <h3 className="font-sans text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-foreground mb-6">
         {section.heading}
-      </TextReveal>
+      </h3>
 
       <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed" style={{ lineHeight: 1.85 }}>
         {section.paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
       </div>
-    </BlueprintReveal>
+    </FluidDrift>
   );
 };
 
 const PrettyWebsiteTrap = () => {
   return (
     <section className="relative section-padding overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, hsl(210 100% 56% / 0.04), transparent 70%), " +
-            "linear-gradient(180deg, hsl(var(--background)) 0%, hsl(220 20% 9%) 50%, hsl(var(--background)) 100%)",
-        }}
-      />
+      {/* Background with parallax */}
+      <FluidDrift parallax className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 50% 40%, hsl(210 100% 56% / 0.04), transparent 70%), " +
+              "linear-gradient(180deg, hsl(var(--background)) 0%, hsl(220 20% 9%) 50%, hsl(var(--background)) 100%)",
+          }}
+        />
+      </FluidDrift>
 
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <img
@@ -138,19 +140,19 @@ const PrettyWebsiteTrap = () => {
       </div>
 
       <div className="relative max-w-3xl mx-auto">
-        <BlueprintReveal className="text-center mb-20">
+        <FluidDrift className="text-center mb-20">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
             A Letter from the Architect
           </p>
-          <TextReveal as="h2" className="font-sans text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6" delay={0.2}>
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
             The "Pretty Website"{" "}
             <span className="glow-text">Trap</span>
-          </TextReveal>
+          </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto" style={{ lineHeight: 1.7 }}>
             Before we build anything, there's a hard truth most agencies won't
             tell you. Consider this your honest briefing.
           </p>
-        </BlueprintReveal>
+        </FluidDrift>
 
         <div className="space-y-16 md:space-y-20">
           {sections.map((section, i) => (
