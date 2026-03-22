@@ -16,25 +16,21 @@ interface Particle {
   colorIdx: number;
 }
 
-const PARTICLE_COUNT = 200;
-const SCATTER_RADIUS = 50;
+const PARTICLE_COUNT = 150;
+const SCATTER_RADIUS = 40;
 const STAGGER_MS = 200;
-const CONVERGE_DURATION = 1200; // ms
+const CONVERGE_DURATION = 1000;
 const COLORS = [
-  "hsl(220, 18%, 10%)",   // Midnight Slate (card bg)
-  "hsl(220, 14%, 18%)",   // Border tone
-  "hsl(210, 100%, 56%)",  // Blue-Steel / primary
-  "hsl(215, 80%, 32%)",   // Blue dim
-  "hsl(220, 16%, 14%)",   // Secondary
+  "hsl(220, 18%, 10%)",
+  "hsl(220, 14%, 18%)",
+  "hsl(210, 100%, 56%)",
+  "hsl(215, 80%, 32%)",
+  "hsl(220, 16%, 14%)",
 ];
 
-function cubicBezier(t: number): number {
-  // Attempt to approximate [0.19, 1, 0.22, 1] with a fast-start, smooth-finish curve
+function easeOut(t: number): number {
   const t2 = 1 - t;
-  // Simple approximation using the bezier control points
-  const p0 = 0, p1 = 1, p2 = 1, p3 = 1;
-  // For y given t on a standard cubic bezier y(t)
-  return 3 * t2 * t2 * t * p1 + 3 * t2 * t * t * p2 + t * t * t * p3;
+  return 3 * t2 * t2 * t * 1 + 3 * t2 * t * t * 1 + t * t * t * 1;
 }
 
 const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyProps) => {
@@ -47,7 +43,6 @@ const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyPr
   const particlesRef = useRef<Particle[]>([]);
   const rafRef = useRef<number>(0);
 
-  // Initialize particles
   useEffect(() => {
     const particles: Particle[] = [];
     for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -56,8 +51,8 @@ const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyPr
       particles.push({
         x: Math.cos(angle) * dist,
         y: Math.sin(angle) * dist,
-        homeX: (Math.random() - 0.5) * 2, // normalized -1 to 1
-        homeY: (Math.random() - 0.5) * 2,
+        homeX: 0,
+        homeY: 0,
         size: 1.5 + Math.random() * 2.5,
         colorIdx: Math.floor(Math.random() * COLORS.length),
       });
@@ -92,7 +87,6 @@ const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyPr
       const cy = h / 2;
       const particles = particlesRef.current;
 
-      // Map home positions to actual card coordinates
       particles.forEach((p) => {
         p.homeX = Math.random() * w;
         p.homeY = Math.random() * h;
@@ -103,7 +97,7 @@ const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyPr
       const animate = (now: number) => {
         const elapsed = now - startTime;
         const rawT = Math.min(elapsed / CONVERGE_DURATION, 1);
-        const t = cubicBezier(rawT);
+        const t = easeOut(rawT);
 
         ctx.clearRect(0, 0, w, h);
 
@@ -114,8 +108,9 @@ const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyPr
           const curY = startY + (p.homeY - startY) * t;
 
           ctx.fillStyle = COLORS[p.colorIdx];
-          ctx.globalAlpha = 0.6 + 0.4 * t;
-          ctx.fillRect(curX, curY, p.size * (1 - t * 0.4), p.size * (1 - t * 0.4));
+          ctx.globalAlpha = 0.5 + 0.5 * t;
+          const s = p.size * (1 - t * 0.4);
+          ctx.fillRect(curX, curY, s, s);
         }
 
         ctx.globalAlpha = 1;
@@ -123,7 +118,6 @@ const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyPr
         if (rawT < 1) {
           rafRef.current = requestAnimationFrame(animate);
         } else {
-          // Animation complete — solidify
           ctx.clearRect(0, 0, w, h);
           setAssembled(true);
           setShowFlash(true);
@@ -142,7 +136,6 @@ const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyPr
 
   return (
     <div ref={containerRef} className={`relative ${className ?? ""}`} style={{ willChange: "transform, opacity" }}>
-      {/* Particle canvas overlay */}
       {!assembled && (
         <canvas
           ref={canvasRef}
@@ -150,19 +143,12 @@ const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyPr
         />
       )}
 
-      {/* Scanline flash on solidify */}
       {showFlash && (
         <div className="absolute inset-0 z-20 pointer-events-none rounded-xl overflow-hidden">
           <div
             className="absolute inset-0"
             style={{
-              background: `repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                hsl(210 100% 56% / 0.08) 2px,
-                hsl(210 100% 56% / 0.08) 4px
-              )`,
+              background: `repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(210 100% 56% / 0.08) 2px, hsl(210 100% 56% / 0.08) 4px)`,
               mixBlendMode: "screen",
             }}
           />
@@ -175,7 +161,6 @@ const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyPr
         </div>
       )}
 
-      {/* The actual card content */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={assembled ? { opacity: 1 } : { opacity: 0 }}
