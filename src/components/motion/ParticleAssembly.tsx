@@ -18,8 +18,8 @@ interface Particle {
 
 const PARTICLE_COUNT = 150;
 const SCATTER_RADIUS = 40;
-const STAGGER_MS = 200;
-const CONVERGE_DURATION = 1000;
+const STAGGER_MS = 80;
+const CONVERGE_DURATION = 600;
 const COLORS = [
   "hsl(220, 18%, 10%)",
   "hsl(220, 14%, 18%)",
