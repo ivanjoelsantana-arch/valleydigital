@@ -1,6 +1,6 @@
 import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
-import ParticleAssembly from "./motion/ParticleAssembly";
+import FluidSlide from "./motion/FluidSlide";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
