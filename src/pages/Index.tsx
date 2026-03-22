@@ -18,11 +18,11 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <PrettyWebsiteTrap />
+      <FeaturedProject />
       <MeetTheArchitect />
       <ThreePillarSolution />
       <PersuasionSection />
       <SignalNoiseTransition />
-      <FeaturedProject />
       <ROIArchitectureSection />
       <ArchitectureProcess />
       <LocalPricingSection />
