@@ -1,6 +1,6 @@
 import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
-import SpringCard from "./motion/SpringCard";
+import LiquidReveal from "./motion/LiquidReveal";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
