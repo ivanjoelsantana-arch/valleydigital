@@ -52,7 +52,7 @@ const PricingCard = ({
   return (
     <SpringCard index={index} className="self-start">
       <div
-        className="relative rounded-xl p-6 md:p-8 flex flex-col bg-card"
+        className="relative rounded-xl p-6 md:p-8 flex flex-col h-full bg-card"
         style={{ border: "1px solid hsl(var(--border))" }}
       >
         {plan.bestValue && (
@@ -75,7 +75,7 @@ const PricingCard = ({
           <p className="text-3xl font-extrabold glow-text">{plan.localRate}</p>
         </div>
 
-        <ul className="space-y-3 mb-8 flex-1">
+        <ul className="space-y-3 flex-1">
           {plan.bullets.map((bullet) => (
             <li
               key={bullet}
@@ -87,9 +87,11 @@ const PricingCard = ({
           ))}
         </ul>
 
-        <button className="btn-primary-glow btn-hover-lift w-full text-center">
-          Start Your Build
-        </button>
+        <div className="mt-auto pt-8">
+          <button className="btn-primary-glow btn-hover-lift w-full text-center">
+            Start Your Build
+          </button>
+        </div>
       </div>
     </SpringCard>
   );
