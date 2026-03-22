@@ -209,13 +209,14 @@ const HeroSection = () => {
           </motion.div>
 
           <TextReveal as="h1" className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]" delay={0.15}>
-            Architecting <span className="glow-text">Scale</span>,<br />
-            Not Just Websites.
+            We Don't Just Build Websites. We Architect{" "}
+            <span className="glow-text">Financial Growth Engines.</span>
           </TextReveal>
 
           <TextReveal as="p" className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto" delay={0.3}>
-            A stunning website without masterful copy is a building without a
-            foundation. We engineer both.
+            Most agencies deliver a digital brochure. We engineer a conversion-focused
+            infrastructure designed to attract your ideal clients and carry your
+            business to the finish line.
           </TextReveal>
 
           <motion.div
