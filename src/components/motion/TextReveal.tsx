@@ -15,7 +15,7 @@ const TextReveal = ({ children, className, delay = 0, as = "div" }: TextRevealPr
   const Tag = motion[as] as typeof motion.div;
 
   return (
-    <div ref={ref} className="overflow-hidden">
+    <div ref={ref} className="overflow-hidden pb-1">
       <Tag
         className={className}
         initial={{ y: "100%", opacity: 0 }}
