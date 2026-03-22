@@ -1,6 +1,6 @@
 import ivanHeadshot from "@/assets/ivan-headshot.png";
 import logo from "@/assets/logo.png";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import TextReveal from "./motion/TextReveal";
 
