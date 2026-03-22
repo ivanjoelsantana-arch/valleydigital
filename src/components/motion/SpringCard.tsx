@@ -11,18 +11,18 @@ interface SpringCardProps {
 /** Card that springs in from the bottom-right with stagger */
 const SpringCard = ({ children, className, style, index = 0 }: SpringCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-8%" });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
     <motion.div
       ref={ref}
       className={className}
-      style={style}
-      initial={{ opacity: 0, x: 60, y: 80 }}
+      style={{ ...style, willChange: "transform, opacity" }}
+      initial={{ opacity: 0, y: 30 }}
       animate={
         isInView
-          ? { opacity: 1, x: 0, y: 0 }
-          : { opacity: 0, x: 60, y: 80 }
+          ? { opacity: 1, y: 0 }
+          : { opacity: 0, y: 30 }
       }
       transition={{
         type: "spring",
