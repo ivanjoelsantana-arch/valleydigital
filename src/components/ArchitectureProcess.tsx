@@ -1,7 +1,7 @@
 import { Compass, Wrench, Rocket } from "lucide-react";
 import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
-import ParticleAssembly from "./motion/ParticleAssembly";
+import FluidSlide from "./motion/FluidSlide";
 
 const steps = [
   {
