@@ -9,7 +9,7 @@ interface FluidSlideProps {
 }
 
 const variants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 15 },
   visible: { opacity: 1, y: 0 },
 };
 
