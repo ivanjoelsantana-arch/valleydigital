@@ -40,7 +40,7 @@ const ArchitectureProcess = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {steps.map((step, i) => (
-            <LiquidReveal
+            <ParticleAssembly
               key={step.num}
               index={i}
               className="glass-card p-8 md:p-10 text-center group hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] transition-all duration-300"
