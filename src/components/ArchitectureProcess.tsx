@@ -1,7 +1,7 @@
 import { Compass, Wrench, Rocket } from "lucide-react";
 import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
-import SpringCard from "./motion/SpringCard";
+import LiquidReveal from "./motion/LiquidReveal";
 
 const steps = [
   {
