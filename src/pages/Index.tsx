@@ -23,6 +23,7 @@ const Index = () => {
       <MeetTheArchitect />
       <ThreePillarSolution />
       <LocalPricingSection />
+      <ArchitectureAuditCTA />
       <PersuasionSection />
       <SignalNoiseTransition />
       <ArchitectureProcess />
