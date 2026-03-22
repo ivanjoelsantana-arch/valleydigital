@@ -8,7 +8,7 @@ import PersuasionSection from "@/components/PersuasionSection";
 import SignalNoiseTransition from "@/components/SignalNoiseTransition";
 import FeaturedProject from "@/components/FeaturedProject";
 import ROIArchitectureSection from "@/components/ROIArchitectureSection";
-import ArchitectureProcess from "@/components/ArchitectureProcess";
+
 import ArchitectureAuditCTA from "@/components/ArchitectureAuditCTA";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -26,7 +26,7 @@ const Index = () => {
       <ArchitectureAuditCTA />
       <PersuasionSection />
       <SignalNoiseTransition />
-      <ArchitectureProcess />
+      
       <ROIArchitectureSection />
       <FinalCTA />
       <Footer />
