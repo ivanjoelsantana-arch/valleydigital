@@ -66,20 +66,23 @@ const MeetTheArchitect = () => {
               textBlock.isVisible ? "scroll-visible-right" : "scroll-hidden-right"
             }`}
           >
-            <span className="inline-block glow-text text-xs font-bold tracking-widest uppercase stagger-child stagger-1">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight stagger-child stagger-1">
               Lead Architect
-            </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mt-6 stagger-child stagger-2">
-              Strategy First. Architecture Second.
             </h2>
+            <h3
+              className="text-lg md:text-xl font-semibold mt-4 stagger-child stagger-2"
+              style={{ color: "rgba(45, 55, 72, 1)" }}
+            >
+              Meet the Visionary Behind Your Blueprint
+            </h3>
             <p className="text-muted-foreground text-base md:text-lg leading-[1.85] max-w-2xl mt-6 stagger-child stagger-3">
-              I'm Ivan—a Web Solutions Architect dedicated to helping businesses
-              in the Pembina Valley scale through high-performance digital
-              engineering. I don't just build websites; I design conversion
-              systems that turn local browsers into loyal partners. My approach
-              combines deep technical architecture with the psychology of
-              storytelling to ensure your brand doesn't just look premium—it
-              performs at a premium level.
+              Our architectural approach isn't a fit for every business. It is
+              designed specifically for the established owner who is ready to
+              move past temporary fixes and{" "}
+              <span className="text-foreground font-semibold">
+                build a digital foundation capable of supporting their next
+                stage of scale.
+              </span>
             </p>
             <p className="text-muted-foreground/60 text-sm italic mt-6 stagger-child stagger-4">
               Based in Altona, MB. Serving the Southern Manitoba business community.
