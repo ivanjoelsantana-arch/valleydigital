@@ -9,7 +9,7 @@ const MeetTheArchitect = () => {
     <section
       className="section-padding"
       style={{
-        backgroundColor: "#121212",
+        backgroundColor: "#1E2329",
         borderTop: "1px solid #2A2A2A",
         borderBottom: "1px solid #2A2A2A",
       }}
