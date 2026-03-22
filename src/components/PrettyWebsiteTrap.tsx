@@ -1,4 +1,6 @@
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import BlueprintReveal from "./motion/BlueprintReveal";
+import TextReveal from "./motion/TextReveal";
+import LetterSpacingReveal from "./motion/LetterSpacingReveal";
 
 const sections = [
   {
@@ -31,9 +33,9 @@ const sections = [
         DIY builders give you a "skin," but they don't give you a nervous system.
         They are often bloated with messy code that slows your site down, confusing
         layouts that frustrate your customers,{" "}
-        <span className="highlight-reveal inline text-[1.2em] font-bold" style={{ color: "#FFFFFF" }}>
+        <LetterSpacingReveal className="inline text-[1.2em] font-bold text-foreground" delay={0.3}>
           and zero strategy for how to actually turn a visitor into a lead.
-        </span>
+        </LetterSpacingReveal>
       </>,
     ],
   },
@@ -88,15 +90,8 @@ const NarrativeBlock = ({
   section: (typeof sections)[0];
   index: number;
 }) => {
-  const reveal = useScrollReveal();
-
   return (
-    <div
-      ref={reveal.ref}
-      className={`${reveal.isVisible ? "scroll-visible" : "scroll-hidden"}`}
-      style={{ transitionDelay: `${index * 80}ms` }}
-    >
-      {/* Divider */}
+    <BlueprintReveal delay={index * 0.1}>
       {index > 0 && (
         <div className="flex items-center gap-4 mb-12">
           <span className="flex-1 h-px bg-border/50" />
@@ -107,25 +102,22 @@ const NarrativeBlock = ({
         </div>
       )}
 
-      <h3 className="font-sans text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-foreground mb-6">
+      <TextReveal as="h3" className="font-sans text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-foreground mb-6" delay={index * 0.1 + 0.2}>
         {section.heading}
-      </h3>
+      </TextReveal>
 
       <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed" style={{ lineHeight: 1.85 }}>
         {section.paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
       </div>
-    </div>
+    </BlueprintReveal>
   );
 };
 
 const PrettyWebsiteTrap = () => {
-  const header = useScrollReveal();
-
   return (
     <section className="relative section-padding overflow-hidden">
-      {/* Subtle radial background wash */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -135,7 +127,6 @@ const PrettyWebsiteTrap = () => {
         }}
       />
 
-      {/* Ghost logo watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <img
           src="/logo.png"
@@ -147,25 +138,20 @@ const PrettyWebsiteTrap = () => {
       </div>
 
       <div className="relative max-w-3xl mx-auto">
-        {/* Section header */}
-        <div
-          ref={header.ref}
-          className={`text-center mb-20 ${header.isVisible ? "scroll-visible" : "scroll-hidden"}`}
-        >
+        <BlueprintReveal className="text-center mb-20">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
             A Letter from the Architect
           </p>
-          <h2 className="font-sans text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
+          <TextReveal as="h2" className="font-sans text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6" delay={0.2}>
             The "Pretty Website"{" "}
             <span className="glow-text">Trap</span>
-          </h2>
+          </TextReveal>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto" style={{ lineHeight: 1.7 }}>
             Before we build anything, there's a hard truth most agencies won't
             tell you. Consider this your honest briefing.
           </p>
-        </div>
+        </BlueprintReveal>
 
-        {/* Narrative blocks */}
         <div className="space-y-16 md:space-y-20">
           {sections.map((section, i) => (
             <NarrativeBlock key={i} section={section} index={i} />

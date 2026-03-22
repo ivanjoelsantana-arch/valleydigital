@@ -1,15 +1,16 @@
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const SignalNoiseTransition = () => {
-  const reveal = useScrollReveal();
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-5%" });
 
-  // Build a path: jagged noise on the left, smoothing into a clean sine on the right
   const width = 1200;
   const midY = 40;
   const points: string[] = [`M 0 ${midY}`];
 
   for (let x = 0; x <= width; x += 4) {
-    const t = x / width; // 0→1
+    const t = x / width;
     const noiseAmp = 18 * (1 - t) * (1 - t);
     const signalAmp = 12 * t * t;
     const noise = noiseAmp * (Math.random() * 2 - 1 + Math.sin(x * 0.3) * 0.5);
@@ -20,9 +21,16 @@ const SignalNoiseTransition = () => {
   const pathD = points.join(" ");
 
   return (
-    <div
-      ref={reveal.ref}
-      className={`px-6 md:px-12 lg:px-20 py-10 ${reveal.isVisible ? "scroll-visible" : "scroll-hidden"}`}
+    <motion.div
+      ref={ref}
+      className="px-6 md:px-12 lg:px-20 py-10"
+      initial={{ clipPath: "inset(50% 50% 50% 50%)", opacity: 0 }}
+      animate={
+        isInView
+          ? { clipPath: "inset(0% 0% 0% 0%)", opacity: 1 }
+          : {}
+      }
+      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="max-w-5xl mx-auto">
         <div className="flex justify-between mb-3">
@@ -59,7 +67,7 @@ const SignalNoiseTransition = () => {
           />
         </svg>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
