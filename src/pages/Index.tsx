@@ -21,11 +21,11 @@ const Index = () => {
       <FeaturedProject />
       <MeetTheArchitect />
       <ThreePillarSolution />
+      <LocalPricingSection />
       <PersuasionSection />
       <SignalNoiseTransition />
       <ROIArchitectureSection />
       <ArchitectureProcess />
-      <LocalPricingSection />
       <FinalCTA />
       <Footer />
     </div>
