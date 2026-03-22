@@ -56,7 +56,7 @@ const ROIArchitectureSection = () => {
 
           <div className="space-y-4">
             {valueProps.map((item, i) => (
-              <SpringCard
+              <LiquidReveal
                 key={item.num}
                 index={i}
                 className="glass-card p-6 md:p-8 rounded-xl transition-all duration-300 hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] group"
