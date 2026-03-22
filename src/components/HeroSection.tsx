@@ -209,8 +209,8 @@ const HeroSection = () => {
           </motion.div>
 
           <TextReveal as="h1" className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]" delay={0.15}>
-            We Don't Just Build Websites. We Architect{" "}
-            <span className="glow-text">Financial Growth Engines.</span>
+             We Don't Just Design Websites. We Architect the Systems That{" "}
+             <span className="glow-text">Grow Your Business.</span>
           </TextReveal>
 
           <TextReveal as="p" className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto" delay={0.3}>
