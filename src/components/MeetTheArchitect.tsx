@@ -9,9 +9,9 @@ const MeetTheArchitect = () => {
     <section
       className="section-padding"
       style={{
-        backgroundColor: "#1E2329",
-        borderTop: "1px solid #2A2A2A",
-        borderBottom: "1px solid #2A2A2A",
+        backgroundColor: "#15191E",
+        borderTop: "1px solid rgba(45, 55, 72, 0.6)",
+        borderBottom: "1px solid rgba(45, 55, 72, 0.6)",
       }}
     >
       <div className="max-w-7xl mx-auto">
