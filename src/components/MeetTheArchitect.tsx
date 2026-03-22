@@ -62,26 +62,24 @@ const MeetTheArchitect = () => {
           {/* Right: Copy */}
           <div
             ref={textBlock.ref}
-            className={`${
+            className={`relative z-10 flex flex-col ${
               textBlock.isVisible ? "scroll-visible-right" : "scroll-hidden-right"
             }`}
+            style={{ display: "flex" }}
           >
             <span className="inline-block glow-text text-xs font-bold tracking-widest uppercase stagger-child stagger-1">
               Lead Architect
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mt-6 stagger-child stagger-2">
-              Strategy First. Architecture Second.
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight leading-tight mt-6 stagger-child stagger-2" style={{ color: "#FFFFFF" }}>
+              Meet the Visionary Behind Your Blueprint
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg leading-[1.85] max-w-2xl mt-6 stagger-child stagger-3">
-              I'm Ivan—a Web Solutions Architect dedicated to helping businesses
-              in the Pembina Valley scale through high-performance digital
-              engineering. I don't just build websites; I design conversion
-              systems that turn local browsers into loyal partners. My approach
-              combines deep technical architecture with the psychology of
-              storytelling to ensure your brand doesn't just look premium—it
-              performs at a premium level.
+            <p className="text-base md:text-lg leading-[1.85] max-w-2xl mt-6 stagger-child stagger-3" style={{ display: "block", color: "rgba(255,255,255,0.85)" }}>
+              Our architectural approach isn't a fit for every business. It is
+              designed specifically for the established owner who is ready to
+              move past temporary fixes and build a digital foundation capable
+              of supporting their multi-million dollar vision.
             </p>
-            <p className="text-muted-foreground/60 text-sm italic mt-6 stagger-child stagger-4">
+            <p className="text-sm italic mt-6 stagger-child stagger-4" style={{ display: "block", color: "rgba(255,255,255,0.5)" }}>
               Based in Altona, MB. Serving the Southern Manitoba business community.
             </p>
           </div>
