@@ -55,7 +55,7 @@ const PricingCard = ({
       className={`glass-card-hover p-6 md:p-8 flex flex-col relative ${
         plan.bestValue ? "glow-border-strong" : ""
       } ${isVisible ? "scroll-visible" : "scroll-hidden"}`}
-      style={{ transitionDelay: `${index * 150}ms` }}
+      style={{ transitionDelay: `${index * 100}ms` }}
     >
       {plan.bestValue && (
         <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground border-none shadow-[var(--shadow-glow-sm)] px-4 py-1">
