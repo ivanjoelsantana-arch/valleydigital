@@ -12,8 +12,9 @@ const sections = [
     paragraphs: [
       "Most business owners start in the same place: You know you need a digital presence, so you try the DIY route. You spend late nights fighting with a website builder template, dragging boxes around, and trying to make it look \"professional.\"",
       <span key="trap-italic" className="italic font-semibold text-foreground">
-        But here's the reality: A pretty website is just a digital brochure.
-        It's a storefront in the middle of a desert.
+        But here's the reality: A pretty website is just a digital layer of paint.
+        It can't hide a weak structure, and it certainly won't support the weight
+        of a growing business.
       </span>,
     ],
   },
@@ -26,7 +27,13 @@ const sections = [
       </>
     ),
     paragraphs: [
-      "DIY builders give you a \"skin,\" but they don't give you a nervous system. They are often bloated with messy code that slows your site down, confusing layouts that frustrate your customers, and zero strategy for how to actually turn a visitor into a lead.",
+      <>
+        DIY builders give you a "skin," but they don't give you a functional
+        foundation. They are often bloated with messy code that slows your site
+        down, confusing layouts that frustrate your customers, and zero strategy
+        for how to actually{" "}
+        <span className="lead-highlight">turn a visitor into a lead</span>.
+      </>,
       <span key="prob-bold" className="font-semibold text-foreground">
         Standard designers build for the eyes. We architect for the bottom line.
       </span>,
@@ -54,33 +61,7 @@ const sections = [
       </>,
     ],
   },
-  {
-    label: "The Investment",
-    heading: (
-      <>
-        An Investment in <span className="glow-text">Growth</span>, Not a
-        Monthly Expense
-      </>
-    ),
-    paragraphs: [
-      "When you work with Valley Digital Architecture, you aren't paying for \"a website.\" You are investing in a high-performance business asset.",
-      <>
-        A DIY site is a liability that you have to constantly fix and manage.
-        <br />
-        <span className="font-semibold text-foreground">
-          Digital Architecture
-        </span>{" "}
-        is an investment designed to scale your business while you sleep.
-      </>,
-      <span key="inv-bold" className="font-semibold text-foreground">
-        Our $6,500+ engagements aren't for everyone. They are for the business
-        owner who is done playing small and is ready for a digital foundation
-        that can actually support a multi-million dollar vision.
-      </span>,
-    ],
-  },
 ];
-
 const NarrativeBlock = ({
   section,
   index,
