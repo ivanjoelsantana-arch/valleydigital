@@ -77,11 +77,6 @@ const sections = [
         </span>{" "}
         is an investment designed to scale your business while you sleep.
       </>,
-      <span key="inv-bold" className="font-semibold text-foreground">
-        Our $6,500+ engagements aren't for everyone. They are for the business
-        owner who is done playing small and is ready for a digital foundation
-        that can actually support a multi-million dollar vision.
-      </span>,
     ],
   },
 ];
