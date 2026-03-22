@@ -110,7 +110,7 @@ const LocalPricingSection = () => {
           </TextReveal>
         </BlueprintReveal>
 
-        <div className="grid md:grid-cols-3 gap-4 items-end">
+        <div className="grid md:grid-cols-3 gap-4 items-stretch">
           {pricingPlans.map((plan, i) => (
             <PricingCard key={plan.title} plan={plan} index={i} />
           ))}
