@@ -1,6 +1,6 @@
 import { Palette, PenTool, Hexagon } from "lucide-react";
 import BlueprintReveal from "./motion/BlueprintReveal";
-import LiquidReveal from "./motion/LiquidReveal";
+import ParticleAssembly from "./motion/ParticleAssembly";
 import TextReveal from "./motion/TextReveal";
 
 const pillars = [
