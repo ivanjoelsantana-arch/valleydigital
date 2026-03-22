@@ -1,4 +1,5 @@
 import ivanHeadshot from "@/assets/ivan-headshot.png";
+import logo from "@/assets/logo.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const MeetTheArchitect = () => {
@@ -14,8 +15,24 @@ const MeetTheArchitect = () => {
         borderBottom: "1px solid rgba(45, 55, 72, 0.6)",
       }}
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="max-w-7xl mx-auto relative">
+        {/* Faded background logo watermark */}
+        <div
+          className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1]"
+          aria-hidden="true"
+        >
+          <img
+            src={logo}
+            alt=""
+            className="h-[60%] w-auto max-h-[60%] object-contain"
+            style={{
+              opacity: 0.04,
+              mixBlendMode: "screen",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
           {/* Left: Headshot */}
           <div
             ref={headshot.ref}
