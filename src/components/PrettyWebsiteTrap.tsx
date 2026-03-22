@@ -175,7 +175,7 @@ const PrettyWebsiteTrap = () => {
         </div>
 
         {/* Narrative blocks */}
-        <div className="space-y-16 md:space-y-20">
+        <div className="space-y-[100px] md:space-y-[150px]">
           {sections.map((section, i) => (
             <NarrativeBlock key={i} section={section} index={i} />
           ))}
