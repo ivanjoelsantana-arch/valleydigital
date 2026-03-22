@@ -70,7 +70,7 @@ const sections = [
     paragraphs: [
       "When you work with Valley Digital Architecture, you aren't paying for \"a website.\" You are investing in a high-performance business asset.",
       <>
-        A DIY site is a liability that you have to constantly fix and manage.
+        A poorly converting DIY site is a liability.
         <br />
         <span className="font-semibold text-foreground">
           Digital Architecture
