@@ -63,8 +63,8 @@ const sections = [
     label: "The Investment",
     heading: (
       <>
-        An Investment in <span className="glow-text">Growth</span>, Not a
-        Monthly Expense
+        An investment designed to scale your business{" "}
+        <span className="glow-text">while you sleep.</span>
       </>
     ),
     paragraphs: [
