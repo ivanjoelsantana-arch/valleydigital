@@ -8,14 +8,6 @@ const MeetTheArchitect = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
 
-  // Parallax for watermark logo
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const logoY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const logoRotate = useTransform(scrollYProgress, [0, 1], [0, 8]);
-
   return (
     <section
       ref={sectionRef}
