@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { type ReactNode } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef, type ReactNode } from "react";
 
 interface SpringCardProps {
   children: ReactNode;
@@ -8,32 +8,28 @@ interface SpringCardProps {
   index?: number;
 }
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 70,
-      damping: 15,
-      delay: i * 0.15,
-    },
-  }),
-};
-
-/** Card that fades + slides up with spring physics, triggered by viewport */
+/** Card that springs in from the bottom-right with stagger */
 const SpringCard = ({ children, className, style, index = 0 }: SpringCardProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-8%" });
+
   return (
     <motion.div
+      ref={ref}
       className={className}
       style={style}
-      layout
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      custom={index}
+      initial={{ opacity: 0, x: 60, y: 80 }}
+      animate={
+        isInView
+          ? { opacity: 1, x: 0, y: 0 }
+          : { opacity: 0, x: 60, y: 80 }
+      }
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        delay: index * 0.15,
+      }}
     >
       {children}
     </motion.div>
