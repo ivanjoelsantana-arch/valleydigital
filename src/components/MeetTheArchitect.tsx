@@ -34,11 +34,11 @@ const MeetTheArchitect = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
-          {/* Left: Headshot */}
+        <div className="grid md:grid-cols-[2fr_3fr] gap-12 md:gap-16 items-center">
+          {/* Left Column (40%): Headshot */}
           <div
             ref={headshot.ref}
-            className={`flex justify-center md:justify-start ${
+            className={`flex justify-center ${
               headshot.isVisible ? "scroll-visible-scale" : "scroll-hidden-scale"
             }`}
           >
@@ -59,10 +59,10 @@ const MeetTheArchitect = () => {
             </div>
           </div>
 
-          {/* Right: Copy */}
+          {/* Right Column (60%): Copy */}
           <div
             ref={textBlock.ref}
-            className={`${
+            className={`text-left ${
               textBlock.isVisible ? "scroll-visible-right" : "scroll-hidden-right"
             }`}
           >
@@ -71,7 +71,7 @@ const MeetTheArchitect = () => {
             </h2>
             <h3
               className="text-lg md:text-xl font-semibold mt-4 stagger-child stagger-2"
-              style={{ color: "rgba(45, 55, 72, 1)" }}
+              style={{ color: "#2D3748" }}
             >
               Meet the Visionary Behind Your Blueprint
             </h3>
@@ -80,8 +80,8 @@ const MeetTheArchitect = () => {
               designed specifically for the established owner who is ready to
               move past temporary fixes and{" "}
               <span className="text-foreground font-semibold">
-                build a digital foundation capable of supporting their next
-                stage of scale.
+                build a digital foundation capable of supporting their
+                multi-million dollar vision.
               </span>
             </p>
             <p className="text-muted-foreground/60 text-sm italic mt-6 stagger-child stagger-4">
