@@ -29,8 +29,10 @@ const COLORS = [
 ];
 
 function easeOut(t: number): number {
+  // Power Out curve: [0.16, 1, 0.3, 1]
+  const p1x = 0.16, p1y = 1, p2x = 0.3, p2y = 1;
   const t2 = 1 - t;
-  return 3 * t2 * t2 * t * 1 + 3 * t2 * t * t * 1 + t * t * t * 1;
+  return 3 * t2 * t2 * t * p1y + 3 * t2 * t * t * p2y + t * t * t * 1;
 }
 
 const ParticleAssembly = ({ children, className, index = 0 }: ParticleAssemblyProps) => {
