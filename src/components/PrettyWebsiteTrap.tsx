@@ -12,8 +12,9 @@ const sections = [
     paragraphs: [
       "Most business owners start in the same place: You know you need a digital presence, so you try the DIY route. You spend late nights fighting with a website builder template, dragging boxes around, and trying to make it look \"professional.\"",
       <span key="trap-italic" className="italic font-semibold text-foreground">
-        But here's the reality: A pretty website is just a digital brochure.
-        It's a storefront in the middle of a desert.
+        But here's the reality: A pretty website is just a digital layer of paint.
+        It can't hide a weak structure, and it certainly won't support the weight
+        of a growing business.
       </span>,
     ],
   },
