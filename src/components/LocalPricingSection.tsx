@@ -1,6 +1,9 @@
 import { Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import SpringCard from "./motion/SpringCard";
+import GradientBorderCard from "./motion/GradientBorderCard";
+import BlueprintReveal from "./motion/BlueprintReveal";
+import TextReveal from "./motion/TextReveal";
 
 const pricingPlans = [
   {
@@ -47,74 +50,64 @@ const PricingCard = ({
   plan: (typeof pricingPlans)[0];
   index: number;
 }) => {
-  const { ref, isVisible } = useScrollReveal();
-
   return (
-    <div
-      ref={ref}
-      className={`glass-card-hover p-6 md:p-8 flex flex-col relative ${
-        plan.bestValue ? "glow-border-strong" : ""
-      } ${isVisible ? "scroll-visible" : "scroll-hidden"}`}
-      style={{ transitionDelay: `${index * 100}ms` }}
-    >
-      {plan.bestValue && (
-        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground border-none shadow-[var(--shadow-glow-sm)] px-4 py-1">
-          Best Value
-        </Badge>
-      )}
+    <SpringCard index={index}>
+      <GradientBorderCard
+        active={plan.bestValue}
+        className={`p-6 md:p-8 flex flex-col relative ${plan.bestValue ? "" : ""}`}
+      >
+        {plan.bestValue && (
+          <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground border-none shadow-[var(--shadow-glow-sm)] px-4 py-1 z-10">
+            Best Value
+          </Badge>
+        )}
 
-      <h3 className="text-xl font-bold text-foreground mb-6">{plan.title}</h3>
+        <h3 className="text-xl font-bold text-foreground mb-6">{plan.title}</h3>
 
-      <div className="mb-2">
-        <span className="text-sm text-muted-foreground">Standard Rate</span>
-        <p className="text-2xl font-bold text-muted-foreground line-through">
-          {plan.standardRate}
-        </p>
-      </div>
+        <div className="mb-2">
+          <span className="text-sm text-muted-foreground">Standard Rate</span>
+          <p className="text-2xl font-bold text-muted-foreground line-through">
+            {plan.standardRate}
+          </p>
+        </div>
 
-      <div className="mb-8">
-        <span className="text-sm text-muted-foreground">Local Partner Rate</span>
-        <p className="text-3xl font-extrabold glow-text">{plan.localRate}</p>
-      </div>
+        <div className="mb-8">
+          <span className="text-sm text-muted-foreground">Local Partner Rate</span>
+          <p className="text-3xl font-extrabold glow-text">{plan.localRate}</p>
+        </div>
 
-      <ul className="space-y-3 mb-8 flex-1">
-        {plan.bullets.map((bullet) => (
-          <li
-            key={bullet}
-            className="flex items-start gap-3 text-sm text-secondary-foreground"
-          >
-            <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-            {bullet}
-          </li>
-        ))}
-      </ul>
+        <ul className="space-y-3 mb-8 flex-1">
+          {plan.bullets.map((bullet) => (
+            <li
+              key={bullet}
+              className="flex items-start gap-3 text-sm text-secondary-foreground"
+            >
+              <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+              {bullet}
+            </li>
+          ))}
+        </ul>
 
-      <button className="btn-primary-glow w-full text-center">
-        Start Your Build
-      </button>
-    </div>
+        <button className="btn-primary-glow btn-hover-lift w-full text-center">
+          Start Your Build
+        </button>
+      </GradientBorderCard>
+    </SpringCard>
   );
 };
 
 const LocalPricingSection = () => {
-  const header = useScrollReveal();
-
   return (
     <section id="pricing" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div
-          ref={header.ref}
-          className={`text-center mb-16 ${
-            header.isVisible ? "scroll-visible" : "scroll-hidden"
-          }`}
-        >
+        <BlueprintReveal className="text-center mb-16">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
             Pricing
           </p>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground">
+          <TextReveal as="h2" className="text-3xl md:text-5xl font-black tracking-tight text-foreground" delay={0.2}>
             Local Partner <span className="glow-text">Pricing</span>
-          </h2>
-        </div>
+          </TextReveal>
+        </BlueprintReveal>
 
         <div className="grid md:grid-cols-3 gap-4">
           {pricingPlans.map((plan, i) => (

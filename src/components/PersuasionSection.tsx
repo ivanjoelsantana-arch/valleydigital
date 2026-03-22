@@ -1,39 +1,27 @@
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import BlueprintReveal from "./motion/BlueprintReveal";
+import TextReveal from "./motion/TextReveal";
 
 const PersuasionSection = () => {
-  const header = useScrollReveal();
-  const card = useScrollReveal();
-
   return (
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div
-          ref={header.ref}
-          className={`text-center mb-16 ${
-            header.isVisible ? "scroll-visible" : "scroll-hidden"
-          }`}
-        >
+        <BlueprintReveal className="text-center mb-16">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
             Strategy
           </p>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground">
+          <TextReveal as="h2" className="text-3xl md:text-5xl font-black tracking-tight text-foreground" delay={0.2}>
             The Architecture of <span className="glow-text">Persuasion</span>
-          </h2>
-        </div>
+          </TextReveal>
+        </BlueprintReveal>
 
-        <div
-          ref={card.ref}
-          className={`glass-card p-8 md:p-12 lg:p-16 glow-border ${
-            card.isVisible ? "scroll-visible" : "scroll-hidden"
-          }`}
-        >
+        <BlueprintReveal className="glass-card p-8 md:p-12 lg:p-16 glow-border" delay={0.2}>
           <div className="grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-0 items-center">
             <div className="md:pr-12">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-foreground">
+              <TextReveal as="h3" className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-foreground" delay={0.4}>
                 Design Captures Attention.
                 <br />
                 <span className="glow-text">Storytelling</span> Captures the Sale.
-              </h3>
+              </TextReveal>
             </div>
 
             <div className="hidden md:flex justify-center">
@@ -64,7 +52,7 @@ const PersuasionSection = () => {
               </p>
             </div>
           </div>
-        </div>
+        </BlueprintReveal>
       </div>
     </section>
   );

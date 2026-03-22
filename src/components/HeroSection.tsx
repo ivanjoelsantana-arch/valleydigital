@@ -1,5 +1,8 @@
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { Globe, Code2, BarChart3, Zap, Shield, BoltIcon, X } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import TextReveal from "./motion/TextReveal";
+import LetterSpacingReveal from "./motion/LetterSpacingReveal";
 
 const ribbonItems = [
   {
@@ -72,7 +75,6 @@ const PerformanceRibbon = () => {
   const [litSegments, setLitSegments] = useState<boolean[]>([false, false, false]);
   const ribbonRef = useRef<HTMLDivElement>(null);
 
-  // Center-scroll on mobile on mount (synchronous to avoid visible jump)
   useLayoutEffect(() => {
     const el = ribbonRef.current;
     if (!el) return;
@@ -110,7 +112,6 @@ const PerformanceRibbon = () => {
   return (
     <>
       <div className="w-full md:w-[95%] lg:max-w-3xl mx-auto relative p-[10px] overflow-visible">
-        {/* Scroll indicators for mobile only (hidden on tablet+) */}
         <div className="pointer-events-none absolute left-[10px] top-[10px] bottom-[10px] w-6 z-10 bg-gradient-to-r from-background/80 to-transparent md:hidden" />
         <div className="pointer-events-none absolute right-[10px] top-[10px] bottom-[10px] w-6 z-10 bg-gradient-to-l from-background/80 to-transparent md:hidden" />
         <div className="glass-card glow-border relative overflow-visible">
@@ -190,26 +191,40 @@ const bentoItems = [
 ];
 
 const HeroSection = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <section className="flex flex-col justify-center section-padding pt-32 py-[100px]">
-      <div className="max-w-7xl mx-auto w-full">
+      <div ref={ref} className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-12 space-y-6">
-          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-xs text-muted-foreground mb-4 scroll-hidden scroll-visible">
+          <motion.div
+            className="inline-flex items-center gap-2 glass-card px-4 py-2 text-xs text-muted-foreground mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
             Accepting Q2 2026 engagements
-          </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]">
+          </motion.div>
+
+          <TextReveal as="h1" className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]" delay={0.15}>
             Architecting <span className="glow-text">Scale</span>,<br />
             Not Just Websites.
-          </h1>
-          <p
-            className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto"
-            style={{ lineHeight: 1.7 }}
-          >
+          </TextReveal>
+
+          <TextReveal as="p" className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto" delay={0.3}>
             A stunning website without masterful copy is a building without a
             foundation. We engineer both.
-          </p>
-          <PerformanceRibbon />
+          </TextReveal>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+          >
+            <PerformanceRibbon />
+          </motion.div>
         </div>
       </div>
     </section>

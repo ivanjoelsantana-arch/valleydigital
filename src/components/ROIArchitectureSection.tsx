@@ -1,4 +1,8 @@
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import BlueprintReveal from "./motion/BlueprintReveal";
+import TextReveal from "./motion/TextReveal";
+import SpringCard from "./motion/SpringCard";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const valueProps = [
   {
@@ -18,79 +22,59 @@ const valueProps = [
   },
 ];
 
-const ROICard = ({
-  item,
-  index,
-}: {
-  item: (typeof valueProps)[0];
-  index: number;
-}) => {
-  const { ref, isVisible } = useScrollReveal();
-
-  return (
-    <div
-      ref={ref}
-      className={`glass-card p-6 md:p-8 rounded-xl transition-all duration-300 hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] group ${
-        isVisible ? "scroll-visible" : "scroll-hidden"
-      }`}
-      style={{ transitionDelay: `${index * 100}ms` }}
-    >
-      <div className="flex gap-5">
-        <span className="glow-text text-2xl md:text-3xl font-black shrink-0">
-          {item.num}
-        </span>
-        <div>
-          <h4 className="text-lg md:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-            {item.title}
-          </h4>
-          <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-            {item.desc}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const ROIArchitectureSection = () => {
-  const header = useScrollReveal();
-  const headline = useScrollReveal();
+  const headlineRef = useRef<HTMLDivElement>(null);
+  const headlineInView = useInView(headlineRef, { once: true, margin: "-10%" });
 
   return (
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div
-          ref={header.ref}
-          className={`text-center mb-16 ${
-            header.isVisible ? "scroll-visible" : "scroll-hidden"
-          }`}
-        >
+        <BlueprintReveal className="text-center mb-16">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
             Value
           </p>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground">
+          <TextReveal as="h2" className="text-3xl md:text-5xl font-black tracking-tight text-foreground" delay={0.2}>
             The ROI of High-Performance{" "}
             <span className="glow-text">Architecture</span>
-          </h2>
-        </div>
+          </TextReveal>
+        </BlueprintReveal>
 
         <div className="grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16 items-start">
-          <div
-            ref={headline.ref}
-            className={`md:sticky md:top-32 ${
-              headline.isVisible ? "scroll-visible" : "scroll-hidden"
-            }`}
+          <motion.div
+            ref={headlineRef}
+            className="md:sticky md:top-32"
+            initial={{ opacity: 0, y: 30 }}
+            animate={headlineInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-foreground">
               A Strategic Investment,
               <br />
               Not a Digital <span className="glow-text">Expense.</span>
             </h3>
-          </div>
+          </motion.div>
 
           <div className="space-y-4">
             {valueProps.map((item, i) => (
-              <ROICard key={item.num} item={item} index={i} />
+              <SpringCard
+                key={item.num}
+                index={i}
+                className="glass-card p-6 md:p-8 rounded-xl transition-all duration-300 hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] group"
+              >
+                <div className="flex gap-5">
+                  <span className="glow-text text-2xl md:text-3xl font-black shrink-0">
+                    {item.num}
+                  </span>
+                  <div>
+                    <h4 className="text-lg md:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h4>
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              </SpringCard>
             ))}
 
             <div className="flex flex-col items-center md:items-start gap-4 pt-4">

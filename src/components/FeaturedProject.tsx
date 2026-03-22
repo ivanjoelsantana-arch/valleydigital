@@ -1,20 +1,18 @@
 import { ExternalLink } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import BlueprintReveal from "./motion/BlueprintReveal";
+import TextReveal from "./motion/TextReveal";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import screenshot from "@/assets/featured-project-afte.png";
 
 const FeaturedProject = () => {
-  const container = useScrollReveal();
-  const copy = useScrollReveal();
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
     <section className="px-6 md:px-12 lg:px-20 pt-10 md:pt-12 pb-20 md:pb-28">
-      <div className="max-w-7xl mx-auto">
-        <div
-          ref={container.ref}
-          className={`glass-card glow-border p-6 md:p-10 lg:p-14 ${
-            container.isVisible ? "scroll-visible" : "scroll-hidden"
-          }`}
-        >
+      <div className="max-w-7xl mx-auto" ref={ref}>
+        <BlueprintReveal className="glass-card glow-border p-6 md:p-10 lg:p-14">
           <div className="grid md:grid-cols-[1.5fr_1fr] gap-8 md:gap-12 items-center">
             {/* Left: Screenshot */}
             <div className="relative group">
@@ -30,26 +28,27 @@ const FeaturedProject = () => {
                   src={screenshot}
                   alt="A Furry Tail Ending — Featured project by Valley Digital Architecture"
                   className="w-full h-auto block transition-[filter] duration-500 grayscale group-hover:grayscale-0"
+                  loading="lazy"
                 />
               </div>
             </div>
 
             {/* Right: Copy */}
-            <div
-              ref={copy.ref}
-              className={`space-y-5 ${
-                copy.isVisible ? "scroll-visible-right" : "scroll-hidden-right"
-              }`}
+            <motion.div
+              className="space-y-5"
+              initial={{ opacity: 0, x: 40 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
             >
               <div>
                 <p className="text-primary text-xs font-semibold tracking-wider uppercase mb-2">
                   Case Study
                 </p>
-                <h3 className="text-2xl md:text-3xl font-black tracking-tight text-foreground leading-tight">
+                <TextReveal as="h3" className="text-2xl md:text-3xl font-black tracking-tight text-foreground leading-tight" delay={0.4}>
                   Featured Infrastructure:
                   <br />
                   <span className="glow-text">A Furry Tail Ending</span>
-                </h3>
+                </TextReveal>
                 <p className="text-muted-foreground text-sm font-medium mt-1">
                   Modernizing Local Service Architecture
                 </p>
@@ -72,15 +71,15 @@ const FeaturedProject = () => {
                   href="https://afurrytailending.lovable.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary border border-primary/40 rounded-lg px-5 py-2.5 transition-all duration-300 hover:bg-primary/10 hover:border-primary/60 hover:shadow-[var(--shadow-glow-sm)]"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary border border-primary/40 rounded-lg px-5 py-2.5 btn-hover-lift"
                 >
                   View Live Architecture
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </BlueprintReveal>
       </div>
     </section>
   );
