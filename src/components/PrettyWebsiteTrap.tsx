@@ -39,28 +39,6 @@ const sections = [
       </span>,
     ],
   },
-  {
-    label: "The Craft",
-    heading: (
-      <>
-        The Silent Power of{" "}
-        <span className="glow-text">Expert Copywriting</span>
-      </>
-    ),
-    paragraphs: [
-      "You could have the most beautiful site in Manitoba, but if the words don't resonate, your visitors will leave in seconds.",
-      <>
-        <span className="font-semibold text-foreground">The Problem:</span> Most
-        sites talk at the customer about "Me, Me, Me."
-      </>,
-      <>
-        <span className="font-semibold text-foreground">The Architecture:</span>{" "}
-        We craft copy that speaks directly to your customer's pain points and
-        positions your business as the only logical solution. Every word is
-        engineered to build trust and drive action.
-      </>,
-    ],
-  },
 ];
 const NarrativeBlock = ({
   section,
