@@ -81,6 +81,14 @@ const sections = [
   },
 ];
 
+// Layout config per section index for Z-pattern stagger
+const layoutConfig: Record<number, { align: string; width: string }> = {
+  0: { align: "mx-auto text-center", width: "max-w-3xl" },          // The Trap — centered
+  1: { align: "mr-auto text-left", width: "max-w-[60%]" },          // The Problem — left
+  2: { align: "ml-auto text-right", width: "max-w-[60%]" },         // The Craft — right
+  3: { align: "mx-auto text-center", width: "max-w-3xl" },          // The Investment — centered anchor
+};
+
 const NarrativeBlock = ({
   section,
   index,
@@ -89,11 +97,12 @@ const NarrativeBlock = ({
   index: number;
 }) => {
   const reveal = useScrollReveal();
+  const layout = layoutConfig[index] ?? layoutConfig[0];
 
   return (
     <div
       ref={reveal.ref}
-      className={`${reveal.isVisible ? "scroll-visible" : "scroll-hidden"}`}
+      className={`${layout.align} ${layout.width} ${reveal.isVisible ? "scroll-visible" : "scroll-hidden"}`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
       {/* Divider */}
@@ -146,7 +155,7 @@ const PrettyWebsiteTrap = () => {
         />
       </div>
 
-      <div className="relative max-w-3xl mx-auto">
+      <div className="relative max-w-5xl mx-auto">
         {/* Section header */}
         <div
           ref={header.ref}
@@ -166,7 +175,7 @@ const PrettyWebsiteTrap = () => {
         </div>
 
         {/* Narrative blocks */}
-        <div className="space-y-16 md:space-y-20">
+        <div className="space-y-[100px] md:space-y-[150px]">
           {sections.map((section, i) => (
             <NarrativeBlock key={i} section={section} index={i} />
           ))}
