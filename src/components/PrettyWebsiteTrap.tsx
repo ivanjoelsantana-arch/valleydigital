@@ -93,25 +93,25 @@ const NarrativeBlock = ({
   return (
     <div
       ref={reveal.ref}
-      className={`${reveal.isVisible ? "scroll-visible" : "scroll-hidden"}`}
+      className={`blueprint-line ${reveal.isVisible ? "scroll-visible" : "scroll-hidden"}`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
       {/* Divider */}
       {index > 0 && (
-        <div className="flex items-center gap-4 mb-12">
+        <div className="flex items-center gap-4 mb-12 pt-8">
           <span className="flex-1 h-px bg-border/50" />
-          <span className="text-primary text-xs font-medium tracking-widest uppercase">
+          <span className="text-primary text-xs font-medium tracking-widest uppercase stagger-child stagger-1">
             {section.label}
           </span>
           <span className="flex-1 h-px bg-border/50" />
         </div>
       )}
 
-      <h3 className="font-sans text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-foreground mb-6">
+      <h3 className="font-sans text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-foreground mb-6 stagger-child stagger-2">
         {section.heading}
       </h3>
 
-      <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed" style={{ lineHeight: 1.85 }}>
+      <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed stagger-child stagger-3" style={{ lineHeight: 1.85 }}>
         {section.paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}

@@ -12,16 +12,16 @@ const FinalCTA = () => {
             isVisible ? "scroll-visible" : "scroll-hidden"
           }`}
         >
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground mb-4 stagger-child stagger-1">
             Ready to Architect Your{" "}
             <span className="glow-text">Growth</span>?
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl mb-10 max-w-xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl mb-10 max-w-xl mx-auto stagger-child stagger-2">
             Limited Local Partner spots available for Q2 2026.
           </p>
           <a
             href="#pricing"
-            className="btn-primary-glow text-base md:text-lg px-10 py-4 inline-block"
+            className="btn-primary-glow text-base md:text-lg px-10 py-4 inline-block stagger-child stagger-3"
           >
             Start Your Build
           </a>
