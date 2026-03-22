@@ -181,11 +181,12 @@ const PrettyWebsiteTrap = () => {
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto" style={{ lineHeight: 1.7 }}>
             To the Business Owner who is tired of "good enough" digital presence:
-            Most websites are built to look pretty; mine are built to perform. I
-            don't see your business as a "project"—I see it as a partnership.
-            Investing in Valley Digital isn't about buying a website; it's about
-            installing a 24/7 sales architect into your business model. We are
-            your trusted partner in seeing your growth through to the end.
+            Most websites are built to look pretty; ours are built to convert
+            visitors into paying clients. We don't see your business as a
+            "project"—We see it as a partnership. Investing in Valley Digital
+            Architecture isn't about buying a website; it's about installing a
+            24/7 sales expert into your business model. We are your trusted
+            partner in seeing your growth through to the end.
           </p>
         </FluidDrift>
 
