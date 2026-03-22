@@ -176,7 +176,7 @@ const LocalPricingSection = () => {
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
             Pricing
           </p>
-          <TextReveal as="h2" className="text-3xl md:text-5xl font-black tracking-tight text-foreground" delay={0.2}>
+          <TextReveal as="h2" className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight pb-1" delay={0.2}>
             Local Partner <span className="glow-text">Pricing</span>
           </TextReveal>
         </BlueprintReveal>
