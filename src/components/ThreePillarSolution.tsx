@@ -43,7 +43,7 @@ const ThreePillarSolution = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {pillars.map((pillar, i) => (
-            <LiquidReveal
+            <ParticleAssembly
               key={pillar.title}
               index={i}
               className="glass-card p-8 md:p-10 text-center group hover:border-primary/40 hover:shadow-[var(--shadow-glow-sm)] transition-all duration-300"
