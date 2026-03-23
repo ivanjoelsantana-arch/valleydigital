@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const fieldClasses =
   "w-full bg-transparent border border-border/60 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/30 transition-colors text-sm";
@@ -9,7 +11,9 @@ const fieldClasses =
 const labelClasses = "block text-sm font-medium text-muted-foreground mb-2";
 
 const Discovery = () => {
+  const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     name: "",
     business: "",
@@ -20,13 +24,51 @@ const Discovery = () => {
     vision: "",
   });
 
+  useEffect(() => {
+    const service = searchParams.get("service");
+    if (service && ["web-copy", "logo", "rebrand"].includes(service)) {
+      setForm((f) => ({ ...f, service }));
+    }
+  }, [searchParams]);
+
   const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [field]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setSubmitting(true);
+
+    try {
+      const { error } = await supabase.from("project_inquiries").insert({
+        name: form.name.trim(),
+        business: form.business.trim(),
+        email: form.email.trim(),
+        service_interest: form.service || null,
+        current_status: form.status || null,
+        bottleneck: form.bottleneck.trim() || null,
+        vision: form.vision.trim() || null,
+      });
+
+      if (error) throw error;
+
+      // Trigger notification email
+      await supabase.functions.invoke("notify-inquiry", {
+        body: {
+          name: form.name.trim(),
+          business: form.business.trim(),
+          email: form.email.trim(),
+          service: form.service,
+        },
+      });
+
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      console.error("Submission error:", err);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -147,10 +189,11 @@ const Discovery = () => {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-lg font-bold text-base tracking-wide text-primary-foreground transition-all duration-300 hover:shadow-[var(--shadow-glow)]"
+                    disabled={submitting}
+                    className="w-full py-4 rounded-lg font-bold text-base tracking-wide text-primary-foreground transition-all duration-300 hover:shadow-[var(--shadow-glow)] disabled:opacity-50"
                     style={{ background: "var(--gradient-blue)" }}
                   >
-                    Request Your Discovery Call
+                    {submitting ? "Submitting..." : "Request Your Discovery Call"}
                   </button>
                 </div>
               </form>
