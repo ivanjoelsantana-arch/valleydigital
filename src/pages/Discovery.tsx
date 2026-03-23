@@ -12,12 +12,12 @@ const Discovery = () => {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: "",
-    email: "",
     business: "",
-    website: "",
-    goals: "",
-    budget: "",
-    timeline: "",
+    email: "",
+    service: "",
+    status: "",
+    bottleneck: "",
+    vision: "",
   });
 
   const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
@@ -74,22 +74,7 @@ const Discovery = () => {
                     />
                   </div>
                   <div>
-                    <label className={labelClasses}>Email *</label>
-                    <input
-                      type="email"
-                      required
-                      maxLength={255}
-                      placeholder="you@company.com"
-                      value={form.email}
-                      onChange={update("email")}
-                      className={fieldClasses}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className={labelClasses}>Business / Brand Name *</label>
+                    <label className={labelClasses}>Business Name *</label>
                     <input
                       type="text"
                       required
@@ -100,62 +85,72 @@ const Discovery = () => {
                       className={fieldClasses}
                     />
                   </div>
-                  <div>
-                    <label className={labelClasses}>Current Website</label>
-                    <input
-                      type="url"
-                      maxLength={255}
-                      placeholder="https://yoursite.com"
-                      value={form.website}
-                      onChange={update("website")}
-                      className={fieldClasses}
-                    />
-                  </div>
                 </div>
 
                 <div>
-                  <label className={labelClasses}>What are your primary growth goals? *</label>
-                  <textarea
+                  <label className={labelClasses}>Email Address *</label>
+                  <input
+                    type="email"
                     required
-                    maxLength={1000}
-                    rows={4}
-                    placeholder="Describe the outcomes you're looking for — more leads, higher-quality clients, brand repositioning, etc."
-                    value={form.goals}
-                    onChange={update("goals")}
-                    className={`${fieldClasses} resize-none`}
+                    maxLength={255}
+                    placeholder="you@company.com"
+                    value={form.email}
+                    onChange={update("email")}
+                    className={fieldClasses}
                   />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className={labelClasses}>Investment Range</label>
-                    <select value={form.budget} onChange={update("budget")} className={fieldClasses}>
-                      <option value="" className="bg-card">Select a range</option>
-                      <option value="3k-5k" className="bg-card">$3,000 – $5,000</option>
-                      <option value="5k-10k" className="bg-card">$5,000 – $10,000</option>
-                      <option value="10k-20k" className="bg-card">$10,000 – $20,000</option>
-                      <option value="20k+" className="bg-card">$20,000+</option>
+                    <label className={labelClasses}>Service Interest</label>
+                    <select value={form.service} onChange={update("service")} className={fieldClasses}>
+                      <option value="" className="bg-card">Select a service</option>
+                      <option value="web-copy" className="bg-card">Web + Copy Overhaul</option>
+                      <option value="logo" className="bg-card">Professional Logo</option>
+                      <option value="rebrand" className="bg-card">The Complete Rebrand</option>
                     </select>
                   </div>
                   <div>
-                    <label className={labelClasses}>Ideal Timeline</label>
-                    <select value={form.timeline} onChange={update("timeline")} className={fieldClasses}>
-                      <option value="" className="bg-card">Select a timeline</option>
-                      <option value="asap" className="bg-card">As soon as possible</option>
-                      <option value="1-2months" className="bg-card">1–2 months</option>
-                      <option value="3-6months" className="bg-card">3–6 months</option>
-                      <option value="planning" className="bg-card">Just planning ahead</option>
+                    <label className={labelClasses}>Current Status</label>
+                    <select value={form.status} onChange={update("status")} className={fieldClasses}>
+                      <option value="" className="bg-card">Select your status</option>
+                      <option value="established" className="bg-card">Established Business looking to scale</option>
+                      <option value="new-venture" className="bg-card">New Venture building a foundation</option>
                     </select>
                   </div>
+                </div>
+
+                <div>
+                  <label className={labelClasses}>The Goal</label>
+                  <textarea
+                    maxLength={1000}
+                    rows={4}
+                    placeholder="What is the #1 bottleneck in your current digital presence?"
+                    value={form.bottleneck}
+                    onChange={update("bottleneck")}
+                    className={`${fieldClasses} resize-none`}
+                  />
+                </div>
+
+                <div>
+                  <label className={labelClasses}>The Vision</label>
+                  <textarea
+                    maxLength={1000}
+                    rows={4}
+                    placeholder="Where do you want your business to be in 12 months?"
+                    value={form.vision}
+                    onChange={update("vision")}
+                    className={`${fieldClasses} resize-none`}
+                  />
                 </div>
 
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-lg font-semibold text-sm tracking-wide text-primary-foreground transition-all duration-300 hover:shadow-[var(--shadow-glow)]"
+                    className="w-full py-4 rounded-lg font-bold text-base tracking-wide text-primary-foreground transition-all duration-300 hover:shadow-[var(--shadow-glow)]"
                     style={{ background: "var(--gradient-blue)" }}
                   >
-                    Submit Discovery Brief
+                    Request Your Discovery Call
                   </button>
                 </div>
               </form>
