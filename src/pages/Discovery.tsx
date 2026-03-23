@@ -31,6 +31,19 @@ const Discovery = () => {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    if (window.location.hash === "#discovery-section") {
+      setTimeout(() => {
+        const el = document.getElementById("discovery-section");
+        if (el) {
+          const navHeight = 80;
+          const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, []);
+
   const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [field]: e.target.value }));
 
