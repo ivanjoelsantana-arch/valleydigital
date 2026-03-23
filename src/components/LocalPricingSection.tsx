@@ -90,6 +90,12 @@ const PricingToggle = ({
   );
 };
 
+const serviceMap: Record<string, string> = {
+  "Web + Copy Overhaul": "web-copy",
+  "Professional Logo": "logo",
+  "The Complete Rebrand": "rebrand",
+};
+
 const PricingCard = ({
   plan,
   index,
@@ -99,6 +105,7 @@ const PricingCard = ({
   index: number;
   isMonthly: boolean;
 }) => {
+  const navigate = useNavigate();
   return (
     <SpringCard index={index} className="h-full">
       <div
