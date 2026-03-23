@@ -31,6 +31,19 @@ const Discovery = () => {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    if (window.location.hash === "#discovery-section") {
+      setTimeout(() => {
+        const el = document.getElementById("discovery-section");
+        if (el) {
+          const navHeight = 80;
+          const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, []);
+
   const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [field]: e.target.value }));
 
@@ -101,7 +114,7 @@ const Discovery = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="text-center mb-14">
+              <div id="discovery-section" className="text-center mb-14">
                 <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4">
                   The Discovery Phase:{" "}
                   <span className="glow-text">Architecting Your Future.</span>

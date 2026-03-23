@@ -174,7 +174,7 @@ const PricingCard = ({
 
         <div className="mt-auto pt-8">
           <button
-            onClick={() => navigate(`/discovery?service=${serviceMap[plan.title]}`)}
+            onClick={() => navigate(`/discovery?service=${serviceMap[plan.title]}#discovery-section`)}
             className="btn-primary-glow btn-hover-lift w-full text-center"
           >
             Start Your Build
