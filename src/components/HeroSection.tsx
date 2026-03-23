@@ -209,7 +209,8 @@ const HeroSection = () => {
           </motion.div>
 
           <TextReveal as="h1" className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]" delay={0.15}>
-             We Don't Just Design Websites. We Architect the Systems That{" "}
+             We Don't Just Design Websites. We Architect the Systems That
+             <br />
              <span className="glow-text">Grow Your Business.</span>
           </TextReveal>
 
