@@ -131,7 +131,9 @@ const AdminLeads = () => {
           className="w-full max-w-sm"
         >
           <h1 className="text-2xl font-black text-foreground text-center mb-2">Admin Access</h1>
-          <p className="text-muted-foreground text-sm text-center mb-8">Sign in to view project inquiries.</p>
+          <p className="text-muted-foreground text-sm text-center mb-8">
+            {isSignUp ? "Create your admin account." : "Sign in to view project inquiries."}
+          </p>
           <form onSubmit={handleLogin} className="space-y-4">
             <input
               type="email"
@@ -144,6 +146,7 @@ const AdminLeads = () => {
             <input
               type="password"
               required
+              minLength={6}
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -155,9 +158,15 @@ const AdminLeads = () => {
               className="w-full py-3 rounded-lg font-semibold text-sm text-primary-foreground transition-all hover:shadow-[var(--shadow-glow)] disabled:opacity-50"
               style={{ background: "var(--gradient-blue)" }}
             >
-              {authLoading ? "Signing in..." : "Sign In"}
+              {authLoading ? (isSignUp ? "Creating account..." : "Signing in...") : (isSignUp ? "Create Account" : "Sign In")}
             </button>
           </form>
+          <p className="text-center text-sm text-muted-foreground mt-4">
+            {isSignUp ? "Already have an account?" : "Need an account?"}{" "}
+            <button onClick={() => setIsSignUp(!isSignUp)} className="text-primary hover:underline">
+              {isSignUp ? "Sign in" : "Sign up"}
+            </button>
+          </p>
         </motion.div>
       </div>
     );
