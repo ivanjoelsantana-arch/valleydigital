@@ -77,14 +77,13 @@ const ROIArchitectureSection = () => {
               </FluidSlide>
             ))}
 
-            <div className="flex flex-col items-center md:items-start gap-4 pt-4">
+            <div className="flex flex-col items-center gap-4 pt-4">
               <div className="inline-flex items-center gap-2 glass-card px-4 py-2 glow-border text-xs text-muted-foreground">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
                 Featured Project: Digital Infrastructure for Southern Manitoba Service Providers
               </div>
-              <p className="text-center md:text-left text-muted-foreground text-sm italic">
-                Most of our partners see a full return on their investment within
-                the first 2–3 high-value client acquisitions.
+              <p className="text-center mt-8 italic" style={{ color: 'hsl(210, 14%, 60%)', opacity: 0.8, fontSize: '0.95rem' }}>
+                Our mission is to bridge the gap between where your business is today and the world-class digital presence your brand deserves.
               </p>
             </div>
           </div>
