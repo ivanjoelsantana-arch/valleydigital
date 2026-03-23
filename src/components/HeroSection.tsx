@@ -213,10 +213,9 @@ const HeroSection = () => {
              <span className="glow-text">Grow Your Business.</span>
           </TextReveal>
 
-          <TextReveal as="p" className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto" delay={0.3}>
+          <TextReveal as="p" className="text-muted-foreground text-xl md:text-2xl max-w-[800px] mx-auto opacity-90 leading-[1.6]" delay={0.3}>
             Most agencies deliver a digital brochure. We engineer a conversion-focused
-            infrastructure designed to attract your ideal clients and carry your
-            business to the finish line.
+            infrastructure designed to attract your ideal clients and drive your growth.
           </TextReveal>
 
           <motion.div
