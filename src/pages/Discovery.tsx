@@ -39,7 +39,9 @@ const Discovery = () => {
     setSubmitting(true);
 
     try {
+      const inquiryId = crypto.randomUUID();
       const { error } = await supabase.from("project_inquiries").insert({
+        id: inquiryId,
         name: form.name.trim(),
         business: form.business.trim(),
         email: form.email.trim(),
@@ -51,13 +53,20 @@ const Discovery = () => {
 
       if (error) throw error;
 
-      // Trigger notification email
-      await supabase.functions.invoke("notify-inquiry", {
+      // Trigger notification email to admin
+      await supabase.functions.invoke("send-transactional-email", {
         body: {
-          name: form.name.trim(),
-          business: form.business.trim(),
-          email: form.email.trim(),
-          service: form.service,
+          templateName: "new-inquiry-notification",
+          recipientEmail: "ivan@valleydigital.agency",
+          idempotencyKey: `inquiry-notify-${inquiryId}`,
+          templateData: {
+            name: form.name.trim(),
+            business: form.business.trim(),
+            email: form.email.trim(),
+            service: form.service,
+            bottleneck: form.bottleneck.trim() || "",
+            vision: form.vision.trim() || "",
+          },
         },
       });
 
