@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import SpringCard from "./motion/SpringCard";
@@ -89,6 +90,12 @@ const PricingToggle = ({
   );
 };
 
+const serviceMap: Record<string, string> = {
+  "Web + Copy Overhaul": "web-copy",
+  "Professional Logo": "logo",
+  "The Complete Rebrand": "rebrand",
+};
+
 const PricingCard = ({
   plan,
   index,
@@ -98,6 +105,7 @@ const PricingCard = ({
   index: number;
   isMonthly: boolean;
 }) => {
+  const navigate = useNavigate();
   return (
     <SpringCard index={index} className="h-full">
       <div
@@ -165,7 +173,10 @@ const PricingCard = ({
         </ul>
 
         <div className="mt-auto pt-8">
-          <button className="btn-primary-glow btn-hover-lift w-full text-center">
+          <button
+            onClick={() => navigate(`/discovery?service=${serviceMap[plan.title]}`)}
+            className="btn-primary-glow btn-hover-lift w-full text-center"
+          >
             Start Your Build
           </button>
         </div>

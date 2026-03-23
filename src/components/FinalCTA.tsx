@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
 
@@ -13,12 +14,12 @@ const FinalCTA = () => {
           <p className="text-muted-foreground text-lg md:text-xl mb-10 max-w-xl mx-auto">
             Limited Local Partner spots available for Q2 2026.
           </p>
-          <a
-            href="#pricing"
+          <Link
+            to="/discovery"
             className="btn-primary-glow btn-hover-lift text-base md:text-lg px-10 py-4 inline-block"
           >
             Start Your Build
-          </a>
+          </Link>
         </BlueprintReveal>
       </div>
     </section>
