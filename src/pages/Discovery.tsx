@@ -70,17 +70,6 @@ const Discovery = () => {
         },
       });
 
-      // Send acknowledgment email to the client
-      await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "project-acknowledgment",
-          recipientEmail: form.email.trim(),
-          idempotencyKey: `inquiry-ack-${inquiryId}`,
-          templateData: {
-            name: form.name.trim(),
-          },
-        },
-      });
 
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
