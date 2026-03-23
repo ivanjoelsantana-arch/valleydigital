@@ -17,8 +17,8 @@ const valueProps = [
   },
   {
     num: "03",
-    title: "The Automated Sales Force",
-    desc: "This platform works 24/7 to educate, persuade, and qualify leads before they ever call you. It replaces manual outreach with automated authority, saving you dozens of hours in the sales cycle every month.",
+    title: "The Automatic Filter",
+    desc: "Stop wasting hours on 'tire-kickers' and unqualified leads. We architect a digital experience that answers the tough questions, builds trust, and pre-qualifies your prospects before they ever pick up the phone. By the time they reach out to you, they aren't just 'looking'—they're ready to buy.",
   },
 ];
 
