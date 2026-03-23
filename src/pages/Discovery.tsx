@@ -114,7 +114,7 @@ const Discovery = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="text-center mb-14">
+              <div id="discovery-section" className="text-center mb-14">
                 <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4">
                   The Discovery Phase:{" "}
                   <span className="glow-text">Architecting Your Future.</span>

@@ -15,7 +15,7 @@ const FinalCTA = () => {
             Limited Local Partner spots available for Q2 2026.
           </p>
           <Link
-            to="/discovery"
+            to="/discovery#discovery-section"
             className="btn-primary-glow btn-hover-lift text-base md:text-lg px-10 py-4 inline-block"
           >
             Start Your Build
