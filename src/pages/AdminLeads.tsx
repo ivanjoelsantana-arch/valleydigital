@@ -38,6 +38,7 @@ const AdminLeads = () => {
   const [selected, setSelected] = useState<Inquiry | null>(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isSignUp, setIsSignUp] = useState(false);
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, sess) => {
