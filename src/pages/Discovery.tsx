@@ -186,7 +186,7 @@ const Discovery = () => {
                 </div>
 
                 <div>
-                  <label className={labelClasses}>The Goal</label>
+                  <label className={labelClasses}>What's your biggest frustration with your current online presence?</label>
                   <textarea
                     maxLength={1000}
                     rows={4}
