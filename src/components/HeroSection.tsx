@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { Smartphone, Search, Sparkles, PhoneCall } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import TextReveal from "./motion/TextReveal";

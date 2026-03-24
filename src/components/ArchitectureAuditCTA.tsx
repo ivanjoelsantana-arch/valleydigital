@@ -30,12 +30,12 @@ const ArchitectureAuditCTA = () => {
           No sales pressure. No obligation. Just a straight answer from someone
           who knows this community.
         </p>
-        <a
-          href="mailto:ivan@valleydigital.co?subject=Booking%20a%20Free%2015-Minute%20Call&body=Hi%20Ivan%2C%0A%0AI'd%20like%20to%20book%20a%20free%2015-minute%20call.%0A%0AMy%20business%3A%20%5BInsert%20Name%5D%0AMy%20website%20(if%20any)%3A%20%5BInsert%20URL%5D"
+        <Link
+          to="/discovery"
           className="btn-primary-glow btn-hover-lift text-base md:text-lg px-12 py-5 inline-block font-bold"
         >
           Book your free 15-minute call →
-        </a>
+        </Link>
         <p className="text-muted-foreground text-sm mt-4 italic">
           Spots are limited — we only take on a handful of new projects each quarter.
         </p>
