@@ -3,14 +3,13 @@ import HeroSection from "@/components/HeroSection";
 import PrettyWebsiteTrap from "@/components/PrettyWebsiteTrap";
 import ThreePillarSolution from "@/components/ThreePillarSolution";
 import HowItWorks from "@/components/HowItWorks";
-import AntiGhostingTrust from "@/components/AntiGhostingTrust";
+import SocialProofBar from "@/components/SocialProofBar";
 import FeaturedProject from "@/components/FeaturedProject";
-import WhoThisIsFor from "@/components/WhoThisIsFor";
+import AntiGhostingTrust from "@/components/AntiGhostingTrust";
 import MeetTheArchitect from "@/components/MeetTheArchitect";
-import LocalPricingSection from "@/components/LocalPricingSection";
-import PersuasionSection from "@/components/PersuasionSection";
-import SignalNoiseTransition from "@/components/SignalNoiseTransition";
+import WhoThisIsFor from "@/components/WhoThisIsFor";
 import ROIArchitectureSection from "@/components/ROIArchitectureSection";
+import LocalPricingSection from "@/components/LocalPricingSection";
 import ArchitectureAuditCTA from "@/components/ArchitectureAuditCTA";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -23,15 +22,14 @@ const Index = () => {
       <PrettyWebsiteTrap />
       <ThreePillarSolution />
       <HowItWorks />
-      <AntiGhostingTrust />
+      <SocialProofBar />
       <FeaturedProject />
-      <WhoThisIsFor />
+      <AntiGhostingTrust />
       <MeetTheArchitect />
+      <WhoThisIsFor />
+      <ROIArchitectureSection />
       <LocalPricingSection />
       <ArchitectureAuditCTA />
-      <PersuasionSection />
-      <SignalNoiseTransition />
-      <ROIArchitectureSection />
       <FinalCTA />
       <Footer />
     </div>
