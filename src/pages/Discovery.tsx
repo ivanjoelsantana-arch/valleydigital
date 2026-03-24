@@ -116,11 +116,11 @@ const Discovery = () => {
             >
               <div id="discovery-section" className="text-center mb-14">
                 <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4">
-                  The Discovery Phase:{" "}
-                  <span className="glow-text">Building Your Future.</span>
+                  Let's talk about{" "}
+                  <span className="glow-text">your business.</span>
                 </h1>
                 <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-lg mx-auto" style={{ opacity: 0.85 }}>
-                  Please provide the context needed to ensure our partnership aligns with your growth goals. This takes 2 minutes.
+                  Fill this out and Ivan will reach out within one business day to set up your free 15-minute call. No pitch — just an honest look at where you're at and what would actually help.
                 </p>
               </div>
 
