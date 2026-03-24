@@ -18,12 +18,13 @@ const Navbar = () => {
             <span className="font-semibold text-foreground tracking-tight">Valley Digital Co.</span>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+            <a href="#work" className="hover:text-foreground transition-colors">Work</a>
             <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
-            <a href="#process" className="hover:text-foreground transition-colors">Process</a>
-            <a href="#roi" className="hover:text-foreground transition-colors">ROI</a>
+            <a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a>
+            <a href="#contact" className="hover:text-foreground transition-colors">Get in Touch</a>
           </div>
-          <a href="#pricing" className="btn-primary-glow text-[0.75rem] px-4 py-1.5 font-semibold md:text-sm md:px-6 md:py-3 md:font-medium w-auto whitespace-nowrap">
-            Get Started
+          <a href="#contact" className="btn-primary-glow text-[0.75rem] px-4 py-1.5 font-semibold md:text-sm md:px-6 md:py-3 md:font-medium w-auto whitespace-nowrap">
+            Book a Free Chat
           </a>
         </div>
       </nav>
