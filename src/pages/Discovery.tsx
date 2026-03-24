@@ -216,7 +216,7 @@ const Discovery = () => {
                     className="w-full py-4 rounded-lg font-bold text-base tracking-wide text-primary-foreground transition-all duration-300 hover:shadow-[var(--shadow-glow)] disabled:opacity-50"
                     style={{ background: "var(--gradient-blue)" }}
                   >
-                    {submitting ? "Submitting..." : "Request Your Discovery Call"}
+                    {submitting ? "Sending..." : "Send my details to Ivan →"}
                   </button>
                 </div>
               </form>
