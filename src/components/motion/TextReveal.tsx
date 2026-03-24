@@ -11,7 +11,7 @@ interface TextRevealProps {
 /** Slide-from-bottom text reveal with overflow hidden mask */
 const TextReveal = ({ children, className, delay = 0, as = "div" }: TextRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-5%" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
   const Tag = motion[as] as typeof motion.div;
 
   return (

@@ -10,7 +10,7 @@ interface BlueprintRevealProps {
 
 const BlueprintReveal = ({ children, className, style, delay = 0 }: BlueprintRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-10%" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
 
   return (
     <motion.div

@@ -11,7 +11,7 @@ interface SpringCardProps {
 /** Card that springs in from the bottom-right with stagger */
 const SpringCard = ({ children, className, style, index = 0 }: SpringCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-8%" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
 
   return (
     <motion.div
