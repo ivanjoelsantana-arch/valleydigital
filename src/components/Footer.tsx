@@ -2,9 +2,10 @@ import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#" },
+  { label: "Work", href: "#work" },
   { label: "Pricing", href: "#pricing" },
-  { label: "ROI", href: "#roi" },
-  { label: "Process", href: "#process" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Get in Touch", href: "#contact" },
 ];
 
 const Footer = () => (
