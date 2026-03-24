@@ -10,7 +10,7 @@ const PersuasionSection = () => {
             Strategy
           </p>
           <TextReveal as="h2" className="text-3xl md:text-5xl font-black tracking-tight text-foreground" delay={0.2}>
-            The Architecture of <span className="glow-text">Persuasion</span>
+            The Power of <span className="glow-text">Persuasion</span>
           </TextReveal>
         </BlueprintReveal>
 
@@ -47,7 +47,7 @@ const PersuasionSection = () => {
                 bridge the gap between their problem and your solution. This
                 narrative framework eliminates doubt, builds an emotional
                 connection, and creates a logical path that leads directly to a
-                transaction. We don't just fill space; we engineer the{" "}
+                transaction. We don't just fill space; we craft the{" "}
                 <span className="font-semibold text-foreground">'Yes.'</span>
               </p>
             </div>

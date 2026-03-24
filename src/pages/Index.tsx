@@ -5,6 +5,7 @@ import ThreePillarSolution from "@/components/ThreePillarSolution";
 import HowItWorks from "@/components/HowItWorks";
 import AntiGhostingTrust from "@/components/AntiGhostingTrust";
 import FeaturedProject from "@/components/FeaturedProject";
+import WhoThisIsFor from "@/components/WhoThisIsFor";
 import MeetTheArchitect from "@/components/MeetTheArchitect";
 import LocalPricingSection from "@/components/LocalPricingSection";
 import PersuasionSection from "@/components/PersuasionSection";
@@ -24,6 +25,7 @@ const Index = () => {
       <HowItWorks />
       <AntiGhostingTrust />
       <FeaturedProject />
+      <WhoThisIsFor />
       <MeetTheArchitect />
       <LocalPricingSection />
       <ArchitectureAuditCTA />
