@@ -14,8 +14,8 @@ const Navbar = () => {
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="flex items-center gap-2 cursor-pointer transition-opacity duration-200 hover:opacity-80"
           >
-            <img src={logo} alt="Valley Digital Architecture" className="h-[72px] w-[72px]" />
-            <span className="font-semibold text-foreground tracking-tight">Valley Digital Architecture</span>
+            <img src={logo} alt="Valley Digital Co." className="h-[72px] w-[72px]" />
+            <span className="font-semibold text-foreground tracking-tight">Valley Digital Co.</span>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
