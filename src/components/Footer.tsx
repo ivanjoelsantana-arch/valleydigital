@@ -39,10 +39,10 @@ const Footer = () => (
         <div className="text-center md:text-right">
           <p className="text-muted-foreground text-sm mb-1">Get in touch</p>
           <a
-            href="mailto:hello@valleydigital.agency"
+            href="mailto:hello@valleydigital.co"
             className="text-primary text-sm font-medium hover:underline"
           >
-            hello@valleydigital.agency
+            hello@valleydigital.co
           </a>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-const NOTIFY_EMAIL = "hello@valleydigital.agency";
+const NOTIFY_EMAIL = "hello@valleydigital.co";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -49,7 +49,7 @@ Deno.serve(async (req) => {
           Authorization: `Bearer ${RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: "Valley Digital <notifications@valleydigital.agency>",
+          from: "Valley Digital <notifications@valleydigital.co>",
           to: [NOTIFY_EMAIL],
           subject: `New Inquiry: ${business} — ${serviceLabel}`,
           html,
