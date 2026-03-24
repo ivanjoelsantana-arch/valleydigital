@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { Smartphone, Search, Sparkles, PhoneCall } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import TextReveal from "./motion/TextReveal";
@@ -72,12 +73,12 @@ const HeroSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
           >
-            <a href="#work" className="btn-primary-glow text-sm md:text-base px-8 py-4 font-semibold">
+            <Link to="/discovery" className="btn-primary-glow text-sm md:text-base px-8 py-4 font-semibold">
               See what your business could look like →
-            </a>
-            <a href="#contact" className="text-primary text-sm hover:underline transition-colors">
+            </Link>
+            <Link to="/discovery" className="text-primary text-sm hover:underline transition-colors">
               Book a free 15-minute chat with Ivan
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
