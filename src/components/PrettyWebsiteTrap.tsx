@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import FluidDrift from "./motion/FluidDrift";
-import LetterSpacingReveal from "./motion/LetterSpacingReveal";
+
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const sections = [
@@ -30,14 +30,7 @@ const sections = [
       </>
     ),
     paragraphs: [
-      <>
-        DIY builders give you a "skin," but they don't give you a nervous system.
-        They are often bloated with messy code that slows your site down, confusing
-        layouts that frustrate your customers,{" "}
-        <LetterSpacingReveal className="inline text-[1.2em] font-bold text-foreground" delay={0.3}>
-          and zero strategy for how to actually turn a visitor into a lead.
-        </LetterSpacingReveal>
-      </>,
+      "DIY builders give you a \"skin,\" but they don't give you a nervous system. They are often bloated with messy code that slows your site down, confusing layouts that frustrate your customers.",
     ],
   },
   {
