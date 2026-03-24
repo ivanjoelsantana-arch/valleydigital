@@ -50,7 +50,7 @@ const HeroSection = () => {
           <TextReveal as="h1" className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]" delay={0.15}>
             More calls. More bookings.
             <br />
-            <span className="glow-text">A reputation that finally matches your work.</span>
+            <span className="glow-text">A reputation that finally{" "}<br className="hidden md:inline" />matches your work.</span>
           </TextReveal>
 
           <TextReveal as="p" className="text-muted-foreground text-xl md:text-2xl max-w-[800px] mx-auto opacity-90 leading-[1.6]" delay={0.3}>
