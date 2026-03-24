@@ -1,7 +1,6 @@
 import logo from "@/assets/logo.png";
 
 const navLinks = [
-  { label: "Home", href: "#" },
   { label: "Work", href: "#work" },
   { label: "Pricing", href: "#pricing" },
   { label: "How It Works", href: "#how-it-works" },
@@ -19,7 +18,7 @@ const Footer = () => (
             <span className="font-semibold text-foreground tracking-tight">Valley Digital Co.</span>
           </div>
           <p className="text-muted-foreground text-sm max-w-xs text-center md:text-left">
-            High-performance digital architecture for businesses that refuse to blend in.
+            Built in Altona, MB. Serving Southern Manitoba's business community.
           </p>
         </div>
 
@@ -49,11 +48,11 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-border/30 mt-12 pt-8 flex flex-col items-center gap-4 text-xs text-muted-foreground">
-        <p className="text-center max-w-md leading-relaxed">
-          Elevating the digital landscape of Altona and the Pembina Valley. Dedicated to Southern Manitoba's economic growth.
-        </p>
-        <p className="italic">Founded by Ivan. Architecting digital growth in Altona, MB.</p>
-        <p>© {new Date().getFullYear()} Valley Digital Co. All rights reserved.</p>
+        <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-xs text-muted-foreground">
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
+          Accepting Q3 2026 engagements
+        </div>
+        <p>© 2026 Valley Digital Co. All rights reserved.</p>
       </div>
     </div>
   </footer>

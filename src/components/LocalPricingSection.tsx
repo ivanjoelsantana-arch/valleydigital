@@ -9,44 +9,49 @@ import TextReveal from "./motion/TextReveal";
 
 const pricingPlans = [
   {
-    title: "Web + Copy Overhaul",
+    title: "Website + Copy",
+    description: "Everything you need to turn your website into your hardest-working employee.",
     standardRate: "$5,500",
     localRate: "$4,800",
     monthlyRate: "$640/mo",
     deposit: "$960",
     bestValue: false,
     bullets: [
-      "Complete UI/UX Redesign",
-      "High-Conversion Sales Copywriting",
-      "SEO-Ready Structure",
-      "Lead-Capture Integration",
+      "A complete redesign built around your customers",
+      "A site your visitors actually enjoy using",
+      "Written copy that turns readers into callers",
+      "Built to show up on Google from day one",
+      "Lead capture so you wake up to new inquiries",
     ],
   },
   {
-    title: "Professional Logo",
+    title: "Logo & Brand Identity",
+    description: "A professional mark that earns trust before you say a word.",
     standardRate: "$1,500",
     localRate: "$1,250",
     monthlyRate: "$166/mo",
     deposit: "$250",
     bestValue: false,
     bullets: [
-      "Strategic Discovery Session",
-      "3 Unique Visual Concepts",
-      "Full Brand Identity Kit",
-      "Print & Digital Master Files",
+      "Strategic discovery session",
+      "3 unique visual concepts",
+      "Full brand identity kit",
+      "Print & digital ready files (vehicle wraps, signage, social, everything)",
     ],
   },
   {
     title: "The Complete Rebrand",
+    description: "Your entire digital presence, rebuilt from the ground up — fully aligned, fully yours.",
     standardRate: "$6,500",
     localRate: "$5,500",
     monthlyRate: "$733/mo",
     deposit: "$1,100",
     bestValue: true,
     bullets: [
-      "Everything in Web, Copy, and Logo",
-      "Total Brand Alignment",
-      "Priority Local Support",
+      "Everything in Website + Copy",
+      "Everything in Logo & Brand Identity",
+      "Total brand alignment across every touchpoint",
+      "Priority support from Ivan directly",
     ],
   },
 ];
@@ -91,8 +96,8 @@ const PricingToggle = ({
 };
 
 const serviceMap: Record<string, string> = {
-  "Web + Copy Overhaul": "web-copy",
-  "Professional Logo": "logo",
+  "Website + Copy": "web-copy",
+  "Logo & Brand Identity": "logo",
   "The Complete Rebrand": "rebrand",
 };
 
@@ -118,7 +123,8 @@ const PricingCard = ({
           </Badge>
         )}
 
-        <h3 className="text-xl font-bold text-foreground mb-6">{plan.title}</h3>
+        <h3 className="text-xl font-bold text-foreground mb-2">{plan.title}</h3>
+        <p className="text-muted-foreground text-sm mb-6">{plan.description}</p>
 
         <div className="mb-2">
           <span className="text-sm text-muted-foreground">Standard Rate</span>
@@ -177,7 +183,7 @@ const PricingCard = ({
             onClick={() => navigate(`/discovery?service=${serviceMap[plan.title]}#discovery-section`)}
             className="btn-primary-glow btn-hover-lift w-full text-center"
           >
-            Start Your Build
+            Start the conversation →
           </button>
         </div>
       </div>
@@ -191,13 +197,19 @@ const LocalPricingSection = () => {
   return (
     <section id="pricing" className="section-padding pt-24 md:pt-32">
       <div className="max-w-7xl mx-auto">
-        <BlueprintReveal className="text-center mb-16">
+        <BlueprintReveal className="text-center mb-6">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
-            Pricing
+            Investment
           </p>
           <TextReveal as="h2" className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight pb-1" delay={0.2}>
-            Local Partner <span className="glow-text">Pricing</span>
+            Straightforward pricing.{" "}
+            <span className="glow-text">No surprises, ever.</span>
           </TextReveal>
+          <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+            We offer local partner rates for businesses physically located in the
+            Pembina Valley and Southern Manitoba. We believe in investing in our
+            neighbors.
+          </p>
         </BlueprintReveal>
 
         <PricingToggle isMonthly={isMonthly} onToggle={() => setIsMonthly(!isMonthly)} />
@@ -209,9 +221,8 @@ const LocalPricingSection = () => {
         </div>
 
         <p className="text-center text-muted-foreground text-sm mt-12 max-w-2xl mx-auto leading-relaxed">
-          Local Partner Rates are reserved for businesses physically located in
-          the Pembina Valley and Southern Manitoba. We believe in investing in
-          our neighbours.
+          6-month payment plans available on all packages. Ask Ivan about it on
+          your free call.
         </p>
       </div>
     </section>

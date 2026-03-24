@@ -18,7 +18,7 @@ const MeetTheArchitect = () => {
         borderBottom: "1px solid hsl(215 25% 22% / 0.6)",
       }}
     >
-      {/* Watermark logo — perfectly centered, no rotation */}
+      {/* Watermark logo */}
       <img
         src={logo}
         alt=""
@@ -56,7 +56,7 @@ const MeetTheArchitect = () => {
             >
               <img
                 src={ivanHeadshot}
-                alt="Ivan — Lead Architect at Valley Digital Co."
+                alt="Ivan — Founder of Valley Digital Co."
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
               />
@@ -71,22 +71,37 @@ const MeetTheArchitect = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           >
             <span className="inline-block glow-text text-xs font-bold tracking-widest uppercase">
-              Lead Architect
+              Founder
             </span>
             <TextReveal as="h2" className="text-2xl md:text-4xl font-bold tracking-tight text-foreground leading-tight" delay={0.3}>
-              Strategy First. Architecture Second.
+              Hey — I'm Ivan.
             </TextReveal>
-            <p className="text-muted-foreground text-base md:text-lg leading-[1.85] max-w-2xl">
-              I'm Ivan—a Web Solutions Architect dedicated to helping businesses
-              in the Pembina Valley scale through high-performance digital
-              engineering. I don't just build websites; I design conversion
-              systems that turn local browsers into loyal partners. My approach
-              combines deep technical architecture with the psychology of
-              storytelling to ensure your brand doesn't just look premium—it
-              performs at a premium level.
-            </p>
+            <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-[1.85] max-w-2xl">
+              <p>
+                I built Valley Digital Co. because I kept seeing the same thing:
+                talented, hard-working local business owners in the Pembina Valley
+                being let down by websites that didn't reflect the quality of their
+                work. Or worse, paying someone who disappeared after the job.
+              </p>
+              <p>
+                I'm a Web Solutions Specialist based right here in Altona, MB. I've
+                spent years learning what actually makes a website bring in business
+                — not just what makes it look good. I combine the technical side of
+                building fast, polished websites with an understanding of how people
+                actually make buying decisions online.
+              </p>
+              <p>
+                But more than anything, I care about this community. Every business
+                I help grow here is an investment in Southern Manitoba. That matters
+                to me.
+              </p>
+              <p>
+                When you work with Valley Digital Co., you're not a ticket in a
+                queue. You're a neighbor. And I treat your business like it's mine.
+              </p>
+            </div>
             <p className="text-muted-foreground/60 text-sm italic">
-              Based in Altona, MB. Serving the Southern Manitoba business community.
+              Based in Altona, MB. Serving Winkler, Morden, and all of Southern Manitoba.
             </p>
           </motion.div>
         </div>

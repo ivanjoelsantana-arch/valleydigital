@@ -7,18 +7,18 @@ import { useRef } from "react";
 const valueProps = [
   {
     num: "01",
-    title: "The Conversion Multiplier",
-    desc: "A standard website converts at ~1%. An engineered platform with strategic storytelling targets 3%+. That 2% difference isn't just a number—it represents a 200% increase in lead flow without spending an extra dollar on marketing.",
+    title: "More leads without more ad spend",
+    desc: "The average DIY website converts around 1% of visitors into inquiries. A professionally built, strategically written site targets 3% or more. That's not a minor improvement — that's potentially tripling your lead flow without spending another dollar on advertising.",
   },
   {
     num: "02",
-    title: "Brand Equity & Authority",
-    desc: "Premium pricing requires premium positioning. By architecting a world-class digital presence, we move your business out of the commodity trap, allowing you to command higher rates and attract higher-quality clients.",
+    title: "Charge what your work is worth",
+    desc: "There's a direct link between how professional your digital presence looks and how much you can charge. When your site looks like a premium operation, clients expect — and accept — premium pricing. We move you out of the 'cheapest quote wins' game.",
   },
   {
     num: "03",
-    title: "The Automatic Filter",
-    desc: "Stop wasting hours on 'tire-kickers' and unqualified leads. We architect a digital experience that answers the tough questions, builds trust, and pre-qualifies your prospects before they ever pick up the phone. By the time they reach out to you, they aren't just 'looking'—they're ready to buy.",
+    title: "Stop losing hours to the wrong inquiries",
+    desc: "A well-built site pre-qualifies your prospects before they ever call you. By the time someone reaches out, they've already seen your work, understood your pricing range, and decided you're the right fit. Less time on tire-kickers. More time on jobs that matter.",
   },
 ];
 
@@ -31,11 +31,11 @@ const ROIArchitectureSection = () => {
       <div className="max-w-7xl mx-auto">
         <BlueprintReveal className="text-center mb-16">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
-            Value
+            Why it matters
           </p>
           <TextReveal as="h2" className="text-3xl md:text-5xl font-black tracking-tight text-foreground" delay={0.2}>
-            The ROI of High-Performance{" "}
-            <span className="glow-text">Architecture</span>
+            A good website isn't a cost. It's the employee that{" "}
+            <span className="glow-text">never calls in sick.</span>
           </TextReveal>
         </BlueprintReveal>
 
@@ -80,7 +80,7 @@ const ROIArchitectureSection = () => {
             <div className="flex flex-col items-center gap-4 pt-4">
               <div className="inline-flex items-center gap-2 glass-card px-4 py-2 glow-border text-xs text-muted-foreground">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-                Featured Project: Digital Infrastructure for Southern Manitoba Service Providers
+                Serving local service businesses across Southern Manitoba
               </div>
               <p className="text-center mt-8 italic" style={{ color: 'hsl(210, 14%, 60%)', opacity: 0.8, fontSize: '0.95rem' }}>
                 Our mission is to bridge the gap between where your business is today and the world-class digital presence your brand deserves.
