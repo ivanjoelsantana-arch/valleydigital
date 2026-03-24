@@ -202,7 +202,7 @@ const Discovery = () => {
                   <textarea
                     maxLength={1000}
                     rows={4}
-                    placeholder="Where do you want your business to be in 12 months?"
+                    placeholder="Consistent leads coming in without me having to chase them — and a website I'm actually proud to send people to."
                     value={form.vision}
                     onChange={update("vision")}
                     className={`${fieldClasses} resize-none`}
