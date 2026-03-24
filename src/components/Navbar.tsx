@@ -23,9 +23,9 @@ const Navbar = () => {
             <a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a>
             <a href="#contact" className="hover:text-foreground transition-colors">Get in Touch</a>
           </div>
-          <a href="#contact" className="btn-primary-glow text-[0.75rem] px-4 py-1.5 font-semibold md:text-sm md:px-6 md:py-3 md:font-medium w-auto whitespace-nowrap">
+          <Link to="/discovery" className="btn-primary-glow text-[0.75rem] px-4 py-1.5 font-semibold md:text-sm md:px-6 md:py-3 md:font-medium w-auto whitespace-nowrap">
             Book a Free Chat
-          </a>
+          </Link>
         </div>
       </nav>
       <ContactDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
