@@ -5,8 +5,8 @@ import { TEMPLATES } from '../_shared/transactional-email-templates/registry.ts'
 
 // Configuration baked in at scaffold time
 const SITE_NAME = "valleydigital"
-const SENDER_DOMAIN = "notify.valleydigital.agency"
-const FROM_DOMAIN = "valleydigital.agency"
+const SENDER_DOMAIN = "notify.valleydigital.co"
+const FROM_DOMAIN = "valleydigital.co"
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',

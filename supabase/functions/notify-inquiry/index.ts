@@ -49,7 +49,7 @@ Deno.serve(async (req) => {
           Authorization: `Bearer ${RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: "Valley Digital <notifications@valleydigital.agency>",
+          from: "Valley Digital <notifications@valleydigital.co>",
           to: [NOTIFY_EMAIL],
           subject: `New Inquiry: ${business} — ${serviceLabel}`,
           html,

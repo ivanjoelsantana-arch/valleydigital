@@ -70,7 +70,7 @@ const Discovery = () => {
       await supabase.functions.invoke("send-transactional-email", {
         body: {
           templateName: "new-inquiry-notification",
-          recipientEmail: "ivan@valleydigital.agency",
+          recipientEmail: "ivan@valleydigital.co",
           idempotencyKey: `inquiry-notify-${inquiryId}`,
           templateData: {
             name: form.name.trim(),

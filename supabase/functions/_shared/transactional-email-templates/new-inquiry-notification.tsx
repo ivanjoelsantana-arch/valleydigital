@@ -96,7 +96,7 @@ export const template = {
   component: NewInquiryNotificationEmail,
   subject: (data: Record<string, any>) =>
     `New Inquiry: ${data.business || 'Unknown'} — ${data.service ? (serviceLabels[data.service] || data.service) : 'General'}`,
-  to: 'ivan@valleydigital.agency',
+  to: 'ivan@valleydigital.co',
   displayName: 'New inquiry notification',
   previewData: {
     name: 'Jane Smith',
