@@ -1,6 +1,6 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-const NOTIFY_EMAIL = "hello@valleydigital.agency";
+const NOTIFY_EMAIL = "hello@valleydigital.co";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
