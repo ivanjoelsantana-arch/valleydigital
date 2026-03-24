@@ -3,7 +3,7 @@ import { useRef } from "react";
 
 const SignalNoiseTransition = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-5%" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
 
   const width = 1200;
   const midY = 40;

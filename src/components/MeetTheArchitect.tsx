@@ -6,7 +6,7 @@ import TextReveal from "./motion/TextReveal";
 
 const MeetTheArchitect = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
+  const isInView = useInView(sectionRef, { once: true, margin: "0px" });
 
   return (
     <section

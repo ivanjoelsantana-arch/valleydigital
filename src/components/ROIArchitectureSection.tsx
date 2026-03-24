@@ -24,7 +24,7 @@ const valueProps = [
 
 const ROIArchitectureSection = () => {
   const headlineRef = useRef<HTMLDivElement>(null);
-  const headlineInView = useInView(headlineRef, { once: true, margin: "-10%" });
+  const headlineInView = useInView(headlineRef, { once: true, margin: "0px" });
 
   return (
     <section className="section-padding">

@@ -7,7 +7,7 @@ import screenshot from "@/assets/featured-project-afte.png";
 
 const FeaturedProject = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-10%" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
 
   return (
     <section className="px-6 md:px-12 lg:px-20 pt-10 md:pt-12 pb-20 md:pb-28">
