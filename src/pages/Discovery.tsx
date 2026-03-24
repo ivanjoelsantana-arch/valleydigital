@@ -198,7 +198,7 @@ const Discovery = () => {
                 </div>
 
                 <div>
-                  <label className={labelClasses}>The Vision</label>
+                  <label className={labelClasses}>What would success look like for you in the next 12 months?</label>
                   <textarea
                     maxLength={1000}
                     rows={4}
