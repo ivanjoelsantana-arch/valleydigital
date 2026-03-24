@@ -30,7 +30,7 @@ const sections = [
       </>
     ),
     paragraphs: [
-      "DIY builders give you a \"skin,\" but they don't give you a nervous system. They are often bloated with messy code that slows your site down, confusing layouts that frustrate your customers.",
+      "DIY builders give you a \"skin,\" but they don't give you a nervous system. They are often bloated with messy code that slows your site down, confusing layouts that frustrate your customers, and zero strategy for how to actually turn a visitor into a lead.",
     ],
   },
   {
