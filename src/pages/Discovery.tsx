@@ -190,7 +190,7 @@ const Discovery = () => {
                   <textarea
                     maxLength={1000}
                     rows={4}
-                    placeholder="What is the #1 bottleneck in your current digital presence?"
+                    placeholder="I keep losing jobs to competitors who look more professional online, but I don't know where to start."
                     value={form.bottleneck}
                     onChange={update("bottleneck")}
                     className={`${fieldClasses} resize-none`}
