@@ -52,7 +52,7 @@ const Footer = () => (
           Elevating the digital landscape of Altona and the Pembina Valley. Dedicated to Southern Manitoba's economic growth.
         </p>
         <p className="italic">Founded by Ivan. Architecting digital growth in Altona, MB.</p>
-        <p>© {new Date().getFullYear()} Valley Digital Architecture. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Valley Digital Co. All rights reserved.</p>
       </div>
     </div>
   </footer>

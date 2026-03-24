@@ -56,7 +56,7 @@ const MeetTheArchitect = () => {
             >
               <img
                 src={ivanHeadshot}
-                alt="Ivan — Lead Architect at Valley Digital Architecture"
+                alt="Ivan — Lead Architect at Valley Digital Co."
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
               />
