@@ -64,7 +64,7 @@ const sections = [
       </>
     ),
     paragraphs: [
-      "When you work with Valley Digital Architecture, you aren't paying for \"a website.\" You are investing in a high-performance business asset.",
+      "When you work with Valley Digital Co., you aren't paying for \"a website.\" You are investing in a high-performance business asset.",
       <>
         A poorly converting DIY site is a liability.
         <br />

@@ -14,7 +14,7 @@ const Footer = () => (
         {/* Logo & tagline */}
         <div className="flex flex-col items-center md:items-start gap-3">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Valley Digital Architecture" className="h-10 w-10" />
+            <img src={logo} alt="Valley Digital Co." className="h-10 w-10" />
             <span className="font-semibold text-foreground tracking-tight">Valley Digital Co.</span>
           </div>
           <p className="text-muted-foreground text-sm max-w-xs text-center md:text-left">

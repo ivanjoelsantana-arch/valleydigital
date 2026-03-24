@@ -26,7 +26,7 @@ const FeaturedProject = () => {
               >
                 <img
                   src={screenshot}
-                  alt="A Furry Tail Ending — Featured project by Valley Digital Architecture"
+                  alt="A Furry Tail Ending — Featured project by Valley Digital Co."
                   className="w-full h-auto block transition-[filter] duration-500 grayscale group-hover:grayscale-0"
                   loading="lazy"
                 />
