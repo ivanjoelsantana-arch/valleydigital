@@ -116,11 +116,11 @@ const Discovery = () => {
             >
               <div id="discovery-section" className="text-center mb-14">
                 <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4">
-                  The Discovery Phase:{" "}
-                  <span className="glow-text">Building Your Future.</span>
+                  Let's talk about{" "}
+                  <span className="glow-text">your business.</span>
                 </h1>
                 <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-lg mx-auto" style={{ opacity: 0.85 }}>
-                  Please provide the context needed to ensure our partnership aligns with your growth goals. This takes 2 minutes.
+                  Fill this out and Ivan will reach out within one business day to set up your free 15-minute call. No pitch — just an honest look at where you're at and what would actually help.
                 </p>
               </div>
 
@@ -186,7 +186,7 @@ const Discovery = () => {
                 </div>
 
                 <div>
-                  <label className={labelClasses}>The Goal</label>
+                  <label className={labelClasses}>What's your biggest frustration with your current online presence?</label>
                   <textarea
                     maxLength={1000}
                     rows={4}
@@ -198,7 +198,7 @@ const Discovery = () => {
                 </div>
 
                 <div>
-                  <label className={labelClasses}>The Vision</label>
+                  <label className={labelClasses}>What would success look like for you in the next 12 months?</label>
                   <textarea
                     maxLength={1000}
                     rows={4}
@@ -216,7 +216,7 @@ const Discovery = () => {
                     className="w-full py-4 rounded-lg font-bold text-base tracking-wide text-primary-foreground transition-all duration-300 hover:shadow-[var(--shadow-glow)] disabled:opacity-50"
                     style={{ background: "var(--gradient-blue)" }}
                   >
-                    {submitting ? "Submitting..." : "Request Your Discovery Call"}
+                    {submitting ? "Sending..." : "Send my details to Ivan →"}
                   </button>
                 </div>
               </form>
