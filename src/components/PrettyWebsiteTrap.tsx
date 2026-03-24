@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import FluidDrift from "./motion/FluidDrift";
-import LetterSpacingReveal from "./motion/LetterSpacingReveal";
+
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const sections = [
