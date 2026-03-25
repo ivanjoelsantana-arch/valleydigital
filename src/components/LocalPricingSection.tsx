@@ -1,99 +1,61 @@
 import { Check } from "lucide-react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import SpringCard from "./motion/SpringCard";
 import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
+import GradientBorderCard from "./motion/GradientBorderCard";
 
 const pricingPlans = [
   {
     title: "Website + Copy",
-    description: "Everything you need to turn your website into your hardest-working employee.",
-    standardRate: "$5,500",
-    localRate: "$4,800",
-    monthlyRate: "$640/mo",
-    deposit: "$960",
-    bestValue: false,
+    deposit: "$1,100",
+    monthly: "$733/month",
+    months: 6,
+    total: "$5,500",
+    localDeposit: "$960",
+    localMonthly: "$640/month",
+    highlight: false,
     bullets: [
-      "A complete redesign built around your customers",
-      "A site your visitors actually enjoy using",
-      "Written copy that turns readers into callers",
-      "Designed to be found — fast-loading, mobile-friendly, and built for search engines to understand",
-      "Lead capture so you wake up to new inquiries",
+      "Custom-designed website built for your industry",
+      "Sales copy written for every page",
+      "Mobile-friendly, fast-loading, built for search engines to understand",
+      "Delivered in 3–4 weeks",
     ],
   },
   {
     title: "Logo & Brand Identity",
-    description: "A professional mark that earns trust before you say a word.",
-    standardRate: "$1,500",
-    localRate: "$1,250",
-    monthlyRate: "$166/mo",
-    deposit: "$250",
-    bestValue: false,
+    deposit: "$300",
+    monthly: "$200/month",
+    months: 6,
+    total: "$1,500",
+    localDeposit: "$250",
+    localMonthly: "$167/month",
+    highlight: false,
     bullets: [
-      "Strategic discovery session",
-      "3 unique visual concepts",
-      "Full brand identity kit",
-      "Print & digital ready files (vehicle wraps, signage, social, everything)",
+      "Primary logo + alternate versions",
+      "Colour palette and typography guide",
+      "Brand usage guidelines",
+      "Print and digital file formats",
     ],
   },
   {
     title: "The Complete Rebrand",
-    description: "Your entire digital presence, rebuilt from the ground up — fully aligned, fully yours.",
-    standardRate: "$6,500",
-    localRate: "$5,500",
-    monthlyRate: "$733/mo",
-    deposit: "$1,100",
-    bestValue: true,
+    deposit: "$1,300",
+    monthly: "$867/month",
+    months: 6,
+    total: "$6,500",
+    localDeposit: "$1,100",
+    localMonthly: "$733/month",
+    highlight: true,
     bullets: [
       "Everything in Website + Copy",
       "Everything in Logo & Brand Identity",
-      "Total brand alignment across every touchpoint",
-      "Priority support from Ivan directly",
+      "Unified brand and site launch strategy",
+      "Priority delivery",
     ],
   },
 ];
-
-const PricingToggle = ({
-  isMonthly,
-  onToggle,
-}: {
-  isMonthly: boolean;
-  onToggle: () => void;
-}) => {
-  return (
-    <div className="flex justify-center mb-12">
-      <div
-        className="relative inline-flex items-center rounded-full p-1 cursor-pointer"
-        style={{ backgroundColor: "hsl(215 18% 13%)" }}
-        onClick={onToggle}
-      >
-        <motion.div
-          className="absolute top-1 bottom-1 rounded-full"
-          style={{ backgroundColor: "hsl(215 20% 24%)", width: "calc(50% - 4px)" }}
-          animate={{ x: isMonthly ? "calc(100% + 4px)" : 4 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        />
-        <span
-          className={`relative z-10 px-5 py-2 text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${
-            !isMonthly ? "text-foreground" : "text-muted-foreground"
-          }`}
-        >
-          Full Investment
-        </span>
-        <span
-          className={`relative z-10 px-5 py-2 text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${
-            isMonthly ? "text-foreground" : "text-muted-foreground"
-          }`}
-        >
-          6-Month Plan
-        </span>
-      </div>
-    </div>
-  );
-};
 
 const serviceMap: Record<string, string> = {
   "Website + Copy": "web-copy",
@@ -104,125 +66,121 @@ const serviceMap: Record<string, string> = {
 const PricingCard = ({
   plan,
   index,
-  isMonthly,
 }: {
   plan: (typeof pricingPlans)[0];
   index: number;
-  isMonthly: boolean;
 }) => {
   const navigate = useNavigate();
+
+  const inner = (
+    <div className="relative rounded-xl p-6 md:p-8 flex flex-col h-full bg-card border border-border">
+      {plan.highlight && (
+        <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground border-none px-4 py-1 z-10">
+          Most Popular
+        </Badge>
+      )}
+
+      <h3 className="text-xl font-bold text-foreground mb-6">{plan.title}</h3>
+
+      {/* Primary deposit price */}
+      <p className="text-4xl md:text-5xl font-black glow-text leading-none mb-1">
+        Start for {plan.deposit}
+      </p>
+
+      {/* Secondary monthly / total */}
+      <p className="text-sm text-muted-foreground mt-2">
+        Then {plan.monthly} for {plan.months} months · {plan.total} total
+      </p>
+
+      {/* Local partner callout */}
+      <div className="mt-4 mb-8 rounded-lg px-4 py-3 bg-primary/5 border border-primary/15">
+        <p className="text-sm font-medium text-primary">
+          Pembina Valley businesses:{" "}
+          <span className="text-foreground">
+            {plan.localDeposit} deposit · {plan.localMonthly}
+          </span>
+        </p>
+      </div>
+
+      {/* Bullets */}
+      <ul className="space-y-3 flex-1">
+        {plan.bullets.map((bullet) => (
+          <li
+            key={bullet}
+            className="flex items-start gap-3 text-sm text-secondary-foreground"
+          >
+            <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+            {bullet}
+          </li>
+        ))}
+      </ul>
+
+      {/* CTA */}
+      <div className="mt-auto pt-8">
+        <button
+          onClick={() =>
+            navigate(
+              `/discovery?service=${serviceMap[plan.title]}#discovery-section`
+            )
+          }
+          className="btn-primary-glow btn-hover-lift w-full text-center"
+        >
+          Book a Free Call →
+        </button>
+      </div>
+    </div>
+  );
+
+  if (plan.highlight) {
+    return (
+      <SpringCard index={index} className="h-full">
+        <GradientBorderCard active className="h-full">
+          {inner}
+        </GradientBorderCard>
+      </SpringCard>
+    );
+  }
+
   return (
     <SpringCard index={index} className="h-full">
-      <div
-        className="relative rounded-xl p-6 md:p-8 flex flex-col h-full bg-card"
-        style={{ border: "1px solid hsl(var(--border))" }}
-      >
-        {plan.bestValue && (
-          <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground border-none px-4 py-1 z-10">
-            Best Value
-          </Badge>
-        )}
-
-        <h3 className="text-xl font-bold text-foreground mb-2">{plan.title}</h3>
-        <p className="text-muted-foreground text-sm mb-6">{plan.description}</p>
-
-        <div className="mb-2">
-          <span className="text-sm text-muted-foreground">Standard Rate</span>
-          <p className="text-2xl font-bold text-muted-foreground line-through">
-            {plan.standardRate}
-          </p>
-        </div>
-
-        <div className="mb-8 min-h-[5rem]">
-          <span className="text-sm text-muted-foreground">
-            {isMonthly ? "Monthly Rate" : "Local Partner Rate"}
-          </span>
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={isMonthly ? "monthly" : "full"}
-              className="text-3xl font-extrabold glow-text"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            >
-              {isMonthly ? plan.monthlyRate : plan.localRate}
-            </motion.p>
-          </AnimatePresence>
-          {isMonthly && (
-            <motion.div
-              className="space-y-1 mt-1"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.15 }}
-            >
-              <p className="text-xs font-medium text-secondary-foreground">
-                Requires {plan.deposit} deposit to start
-              </p>
-              <p className="text-xs text-muted-foreground">
-                80% financed over 6 months at 0% interest
-              </p>
-            </motion.div>
-          )}
-        </div>
-
-        <ul className="space-y-3 flex-1">
-          {plan.bullets.map((bullet) => (
-            <li
-              key={bullet}
-              className="flex items-start gap-3 text-sm text-secondary-foreground"
-            >
-              <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-              {bullet}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-auto pt-8">
-          <button
-            onClick={() => navigate(`/discovery?service=${serviceMap[plan.title]}#discovery-section`)}
-            className="btn-primary-glow btn-hover-lift w-full text-center"
-          >
-            Start the conversation →
-          </button>
-        </div>
-      </div>
+      {inner}
     </SpringCard>
   );
 };
 
 const LocalPricingSection = () => {
-  const [isMonthly, setIsMonthly] = useState(false);
-
   return (
     <section id="pricing" className="section-padding pt-24 md:pt-32">
       <div className="max-w-7xl mx-auto">
-        <BlueprintReveal className="text-center mb-6">
+        <BlueprintReveal className="text-center mb-12">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
             Investment
           </p>
-          <TextReveal as="h2" className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight pb-1" delay={0.2}>
-            Straightforward pricing.{" "}
-            <span className="glow-text">No surprises, ever.</span>
+          <TextReveal
+            as="h2"
+            className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight pb-1"
+            delay={0.2}
+          >
+            Simple, Transparent Pricing.
           </TextReveal>
           <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-            We offer local partner rates for businesses physically located in the
-            Pembina Valley and Southern Manitoba. We believe in investing in our
-            neighbors.
+            Start with a deposit. Split the rest over 6 months. No interest, no
+            hidden fees — just a straightforward way to get a site that pays for
+            itself.
           </p>
         </BlueprintReveal>
 
-        <PricingToggle isMonthly={isMonthly} onToggle={() => setIsMonthly(!isMonthly)} />
-
         <div className="grid md:grid-cols-3 gap-4 items-stretch">
           {pricingPlans.map((plan, i) => (
-            <PricingCard key={plan.title} plan={plan} index={i} isMonthly={isMonthly} />
+            <PricingCard key={plan.title} plan={plan} index={i} />
           ))}
         </div>
 
-        <p className="text-center text-muted-foreground text-sm mt-12 max-w-2xl mx-auto leading-relaxed">
-          6-month payment plans available on all packages. Ask Ivan about it on
-          your free call.
+        <p className="text-center text-muted-foreground text-xs mt-12 max-w-3xl mx-auto leading-relaxed">
+          All packages require a 20% deposit to begin. The remaining balance is
+          split into 6 equal monthly payments — no interest, no surprises. Full
+          upfront payment available. Local partner rates apply to businesses in
+          the Pembina Valley and surrounding Southern Manitoba communities.
         </p>
       </div>
     </section>
