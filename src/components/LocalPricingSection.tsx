@@ -159,7 +159,7 @@ const LocalPricingSection = () => {
             className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight pb-1"
             delay={0.2}
           >
-            Simple, Transparent Pricing.
+            Simple, <span className="glow-text">Transparent Pricing.</span>
           </TextReveal>
           <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
             Start with a deposit. Split the rest over 6 months. No interest, no
