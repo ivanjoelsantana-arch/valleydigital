@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import SpringCard from "./motion/SpringCard";
 import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
-import GradientBorderCard from "./motion/GradientBorderCard";
+
 
 const pricingPlans = [
   {
