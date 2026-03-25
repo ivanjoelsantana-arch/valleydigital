@@ -73,7 +73,7 @@ const PricingCard = ({
   const navigate = useNavigate();
 
   const inner = (
-    <div className="relative rounded-xl p-6 md:p-8 flex flex-col h-full bg-card border border-border" style={{ minHeight: "100%" }}>
+    <div className="relative overflow-visible rounded-xl p-6 md:p-8 flex flex-col h-full bg-card border border-border" style={{ minHeight: "100%" }}>
       {plan.highlight && (
         <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground border-none px-4 py-1 z-10">
           Most Popular
@@ -84,7 +84,7 @@ const PricingCard = ({
 
       {/* Primary deposit price */}
       <p className="text-4xl md:text-5xl font-black glow-text leading-none mb-1">
-        Start for {plan.deposit}
+        Start for <span className="block">{plan.deposit}</span>
       </p>
 
       {/* Secondary monthly / total */}
@@ -134,9 +134,7 @@ const PricingCard = ({
   if (plan.highlight) {
     return (
       <SpringCard index={index} className="h-full">
-        <GradientBorderCard active className="h-full">
-          {inner}
-        </GradientBorderCard>
+        {inner}
       </SpringCard>
     );
   }
@@ -170,7 +168,7 @@ const LocalPricingSection = () => {
           </p>
         </BlueprintReveal>
 
-        <div className="grid md:grid-cols-3 gap-4 items-stretch">
+        <div className="grid md:grid-cols-3 gap-4 items-stretch overflow-visible">
           {pricingPlans.map((plan, i) => (
             <PricingCard key={plan.title} plan={plan} index={i} />
           ))}
