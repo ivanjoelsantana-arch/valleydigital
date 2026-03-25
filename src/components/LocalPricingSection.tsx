@@ -20,7 +20,7 @@ const pricingPlans = [
       "A complete redesign built around your customers",
       "A site your visitors actually enjoy using",
       "Written copy that turns readers into callers",
-      "Built to show up on Google from day one",
+      "Designed to be found — fast-loading, mobile-friendly, and built for search engines to understand",
       "Lead capture so you wake up to new inquiries",
     ],
   },
