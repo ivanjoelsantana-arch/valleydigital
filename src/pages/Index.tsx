@@ -10,6 +10,7 @@ import MeetTheArchitect from "@/components/MeetTheArchitect";
 import WhoThisIsFor from "@/components/WhoThisIsFor";
 import ROIArchitectureSection from "@/components/ROIArchitectureSection";
 import LocalPricingSection from "@/components/LocalPricingSection";
+import LocalGrowthPartnerPlan from "@/components/LocalGrowthPartnerPlan";
 import ArchitectureAuditCTA from "@/components/ArchitectureAuditCTA";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -29,6 +30,7 @@ const Index = () => {
       <WhoThisIsFor />
       <ROIArchitectureSection />
       <LocalPricingSection />
+      <LocalGrowthPartnerPlan />
       <ArchitectureAuditCTA />
       <FinalCTA />
       <Footer />
