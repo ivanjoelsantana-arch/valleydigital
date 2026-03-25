@@ -30,6 +30,7 @@ const Index = () => {
       <WhoThisIsFor />
       <ROIArchitectureSection />
       <LocalPricingSection />
+      <LocalGrowthPartnerPlan />
       <ArchitectureAuditCTA />
       <FinalCTA />
       <Footer />
