@@ -13,7 +13,7 @@ const GradientBorderCard = ({ children, className = "", active = false }: Gradie
 
   return (
     <div
-      className="relative rounded-xl p-[1px] overflow-hidden"
+      className="relative rounded-xl p-[1px] overflow-hidden h-full"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -35,7 +35,7 @@ const GradientBorderCard = ({ children, className = "", active = false }: Gradie
         }}
       />
       {/* Inner content */}
-      <div className={`relative rounded-xl bg-card ${className}`}>
+      <div className={`relative rounded-xl bg-card h-full ${className}`}>
         {children}
       </div>
     </div>
