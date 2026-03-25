@@ -73,7 +73,7 @@ const PricingCard = ({
   const navigate = useNavigate();
 
   const inner = (
-    <div className="relative rounded-xl p-6 md:p-8 flex flex-col h-full bg-card border border-border">
+    <div className="relative rounded-xl p-6 md:p-8 flex flex-col h-full bg-card border border-border" style={{ minHeight: "100%" }}>
       {plan.highlight && (
         <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground border-none px-4 py-1 z-10">
           Most Popular
