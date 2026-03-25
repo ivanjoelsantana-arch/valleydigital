@@ -173,6 +173,7 @@ const Discovery = () => {
                       <option value="web-copy" className="bg-card">Web + Copy Overhaul</option>
                       <option value="logo" className="bg-card">Professional Logo</option>
                       <option value="rebrand" className="bg-card">The Complete Rebrand</option>
+                      <option value="growth-partner" className="bg-card">Local Growth Partner Plan — $197/month</option>
                     </select>
                   </div>
                   <div>
