@@ -9,12 +9,13 @@ import TextReveal from "./motion/TextReveal";
 const pricingPlans = [
   {
     title: "Website + Copy",
-    deposit: "$1,100",
-    monthly: "$733/month",
-    months: 6,
+    deposit: "$880",
+    monthly: "$385/month",
+    months: 12,
     total: "$5,500",
     localDeposit: "$960",
-    localMonthly: "$640/month",
+    localMonthly: "$320/month",
+    localTotal: "$4,800 total",
     highlight: false,
     bullets: [
       "Custom-designed website built for your industry",
@@ -26,11 +27,12 @@ const pricingPlans = [
   {
     title: "Logo & Brand Identity",
     deposit: "$300",
-    monthly: "$200/month",
-    months: 6,
+    monthly: "$100/month",
+    months: 12,
     total: "$1,500",
     localDeposit: "$250",
-    localMonthly: "$167/month",
+    localMonthly: "$83/month",
+    localTotal: "$1,250 total",
     highlight: false,
     bullets: [
       "Primary logo + alternate versions",
@@ -42,11 +44,12 @@ const pricingPlans = [
   {
     title: "The Complete Rebrand",
     deposit: "$1,300",
-    monthly: "$867/month",
-    months: 6,
+    monthly: "$433/month",
+    months: 12,
     total: "$6,500",
     localDeposit: "$1,100",
-    localMonthly: "$733/month",
+    localMonthly: "$367/month",
+    localTotal: "$5,500 total",
     highlight: true,
     bullets: [
       "Everything in Website + Copy",
@@ -97,7 +100,7 @@ const PricingCard = ({
         <p className="text-sm font-medium text-primary">
           Pembina Valley businesses:{" "}
           <span className="text-foreground">
-            {plan.localDeposit} deposit · {plan.localMonthly}
+            {plan.localDeposit} deposit · {plan.localMonthly} · {plan.localTotal}
           </span>
         </p>
       </div>
@@ -162,7 +165,7 @@ const LocalPricingSection = () => {
             Simple, <span className="glow-text">Transparent Pricing.</span>
           </TextReveal>
           <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-            Start with a deposit. Split the rest over 6 months. No interest, no
+            Start with a deposit. Split the rest over 12 months. No interest, no
             hidden fees — just a straightforward way to get a site that pays for
             itself.
           </p>
@@ -176,9 +179,10 @@ const LocalPricingSection = () => {
 
         <p className="text-center text-muted-foreground text-xs mt-12 max-w-3xl mx-auto leading-relaxed">
           All packages require a 20% deposit to begin. The remaining balance is
-          split into 6 equal monthly payments — no interest, no surprises. Full
-          upfront payment available. Local partner rates apply to businesses in
-          the Pembina Valley and surrounding Southern Manitoba communities.
+          split into 12 equal monthly payments — no interest, no surprises. Total
+          investment is always stated upfront. Full upfront payment available. Local
+          partner rates apply to businesses in the Pembina Valley and surrounding
+          Southern Manitoba communities.
         </p>
       </div>
     </section>
