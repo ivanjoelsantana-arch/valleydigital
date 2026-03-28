@@ -9,7 +9,7 @@ import TextReveal from "./motion/TextReveal";
 const pricingPlans = [
   {
     title: "Website + Copy",
-    deposit: "$880",
+    deposit: "$1,100",
     monthly: "$385/month",
     months: 12,
     total: "$5,500",
