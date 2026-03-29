@@ -10,12 +10,9 @@ const pricingPlans = [
   {
     title: "Website + Copy",
     deposit: "$1,100",
-    monthly: "$385/month",
+    monthly: "$367/month",
     months: 12,
     total: "$5,500",
-    localDeposit: "$960",
-    localMonthly: "$320/month",
-    localTotal: "$4,800 total",
     highlight: false,
     bullets: [
       "Custom-designed website built for your industry",
@@ -30,9 +27,6 @@ const pricingPlans = [
     monthly: "$100/month",
     months: 12,
     total: "$1,500",
-    localDeposit: "$250",
-    localMonthly: "$83/month",
-    localTotal: "$1,250 total",
     highlight: false,
     bullets: [
       "Primary logo + alternate versions",
@@ -47,9 +41,6 @@ const pricingPlans = [
     monthly: "$433/month",
     months: 12,
     total: "$6,500",
-    localDeposit: "$1,100",
-    localMonthly: "$367/month",
-    localTotal: "$5,500 total",
     highlight: true,
     bullets: [
       "Everything in Website + Copy",
@@ -95,15 +86,7 @@ const PricingCard = ({
         Then {plan.monthly} for {plan.months} months · {plan.total} total
       </p>
 
-      {/* Local partner callout */}
-      <div className="mt-4 mb-8 rounded-lg px-4 py-3 bg-primary/5 border border-primary/15">
-        <p className="text-sm font-medium text-primary">
-          Pembina Valley businesses:{" "}
-          <span className="text-foreground">
-            {plan.localDeposit} deposit · {plan.localMonthly} · {plan.localTotal}
-          </span>
-        </p>
-      </div>
+      <div className="mb-8" />
 
       {/* Bullets */}
       <ul className="space-y-3 flex-1">
@@ -178,11 +161,10 @@ const LocalPricingSection = () => {
         </div>
 
         <p className="text-center text-muted-foreground text-xs mt-12 max-w-3xl mx-auto leading-relaxed">
-          All packages require a 20% deposit to begin. The remaining balance is
-          split into 12 equal monthly payments — no interest, no surprises. Total
-          investment is always stated upfront. Full upfront payment available. Local
-          partner rates apply to businesses in the Pembina Valley and surrounding
-          Southern Manitoba communities.
+          All packages require a 20% deposit to begin. The remaining 80% is
+          split into 12 equal monthly payments — no interest, no hidden fees.
+          Total investment is always stated upfront. Full upfront payment
+          available.
         </p>
       </div>
     </section>
