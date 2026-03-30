@@ -77,7 +77,7 @@ const PricingCard = ({
       <h3 className="text-xl font-bold text-foreground mb-6">{plan.title}</h3>
 
       {/* Primary deposit price */}
-      <p className="text-4xl md:text-5xl font-black glow-text leading-none mb-1">
+      <p className="text-4xl md:text-3xl lg:text-5xl font-black glow-text leading-none mb-1">
         Start for <span className="block">{plan.deposit}</span>
       </p>
 
