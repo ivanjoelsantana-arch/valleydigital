@@ -48,7 +48,7 @@ const LocalGrowthPartnerPlan = () => {
 
         <div className="text-center">
           <p className="text-muted-foreground text-sm mb-8">
-            $197/month. Cancel any time. And your site never calls in sick.
+            $297/month. Cancel any time. And your site never calls in sick.
           </p>
           <Link to="/discovery" className="btn-primary-glow btn-hover-lift inline-block text-center">
             Let's talk →
