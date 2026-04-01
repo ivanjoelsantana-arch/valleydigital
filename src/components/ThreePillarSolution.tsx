@@ -37,8 +37,7 @@ const ThreePillarSolution = () => {
             <span className="glow-text">business tool.</span>
           </TextReveal>
           <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-            Every project at Valley Digital Co. is built around three things that
-            actually move the needle for local service businesses.
+            We're not the cheapest option — and that's intentional. While other designers focus on how your site looks, we obsess over what it does. Every word, every button, every page is built around one goal: turning your visitors into booked jobs.
           </p>
         </BlueprintReveal>
 
