@@ -55,7 +55,7 @@ const HeroSection = () => {
           </TextReveal>
 
           <TextReveal as="p" className="text-muted-foreground text-xl md:text-2xl max-w-[800px] mx-auto opacity-90 leading-[1.6]" delay={0.3}>
-            Valley Digital Co. builds websites for local businesses in Southern Manitoba — designed to bring in customers, not just look good. Your phone should ring more after we're done. That's the only metric that matters.
+            Most web designers build pretty websites. We build ones that make you more money. Valley Digital Co. crafts the design, copy, and strategy local businesses in Southern Manitoba need to turn visitors into booked jobs.
           </TextReveal>
 
           <motion.p

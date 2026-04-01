@@ -91,6 +91,9 @@ const MeetTheArchitect = () => {
                 actually make buying decisions online.
               </p>
               <p>
+                I've sat across from business owners who paid good money for a website that looked great and brought in nothing. That's not a website problem — that's a strategy problem. And it's exactly what I built Valley Digital Co. to fix.
+              </p>
+              <p>
                 But more than anything, I care about this community. Every business
                 I help grow here is an investment in Southern Manitoba. That matters
                 to me.
