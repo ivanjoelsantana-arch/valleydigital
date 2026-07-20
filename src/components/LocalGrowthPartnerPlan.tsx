@@ -4,8 +4,13 @@ import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
 
 const checklist = [
-  "One site update — new photos, promotions, service changes, copy tweaks",
+  "Hosting and SSL included — your site stays online, fast, and secure. No separate hosting bill to chase",
+  "24/7 uptime monitoring — if your site ever goes down, I know before you do",
   "Full Site Diagnostic — if a button, link, or form ever breaks, I'll catch it and get it working again",
+  "One site update — new photos, promotions, service changes, copy tweaks",
+  "Every version of your site, backed up — nothing is ever one bad click away from gone",
+  "One-click rollback — if something breaks, yesterday's working version is back up in minutes",
+  "Security patches applied — the quiet maintenance that keeps your site from becoming an easy target",
   "Same-day response — always Ivan, never a ticket system",
 ];
 
@@ -25,7 +30,7 @@ const LocalGrowthPartnerPlan = () => {
             Most websites quietly decay after launch. Links break. Photos go stale. Google stops paying attention. The Site Care Plan makes sure that never happens to yours.
           </p>
           <p className="text-secondary-foreground text-base md:text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-            For <span className="text-foreground font-semibold">$59/month</span>, I handle everything that keeps your site sharp, visible, and converting — so you can stay focused on running your business.
+            For <span className="text-foreground font-semibold">$59/month</span>, I handle everything that keeps your site online, secure, and converting — hosting included — so you can stay focused on running your business.
           </p>
         </BlueprintReveal>
 
