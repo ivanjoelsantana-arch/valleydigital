@@ -10,8 +10,8 @@ const pricingPlans = [
   {
     title: "Website + Copy",
     deposit: "$1,000",
-    monthly: "$333/month",
-    months: 12,
+    monthly: "$500/month",
+    months: 8,
     total: "$5,000",
     highlight: false,
     bullets: [
@@ -24,8 +24,8 @@ const pricingPlans = [
   {
     title: "Logo & Brand Identity",
     deposit: "$250",
-    monthly: "$83/month",
-    months: 12,
+    monthly: "$125/month",
+    months: 8,
     total: "$1,250",
     highlight: false,
     bullets: [
@@ -38,8 +38,8 @@ const pricingPlans = [
   {
     title: "The Complete Rebrand",
     deposit: "$1,200",
-    monthly: "$400/month",
-    months: 12,
+    monthly: "$600/month",
+    months: 8,
     total: "$6,000",
     highlight: true,
     bullets: [
@@ -148,7 +148,7 @@ const LocalPricingSection = () => {
             Simple, <span className="glow-text">Transparent Pricing.</span>
           </TextReveal>
           <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-            Start with a deposit. Split the rest over 12 months. No interest, no
+            Start with a deposit. Split the rest over 8 months. No interest, no
             hidden fees — just a straightforward way to get a site that pays for
             itself.
           </p>
@@ -162,7 +162,7 @@ const LocalPricingSection = () => {
 
         <p className="text-center text-muted-foreground text-xs mt-12 max-w-3xl mx-auto leading-relaxed">
           All packages require a 20% deposit to begin. The remaining 80% is
-          split into 12 equal monthly payments — no interest, no hidden fees.
+          split into 8 equal monthly payments — no interest, no hidden fees.
           Total investment is always stated upfront. Full upfront payment
           available.
         </p>
