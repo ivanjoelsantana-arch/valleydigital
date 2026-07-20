@@ -30,7 +30,7 @@ const LocalGrowthPartnerPlan = () => {
             Most websites quietly decay after launch. Links break. Photos go stale. Google stops paying attention. The Site Care Plan makes sure that never happens to yours.
           </p>
           <p className="text-secondary-foreground text-base md:text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-            For <span className="text-foreground font-semibold">$59/month</span>, I handle everything that keeps your site online, secure, and converting — hosting included — so you can stay focused on running your business.
+            For just <span className="text-foreground font-semibold">$59/month</span>, I handle everything that keeps your site online, secure, and converting — hosting included — so you can stay focused on running your business.
           </p>
         </BlueprintReveal>
 
