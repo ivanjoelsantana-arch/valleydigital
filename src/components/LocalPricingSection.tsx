@@ -9,10 +9,10 @@ import TextReveal from "./motion/TextReveal";
 const pricingPlans = [
   {
     title: "Website + Copy",
-    deposit: "$1,100",
-    monthly: "$367/month",
+    deposit: "$1,000",
+    monthly: "$333/month",
     months: 12,
-    total: "$5,500",
+    total: "$5,000",
     highlight: false,
     bullets: [
       "Custom-designed website built for your industry",
@@ -23,10 +23,10 @@ const pricingPlans = [
   },
   {
     title: "Logo & Brand Identity",
-    deposit: "$300",
-    monthly: "$100/month",
+    deposit: "$250",
+    monthly: "$83/month",
     months: 12,
-    total: "$1,500",
+    total: "$1,250",
     highlight: false,
     bullets: [
       "Primary logo + alternate versions",
@@ -37,10 +37,10 @@ const pricingPlans = [
   },
   {
     title: "The Complete Rebrand",
-    deposit: "$1,300",
-    monthly: "$433/month",
+    deposit: "$1,200",
+    monthly: "$400/month",
     months: 12,
-    total: "$6,500",
+    total: "$6,000",
     highlight: true,
     bullets: [
       "Everything in Website + Copy",

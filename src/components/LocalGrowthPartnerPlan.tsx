@@ -4,12 +4,9 @@ import BlueprintReveal from "./motion/BlueprintReveal";
 import TextReveal from "./motion/TextReveal";
 
 const checklist = [
-  "One done-for-you Google Business Profile post — written and ready to publish",
   "One site update — new photos, promotions, service changes, copy tweaks",
-  "A 5-minute performance report — plain-English walkthrough of your traffic and leads every month",
-  "Full site walkthrough — every link, button, form, and page tested by Ivan personally",
+  "Full Site Diagnostic — if a button, link, or form ever breaks, I'll catch it and get it working again",
   "Same-day response — always Ivan, never a ticket system",
-  "Annual full growth review — top-to-bottom audit of your site and digital presence",
 ];
 
 const LocalGrowthPartnerPlan = () => {
@@ -18,17 +15,17 @@ const LocalGrowthPartnerPlan = () => {
       <div className="max-w-3xl mx-auto">
         <BlueprintReveal className="text-center mb-10">
           <p className="text-primary text-sm font-medium tracking-wider uppercase mb-3">
-            Local Growth Partner Plan
+            Site Care Plan
           </p>
           <TextReveal as="h2" className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight pb-1" delay={0.2}>
             Your Site Is Live.{" "}
             <span className="glow-text">Now Let's Keep It Working.</span>
           </TextReveal>
           <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-            Most websites quietly decay after launch. Links break. Photos go stale. Google stops paying attention. The Local Growth Partner Plan makes sure that never happens to yours.
+            Most websites quietly decay after launch. Links break. Photos go stale. Google stops paying attention. The Site Care Plan makes sure that never happens to yours.
           </p>
           <p className="text-secondary-foreground text-base md:text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-            For <span className="text-foreground font-semibold">$197/month</span>, I handle everything that keeps your site sharp, visible, and converting — so you can stay focused on running your business.
+            For <span className="text-foreground font-semibold">$59/month</span>, I handle everything that keeps your site sharp, visible, and converting — so you can stay focused on running your business.
           </p>
         </BlueprintReveal>
 
@@ -48,7 +45,7 @@ const LocalGrowthPartnerPlan = () => {
 
         <div className="text-center">
           <p className="text-muted-foreground text-sm mb-8">
-            $197/month. Cancel any time. And your site never calls in sick.
+            $59/month. Cancel any time. And your site never calls in sick.
           </p>
           <Link to="/discovery" className="btn-primary-glow btn-hover-lift inline-block text-center">
             Let's talk →
